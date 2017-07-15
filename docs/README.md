@@ -1,42 +1,31 @@
-# Instructions
+# KickStarter
 
-This is your Development README, which will:
-show wireframes,
-describe features, and
-outline a development timeline for your application.
+Heroku link to your production site.
+Trello link
 
-# MVP
+# Minimum Viable Product
+
+YouGo is a clone of Kickstarter built with Ruby on Rails and React/Redux. By the end of week 9, this app will, at minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data, and sufficient CSS styling.
 
 1. New account creation, login, and guest/demo login
 2. A production README, replacing this README
 3. Hosting on Heroku
 4. Projects
-* Adequate styling
-* Smooth, bug-free navigation
-* Adequate and appropriate seeds to demonstrate the feature
 5. Backing projects & rewards
-* Adequate styling
-* Smooth, bug-free navigation
-* Adequate and appropriate seeds to demonstrate the feature
 6. Search
-* Adequate styling
-* Smooth, bug-free navigation
-* Adequate and appropriate seeds to demonstrate the feature
-7. Categories / Discover feature
-* Adequate styling
-* Smooth, bug-free navigation
-* Adequate and appropriate seeds to demonstrate the feature
-8. Bonus features
+7. Categories / Discover  
+8. Bonus Features:
 * Likes
-* Credit card payments
+* Credit Card Payments
 
-# Other:
+# Design Docs
 **include links to the following files:**
-* api-endpoints.md
-* component-hierarchy.md
-* sample-state.md
-* schema.md
+* [View Wireframes](./wireframes)
+* [API endpoints](./api-endpoints.md)
+* [React Components](./component-hierarchy.md)
+* [DB schema](./schema.md)
+* [Sample State](./sample-state.md)
 
-**This file will also contain:**
+# Implementation Timeline
 * Heroku link (to be done on first day of full-stack projects)
 * annotated wireframes.
