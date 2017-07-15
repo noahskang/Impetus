@@ -1,6 +1,7 @@
 # Impetus (KickStarter Clone)
 
 [Heroku link](https://www.heroku.com/) to your production site.
+
 [Trello link](https://trello.com/)
 
 # Minimum Viable Product
@@ -16,7 +17,6 @@ Impetus is a clone of Kickstarter built with Ruby on Rails and React/Redux, focu
 - [ ] Categories / Discover  
 
 # Design Docs
-**include links to the following files:**
 * [View Wireframes](./wireframes)
 * [API endpoints](./api-endpoints.md)
 * [React Components](./component-hierarchy.md)
