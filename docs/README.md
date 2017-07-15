@@ -7,18 +7,17 @@
 
 YouGo is a clone of Kickstarter built with Ruby on Rails and React/Redux. By the end of week 9, this app will, at minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data, and sufficient CSS styling.
 
-1. New account creation, login, and guest/demo login
-2. A production README, replacing this README
-3. Hosting on Heroku
-4. Projects
-5. Backing projects & rewards
-6. Search
-7. Categories / Discover  
-8. Bonus Features:
-* Likes
-* Credit Card Payments
-- test 1
-+ test 2 
+- [ ] New account creation, login, and guest/demo login
+- [ ] A production README, replacing this README
+- [ ] Hosting on Heroku
+- [ ] Projects
+- [ ] Backing projects & rewards
+- [ ] Search
+- [ ] Categories / Discover  
+- [ ] Bonus Features:
+
+- [ ] test 1
+- [ ] test 2
 
 # Design Docs
 **include links to the following files:**
@@ -29,5 +28,12 @@ YouGo is a clone of Kickstarter built with Ruby on Rails and React/Redux. By the
 * [Sample State](./sample-state.md)
 
 # Implementation Timeline
-* Heroku link (to be done on first day of full-stack projects)
-* annotated wireframes.
+## Phase 1
+## Phase 1
+## Phase 1
+## Phase 1
+## Phase 1
+## Phase 1
+## Bonus Features (TBD)
+- [ ] Likes
+- [ ] Credit Card Payments
