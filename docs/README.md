@@ -1,7 +1,7 @@
 # KickStarter
 
-Heroku link to your production site.
-Trello link
+[Heroku link](https://www.heroku.com/) to your production site.
+[Trello link](https://trello.com/)
 
 # Minimum Viable Product
 
@@ -17,6 +17,8 @@ YouGo is a clone of Kickstarter built with Ruby on Rails and React/Redux. By the
 8. Bonus Features:
 * Likes
 * Credit Card Payments
+- test 1
++ test 2 
 
 # Design Docs
 **include links to the following files:**
