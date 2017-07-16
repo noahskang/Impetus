@@ -50,7 +50,8 @@
 * Start a project Link
 
 **NewProject**
-* Input Form
+* New Project Form
+* Create Project Button
 
 **Explore**
 * AutoSearch
