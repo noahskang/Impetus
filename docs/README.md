@@ -2,7 +2,7 @@
 
 [Heroku link](https://www.heroku.com/) to your production site.
 
-[Trello link](https://trello.com/)
+[Trello link](https://trello.com/b/9RqvrwYo/impetus-kickstarter-clone)
 
 # Minimum Viable Product
 
