@@ -10,21 +10,11 @@
   },
   projects: {
     1: {
+      id: 1,
       title: "Project1",
       category: "Tests",
       description: "This is blank description"
       creator_id: 1,
-      project_id: 1,
-      backers: {
-        1: {
-          id: 1
-          name: "user 1"
-        },
-        2: {
-          id: 1
-          name: "user 2"
-        }
-      },
       funding-goal: 3000,
       funding-reached: 1000,
       end-date: '07/12/15'
@@ -37,17 +27,22 @@
           delivery-date: "date1"
         }
       }
+      backers: {
+        1: {user 1},
+        2: {iser 2 1}
+      }
     }
   },
   users:  {
     1: {
       id: 1
       name: "user 1"
-      projects-backed:
-    },
-    2: {
-      id: 1
-      name: "user 2"
+      projects_created: {
+        1: {project 1}
+      }
+      projects backed: {
+        2: {project 2}
+      }
     }
   },
 

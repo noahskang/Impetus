@@ -3,19 +3,23 @@
 **AuthFormContainer**
 * AuthForm
 
-**HomeContainer**
-* ProjectsContainer
+**Home**
+* ProjectsIndexContainer
 * NavBar
-  * Explore
-  * Search
+* FeaturedProjects
 
-**ProjectsContainer**
-* Projects Header
+**FeaturedProjectsContainer**
+* FeaturedProjects
+
+**ProjectsIndexContainer**
+* Header
 * ProjectsIndex
 
 **ProjectsIndex**
-* Project Index Item
-* Project Details
+* ProjectIndexItemContainer
+
+**ProjectIndexItemContainer**
+* ProjectIndexItem
   * Categories
   * title
   * image
@@ -46,11 +50,9 @@
   * SubmitPledgeButton
 
 **NewProjectContainer**
-* New Project
-* Start a project Link
+* NewProjectForm
 
-**NewProject**
-* New Project Form
+**NewProjectForm**
 * Create Project Button
 
 **Explore**
@@ -66,6 +68,7 @@
 | ------------- |---------------|
 | "/signup"     | "AuthFormContainer" |
 | "/login"      | "AuthFormContainer"     |
-| "/"           | "HomeContainer"      |  
-| "/projects/:projectId"     | "ProjectContainer" |
-| "/new-project"      | "NewProjectContainer"     |
+| "/"           | redirect to /signup or /home |
+| "/home"       | "Home"   |
+| "/home/projects/:projectId"     | "ProjectContainer" |
+| "/home/new-project"      | "NewProjectContainer"     |

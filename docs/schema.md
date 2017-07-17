@@ -1,0 +1,53 @@
+#Schema Information
+
+**users**
+| column name | data type | details |
+|-------|-------|-------|
+|  id    | integer | not null, primary key |
+| username  |  string   | not null, indexed, unique |
+| email | string | not null, indexed, unique |
+| password_digest | string | not null |
+| session_token | string | not null, indexed, unique |
+
+**projects**
+
+| column name | data type | details |
+|-------|-------|-------|
+|  id    | integer | not null, primary key |
+| title  |  string   | not null |
+| category | string | not null |
+| description | string | not null |
+| creator_id | string | not null |
+| funding-goal | integer | not null|
+| funding-reached | integer | |
+| end-date | date | |
+| days-to-go | integer | |
+
+**rewards**
+| column name | data type | details |
+|-------|-------|-------|
+|  id    | integer | not null, primary key |
+| pledge  |  integer   | not null |
+| tier | integer | not null |
+| description | string | not null |
+| delivery_date | string | not null |
+
+##Join Tables
+
+**projects backers**
+| column name | data type | details |
+|-------|-------|-------|
+| backer_id    | integer | not null |
+| project_id  |  integer   | not null |
+
+**projects created**
+| column name | data type | details |
+|-------|-------|-------|
+| creator_id    | integer | not null |
+| project_id  |  integer   | not null |
+
+**project rewards**
+| column name | data type | details |
+|-------|-------|-------|
+| reward_id    | integer | not null |
+| project_id  |  integer   | not null |
