@@ -1,3 +1,4 @@
+```js
 {
   currentUser: {
     id: 1,
@@ -40,3 +41,4 @@
 
   tagFilters: ["overseas", "local", "humanitarian"]
 }
+```
