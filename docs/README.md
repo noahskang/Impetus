@@ -1,12 +1,12 @@
-# Impetus (KickStarter Clone)
+# Impetus (Impetus Clone)
 
 [Heroku link](https://www.heroku.com/) to your production site.
 
-[Trello link](https://trello.com/b/9RqvrwYo/impetus-kickstarter-clone)
+[Trello link](https://trello.com/b/9RqvrwYo/impetus-Impetus-clone)
 
 # Minimum Viable Product
 
-Impetus is a clone of Kickstarter built with Ruby on Rails and React/Redux, focusing on volunteer projects and humanitarian work. By the end of week 9, this app will, at minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data, and sufficient CSS styling.
+Impetus is a clone of Impetus built with Ruby on Rails and React/Redux, focusing on volunteer projects and humanitarian work. By the end of week 9, this app will, at minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data, and sufficient CSS styling.
 
 - [ ] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
