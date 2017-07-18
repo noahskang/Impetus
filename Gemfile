@@ -46,7 +46,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'annotate'
-  gem 'bcrypt'
   gem 'guard-livereload'
   gem 'rb-readline'
 end
+gem 'bcrypt'
