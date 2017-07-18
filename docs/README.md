@@ -26,14 +26,14 @@ Impetus is a clone of Kickstarter built with Ruby on Rails and React/Redux, focu
 # Implementation Timeline
 ## Phase 1:  Backend setup and Front End User Authentication (2 days)
 **Objective:**  Functioning rails project with front-end Authentication
-## Phase 2: Projects Model, API, and components (2 days)
-**Objective:** Projects can be created, viewed, edited, and destroyed through the API.
-## Phase 3: Backing Interaction (1 Days)
-**Objective:** A user can back a project and view rewards.
+## Phase 2: Projects Model, API, and components (3 days)
+**Objective:** Projects can be created, viewed (as index or item) edited, and destroyed through the API. Basic Styling
+##Phase 3: Rewards (2 Day)
+**Objective:** Project creators can add rewards to their projects, and rewards can be viewed. Users can browse rewards on the project page and back a project. Basic Styling.
 ## Phase 4: Search, Explore, Categories (1 days)
-**Objective:** Projects can be grouped by categories and searched for by name or explored by category through the API. receive a thank you message.
-## Phase 5: Add Styling (3 Days)
-**Objective:** Render a beautiful version of my web page
+**Objective:** Projects can be grouped by categories and searched for by name or explored by category through the API.
+## Phase 5: Add Styling (1 Days)
+**Objective:** Add featured items banner to the Home/Project Index Page, and add advanced styling.
 ## Bonus Features (TBD)
 - [ ] Likes
 - [ ] Credit Card Payments

@@ -20,32 +20,11 @@
 
 **ProjectIndexItemContainer**
 * ProjectIndexItem
-  * Categories
-  * title
-  * image
-  * description
-  * creator
-  * backing progress
-    * visualizer
-    * money pledged
-    * % funded
-    * days to go
 
 **ProjectContainer**
 * Project Header
 * VisitWebsiteButton
-* Project
-* Project Details
-  * Categories
-  * title
-  * image
-  * description
-  * creator
-  * backing progress
-    * visualizer
-    * money pledged
-    * % funded
-    * days to go
+* ProjectItem
 * BackProjectButton
   * SubmitPledgeButton
 

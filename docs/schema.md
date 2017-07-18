@@ -1,8 +1,9 @@
 #Schema Information
 
 **users**
+
 | column name | data type | details |
-|-------|-------|-------|
+|----------|----------|------------|
 |  id    | integer | not null, primary key |
 | username  |  string   | not null, indexed, unique |
 | email | string | not null, indexed, unique |
@@ -19,11 +20,11 @@
 | description | string | not null |
 | creator_id | string | not null |
 | funding-goal | integer | not null|
-| funding-reached | integer | |
 | end-date | date | |
 | days-to-go | integer | |
 
 **rewards**
+
 | column name | data type | details |
 |-------|-------|-------|
 |  id    | integer | not null, primary key |
@@ -35,19 +36,19 @@
 ##Join Tables
 
 **projects backers**
+*customized backing amounts are distinguished from rewards*
+
 | column name | data type | details |
 |-------|-------|-------|
 | backer_id    | integer | not null |
 | project_id  |  integer   | not null |
-
-**projects created**
-| column name | data type | details |
-|-------|-------|-------|
-| creator_id    | integer | not null |
-| project_id  |  integer   | not null |
+| amount | integer | not null |
 
 **project rewards**
+*rewards are different from customized backing amounts*
+
 | column name | data type | details |
 |-------|-------|-------|
 | reward_id    | integer | not null |
 | project_id  |  integer   | not null |
+| backer_id   |  integer | not null |

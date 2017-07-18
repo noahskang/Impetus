@@ -8,7 +8,6 @@
 ##JSON API
 **Users**
 * `POST /api/users`
-* `PATCH /api/users`
 
 **Session**
 * `POST /api/session`
@@ -22,3 +21,11 @@
 * `GET /api/projects/:id`
 * `PATCH /api/projects/:id`
 * `DELETE /api/projects/:id`
+
+**Rewards**
+* `GET /api/rewards`
+* `POST /api/rewards`
+* `GET /api/rewards/id`
+
+**Backers**
+* `GET /api/backers/id/`
