@@ -46,7 +46,10 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'annotate'
-  gem 'guard-livereload'
+  gem 'guard-livereload', :require => false
   gem 'rb-readline'
+  gem 'guard', :require => false
+  gem 'rack-livereload'
+  gem 'rb-fsevent', :require => false
 end
 gem 'bcrypt'

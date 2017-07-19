@@ -1,0 +1,20 @@
+.session-form-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 150px;
+  position: relative;
+}
+
+.session-form{
+
+}
+
+#login{
+  text-align: center;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 22px;
+  font-size: 14px;
+  font-family: $head-font;
+}
