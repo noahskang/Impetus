@@ -1,11 +1,11 @@
-#API Endpoints
+# API Endpoints
 
-##HTML API
+## HTML API
 
 **Root**
 * `GET /` - loads React web app
 
-##JSON API
+## JSON API
 **Users**
 * `POST /api/users`
 

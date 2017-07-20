@@ -1,4 +1,4 @@
-#Schema Information
+# Schema Information
 
 **users**
 
@@ -33,7 +33,7 @@
 | description | string | not null |
 | delivery_date | string | not null |
 
-##Join Tables
+## Join Tables
 
 **projects backers**
 *customized backing amounts are distinguished from rewards*

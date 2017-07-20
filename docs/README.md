@@ -1,6 +1,6 @@
 # Impetus (Impetus Clone)
 
-[Heroku link](https://www.heroku.com/) to your production site.
+[Heroku link](https://impetus-kickstarter-clone.herokuapp.com/#/) to your production site.
 
 [Trello link](https://trello.com/b/9RqvrwYo/impetus-Impetus-clone)
 
@@ -28,7 +28,7 @@ Impetus is a clone of Impetus built with Ruby on Rails and React/Redux, focusing
 **Objective:**  Functioning rails project with front-end Authentication
 ## Phase 2: Projects Model, API, and components (3 days)
 **Objective:** Projects can be created, viewed (as index or item) edited, and destroyed through the API. Basic Styling
-##Phase 3: Rewards (2 Day)
+## Phase 3: Rewards (2 Day)
 **Objective:** Project creators can add rewards to their projects, and rewards can be viewed. Users can browse rewards on the project page and back a project. Basic Styling.
 ## Phase 4: Search, Explore, Categories (1 days)
 **Objective:** Projects can be grouped by categories and searched for by name or explored by category through the API.
