@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect, Link, withRouter } from 'react-router-dom';
+import { Route, Redirect, Link, withRouter, history } from 'react-router-dom';
 
 // we use withrouter when we have a component that isn't rendered by a route component.
 // Right now, sessionform isn't accessed by any route component. So we use withrouter.
@@ -10,8 +10,8 @@ class SessionForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			username: "",
-			password: ""
+			username: "peterparker@columbia.edu",
+			password: "I<3MaryJane"
 		};
     this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleGuestLogin = this.handleGuestLogin.bind(this);
@@ -27,13 +27,14 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
+		// this.props.history.push('/');
   }
 
   navLink(){
     if(this.props.formType === "login"){
-      return (<span>New to Impetus? &nbsp;<Link to="/signup">Signup instead</Link></span>);
+      return (<span><Link className="alt-link" to="/signup">New to Impetus? Signup instead</Link></span>);
     } else {
-      return (<span>Have an account? &nbsp;<Link to= "/login">login instead</Link></span>);
+      return (<span><Link className="alt-link" to= "/login">Already have an account? Login</Link></span>);
     }
   }
 	renderErrors(){
@@ -50,33 +51,34 @@ class SessionForm extends React.Component {
 
   render(){
     return(
-      <div className="session-form-div">
+			<div className="session-form-page">
         <form className="session-form">
-					<h1 id="login">Log into Impetus</h1>
-					<br/>
-					{this.navLink()}
+					<h1 id="session-form-title">{this.props.formType==="login" ? "Log into Impetus" : "Create an account"}</h1>
 				<br/>
-					<h2>{this.props.formType}</h2>
         {this.renderErrors()}
           <div className="login-form">
-            <label>Username:
+            <label>
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')} className="login-input" />
             </label>
             <br/>
-            <label>Password:
+            <label>
               <input type="password"
-                value={this.state.password} onChange={this.update('password')}
+                value={this.state.password}
+								onChange={this.update('password')}
                 className = "login-input"  />
             </label>
             <br/>
-            <input type="submit" onClick={this.handleSubmit} value={this.props.formType} />
-						<br/>
-						<button onClick={this.handleGuestLogin}>Log in as guest</button>
+            <input type="submit" className="session-form-submit" onClick={this.handleSubmit} value={this.props.formType==="login" ? "Log In" : "Sign Up"} />
+						<button className="session-form-submit" onClick={this.handleGuestLogin}>Log In As Guest</button>
           </div>
+					<br/>
+					<div id = "session-foot">
+					{this.navLink()}
+					</div>
         </form>
-      </div>
+			</div>
     );
   }
 
@@ -84,6 +86,7 @@ class SessionForm extends React.Component {
 		e.preventDefault();
 		let user = { username : "guest", password: "password1"};
 		this.props.login(user);
+		// this.props.history.push('/');
 	}
 
 }

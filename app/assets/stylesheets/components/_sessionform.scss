@@ -1,20 +1,103 @@
-.session-form-div{
+.session-form-page{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 150px;
-  position: relative;
+  height: 100vh;
+  min-width: 462px;
+  background-color: black;
 }
 
 .session-form{
-
+  color: white;
+  width: 330px;
+  padding: 0;
 }
 
-#login{
+#session-form-title{
   text-align: center;
   font-style: normal;
   font-weight: 100;
   line-height: 22px;
-  font-size: 14px;
+  font-size: 24px;
   font-family: $head-font;
+}
+
+.login-input{
+  height: 44px;
+  padding: 11px 0;
+  color: $medium-gray;
+  background-color: black;
+  border-bottom: 1px solid $medium-gray;
+  padding-left: 11px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  font: 300 normal 12px / 22px 'Gotham SSm A', 'Gotham SSm B', 'Proxima Nova', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 11px 0 0 0;
+  font-size: 14px;
+  -webkit-appearance: textfield;
+  user-select: text;
+  cursor: auto;
+  font: $nav-link-font;
+}
+
+.login-input:focus {
+  color: white;
+}
+
+.alt-link:hover{
+  color: white;
+}
+
+.alt-link{
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 22px;
+  color: $light-gray;
+  font-family: $nav-link-font;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 11px;
+}
+
+#session-foot{
+  text-align: center;
+}
+
+.session-form-submit{
+  font: $head-font;
+  font-size: 14px;
+  // padding-top: 5.5px;
+  // padding-right: 33px;
+  // padding-bottom: 5.5px;
+  // padding-left: 33px;
+  color: #3E3E3E;
+  line-height: 22px;
+  font-weight: 300;
+  border-radius: 2px;
+  height: 44px;
+  text-transform: none;
+  display: block;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  transition: background-color .1s ease-in-out;
+  -webkit-transition: background-color .1s ease-in-out;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 22px 0 0 0;
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.session-form-submit:hover{
+  background-color: $lighter-gray;
 }
