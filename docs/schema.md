@@ -16,7 +16,7 @@
 |-------|-------|-------|
 |  id    | integer | not null, primary key |
 | title  |  string   | not null |
-| website URL  |  string   | not null |
+| website_url  |  string   | not null |
 | description | string | not null |
 | category | string | not null |
 | creator_id | string | not null |

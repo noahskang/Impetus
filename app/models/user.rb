@@ -2,6 +2,8 @@ class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence: true
   validates :password, length: {minimum: 6}, allow_nil: :true
 
+  has_many :projects, foreign_key: :creator_id
+
   attr_accessor :password
 
   after_initialize :ensure_session_token

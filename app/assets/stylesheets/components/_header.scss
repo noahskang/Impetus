@@ -22,14 +22,8 @@
   text-transform: uppercase;
   padding: 1.8em 3.6em;
   z-index: 10;
+  background-color: white;
 }
-
-.centernav{
-  position: fixed;
-  left: 50%;
-  right: 50%;
-}
-
 
 .leftnav{
   position: relative;
@@ -45,10 +39,15 @@
   margin-right: 20px;
 }
 
-.logo{
-  height: 20px;
-  float: left;
-  display: inline-block;
+.centernav{
+  flex: 1;
+  justify-content: center;
+  .logo{
+    height: 20px;
+    float: left;
+    display: inline-block;
+    z-index: 50;
+  }
 }
 
 .impetus-logo-text{
@@ -92,7 +91,7 @@ a {
   color: $link-color-nav;
 }
 
-@media all and (max-width: 800px){
+@media all and (max-width: 600px){
   .rightnav *{
   margin-left: 1em;
   }

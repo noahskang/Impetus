@@ -11,9 +11,11 @@
   display: flex;
   justify-content: flex-start;
   position: fixed;
+  background-color: black;
   .logo{
-    height: 20px;
-    margin: 40px;
+    height: 40px;
+    width: auto;
+    margin: 65px;
     float: left;
     display: inline-block;
   }
@@ -63,7 +65,7 @@
 }
 
 .alt-link{
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 300;
   line-height: 22px;
   color: $light-gray;
@@ -93,7 +95,7 @@
   // padding-left: 33px;
   color: #3E3E3E;
   line-height: 22px;
-  font-weight: 300;
+  font-weight: 325;
   border-radius: 2px;
   height: 44px;
   text-transform: none;
