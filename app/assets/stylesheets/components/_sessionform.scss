@@ -1,10 +1,22 @@
-.session-form-page{
+.session-form-div{
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   min-width: 462px;
   background-color: black;
+}
+
+.session-home-link{
+  display: flex;
+  justify-content: flex-start;
+  position: fixed;
+  .logo{
+    height: 20px;
+    margin: 40px;
+    float: left;
+    display: inline-block;
+  }
 }
 
 .session-form{

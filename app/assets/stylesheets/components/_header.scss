@@ -27,7 +27,7 @@
 .centernav{
   position: fixed;
   left: 50%;
-  right: 50;
+  right: 50%;
 }
 
 
@@ -92,7 +92,7 @@ a {
   color: $link-color-nav;
 }
 
-@media all and (max-width: 700px){
+@media all and (max-width: 800px){
   .rightnav *{
   margin-left: 1em;
   }

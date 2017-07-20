@@ -16,12 +16,12 @@
 |-------|-------|-------|
 |  id    | integer | not null, primary key |
 | title  |  string   | not null |
-| category | string | not null |
+| website URL  |  string   | not null |
 | description | string | not null |
+| category | string | not null |
 | creator_id | string | not null |
 | funding-goal | integer | not null|
 | end-date | date | |
-| days-to-go | integer | |
 
 **rewards**
 

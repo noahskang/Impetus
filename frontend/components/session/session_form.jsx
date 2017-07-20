@@ -10,8 +10,8 @@ class SessionForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			username: "peterparker@columbia.edu",
-			password: "I<3MaryJane"
+			username: "",
+			password: ""
 		};
     this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleGuestLogin = this.handleGuestLogin.bind(this);
@@ -31,21 +31,22 @@ class SessionForm extends React.Component {
   }
 
 	// onClick={this.props.receiveErrors([])
-  navLink(){
-    if(this.props.formType === "login"){
-      return (<span><Link className="alt-link" to="/signup">New to Impetus? Signup instead</Link></span>);
-    } else {
-      return (<span><Link className="alt-link" to="/login"  to s>Already have an account? Login</Link></span>);
-    }
-  }
+  // navLink(){
+  //   if(this.props.formType === "login"){
+  //     return (<span><Link className="alt-link" to="/signup">New to Impetus? Signup instead</Link></span>);
+  //   } else {
+  //     return (<span><Link className="alt-link" to="/login"  to s>Already have an account? Login</Link></span>);
+  //   }
+  // }
 
-	// navLink(){
-	// 	if(this.props.formType === "login"){
-	// 		return (<div><span onClick=							{this.props.clearErrors()}><Link className="alt-link" to="/signup">New to Impetus? Signup instead</Link></span></div>);
-	// 	} else {
-	// 		return (<div><span onClick=							{this.props.clearErrors()}><Link className="alt-link" to="/login">Already have an account? Login</Link></span></div>);
-	// 	}
-	// }
+	navLink(){
+		if(this.props.formType === "login"){
+			return (<div><span><Link className="alt-link" to="/signup" onClick={this.props.clearErrors}>New to Impetus? Signup instead</Link></span></div>);
+		} else {
+			return (<div><span><Link className="alt-link" to="/login" onClick={this.props.clearErrors}>Already have an account? Login</Link></span></div>);
+		}
+	}
+
 	renderErrors(){
 		return(
 			<div>
@@ -66,33 +67,39 @@ class SessionForm extends React.Component {
 
   render(){
     return(
-			<div className="session-form-page">
-        <form className="session-form">
-					<h1 id="session-form-title">{this.props.formType==="login" ? "Log into Impetus" : "Create an account"}</h1>
-				<br/>
-        <div className="login-form">
-          <label>
-            <input type="text"
-              value={this.state.username}
-              onChange={this.update('username')} className="login-input" />
-          </label>
-          <br/>
-          <label>
-            <input type="password"
-              value={this.state.password}
-							onChange={this.update('password')}
-              className = "login-input"  />
-          </label>
-					{this.renderErrors()}
-          <br/>
-          <input type="submit" className="session-form-submit" onClick={this.handleSubmit} value={this.props.formType==="login" ? "Log In" : "Sign Up"} />
-					<button className="session-form-submit" onClick={this.handleGuestLogin}>Log In As Guest</button>
-        </div>
+			<div className="session-page">
+				<a className="session-home-link" href="/">
+					<img className="logo" src="http://res.cloudinary.com/noah-s-kang/image/upload/v1500584578/lightningbolt_white_gdx591.svg"/>
+				</a>
+				<div className="session-form-div">
+	        <form className="session-form">
+						<h1 id="session-form-title">{this.props.formType==="login" ? "Log into Impetus" : "Create an account"}</h1>
 					<br/>
-					<div id = "session-foot">
-					{this.navLink()}
-					</div>
-        </form>
+	        <div className="login-form">
+	          <label>
+	            <input type="text"
+								placeholder="peterparker"
+	              value={this.state.username}
+	              onChange={this.update('username')} className="login-input" />
+	          </label>
+	          <br/>
+	          <label>
+	            <input type="password"
+	              value={this.state.password}
+								onChange={this.update('password')}
+	              className = "login-input"  />
+	          </label>
+						{this.renderErrors()}
+	          <br/>
+	          <input type="submit" className="session-form-submit" onClick={this.handleSubmit} value={this.props.formType==="login" ? "Log In" : "Sign Up"} />
+						<button className="session-form-submit" onClick={this.handleGuestLogin}>Log In As Guest</button>
+	        </div>
+						<br/>
+						<div id = "session-foot">
+						{this.navLink()}
+						</div>
+	        </form>
+				</div>
 			</div>
     );
   }
