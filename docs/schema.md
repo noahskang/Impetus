@@ -20,8 +20,8 @@
 | description | string | not null |
 | category | string | not null |
 | creator_id | string | not null |
-| funding-goal | integer | not null|
-| end-date | date | |
+| funding_goal | integer | not null|
+| end-date | date | not null |
 
 **rewards**
 
@@ -32,6 +32,7 @@
 | tier | integer | not null |
 | description | string | not null |
 | delivery_date | string | not null |
+| project_id | integer | not null |
 
 ## Join Tables
 
