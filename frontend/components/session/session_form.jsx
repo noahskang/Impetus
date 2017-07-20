@@ -30,13 +30,22 @@ class SessionForm extends React.Component {
 		// this.props.history.push('/');
   }
 
+	// onClick={this.props.receiveErrors([])
   navLink(){
     if(this.props.formType === "login"){
       return (<span><Link className="alt-link" to="/signup">New to Impetus? Signup instead</Link></span>);
     } else {
-      return (<span><Link className="alt-link" to= "/login">Already have an account? Login</Link></span>);
+      return (<span><Link className="alt-link" to="/login"  to s>Already have an account? Login</Link></span>);
     }
   }
+
+	// navLink(){
+	// 	if(this.props.formType === "login"){
+	// 		return (<div><span onClick=							{this.props.clearErrors()}><Link className="alt-link" to="/signup">New to Impetus? Signup instead</Link></span></div>);
+	// 	} else {
+	// 		return (<div><span onClick=							{this.props.clearErrors()}><Link className="alt-link" to="/login">Already have an account? Login</Link></span></div>);
+	// 	}
+	// }
 	renderErrors(){
 		return(
 			<div>
@@ -50,6 +59,9 @@ class SessionForm extends React.Component {
 				</ul>
 			</div>
 		);
+	}
+	clearErrors(){
+		this.props.receiveErrors([]);
 	}
 
   render(){

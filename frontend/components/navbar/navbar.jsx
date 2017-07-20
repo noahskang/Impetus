@@ -19,8 +19,8 @@ class NavBar extends React.Component {
             <a className="site-nav-item" id="about-us">ABOUT US</a>
         </div>
         <div className="centernav">
-          <a className="nav-logo site-nav-item id" href="/">
-            <h2 id="impetus-logo">Impetus</h2>
+          <a className="nav-logo site-nav-item" href="/">
+            <img className="logo" src="http://res.cloudinary.com/noah-s-kang/image/upload/v1500577997/impetus_logo_wndm0c.svg"/>
           </a>
         </div>
         <div className="rightnav">

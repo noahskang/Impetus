@@ -53,3 +53,4 @@ group :development do
   gem 'rb-fsevent', :require => false
 end
 gem 'bcrypt'
+gem 'figaro'

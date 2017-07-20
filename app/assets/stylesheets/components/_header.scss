@@ -24,6 +24,12 @@
   z-index: 10;
 }
 
+.centernav{
+  position: fixed;
+  left: 50%;
+  right: 50;
+}
+
 
 .leftnav{
   position: relative;
@@ -37,6 +43,16 @@
   position: relative;
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.logo{
+  height: 20px;
+  float: left;
+  display: inline-block;
+}
+
+.impetus-logo-text{
+  display: inline-block;
 }
 
 #start-a-project{
