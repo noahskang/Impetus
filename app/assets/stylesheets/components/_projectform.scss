@@ -2,14 +2,26 @@
   display: flex;
   position: relative;
   background-color: $lightest-gray;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
   height: 100%;
 }
 
+#project-form-contents{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.fade-div-appear {
+  opacity: 0.01;
+}
+
+.fade-div-appear.fade-div-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
 .project-form-head{
-  margin-top: 75px;
   height: 30vh;
   display: flex;
   flex-flow: row nowrap;
@@ -17,7 +29,7 @@
   width: 100%;
   font-family: inherit;
   justify-content: space-between;
-  margin-left: 60px;
+  margin: 80px 60px 0 60px;
   .hero_head{
     flex-basis: 50%;
     align-self: flex-start;
@@ -38,8 +50,8 @@
     display: block;
     flex-basis: 50%;
     margin: 0;
-    font-size: 15px;
-    line-height: 2.6em;
+    font-size: 14px;
+    line-height: 2.5em;
     font-weight: 300;
     letter-spacing: .08em;
     -webkit-margin-before: 1em;
@@ -65,6 +77,7 @@
   width: 700px;
   height: 100%;
   padding: 65px;
+  letter-spacing: 0.1em;
   input{
     height: 44px;
     padding: 11px 0;
@@ -78,10 +91,19 @@
     width: 100%;
     margin: 0 0 50px 0;
     font-size: 14px;
+    font-weight: 300;
     -webkit-appearance: textfield;
     user-select: text;
     cursor: auto;
     font: $nav-link-font;
+  }
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    letter-spacing: 0.08em;
+  }
+  textarea{
+    @extend input;
+    margin-top: 17px;
+    line-height: 1.8em;
   }
   select{
     @extend input;
@@ -92,11 +114,12 @@
     color: black;
   }
   label{
-    font-size: 20px;
+    font-size: 14px;
+    text-transform: uppercase;
     color: black;
-    font-weight: 300;
+    font-weight: 500;
   }
-  .button_div{
+  .submit_div{
     display: flex;
     justify-content: center;
     button{

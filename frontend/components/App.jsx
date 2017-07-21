@@ -15,7 +15,7 @@ const App = () => (
       <Route component={NavBar} />
     </Switch>
     <Route exact path="/" component = {Home}/>
-    <AuthRoute path="/projects/new" component = {ProjectFormContainer} />
+    <ProtectedRoute path="/projects/new" component = {ProjectFormContainer} />
   </div>
 );
 

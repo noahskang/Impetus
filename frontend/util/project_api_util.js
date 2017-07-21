@@ -13,19 +13,19 @@ export const fetchProject = id => (
   })
 );
 
-export const createProject = data => (
+export const createProject = project => (
   $.ajax({
     method: 'POST',
     url: 'api/projects',
-    data
+    data: {project}
   })
 );
 
-export const updateProject = (data, id) => (
+export const updateProject = (project, id) => (
   $.ajax({
     method: 'PATCH',
     url: `api/projects/${id}`,
-    data
+    data: {project}
   })
 );
 

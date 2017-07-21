@@ -1,10 +1,6 @@
 import React from 'react';
 import { Route, Redirect, Link, withRouter, history } from 'react-router-dom';
-
-// we use withrouter when we have a component that isn't rendered by a route component.
-// Right now, sessionform isn't accessed by any route component. So we use withrouter.
-// withrouter is a higher order component. it wraps a react component (such as session form).
-// withrouter passes it the router props LOCATION, MATCH, and HISTORY.
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class SessionForm extends React.Component {
 	constructor(props) {
@@ -69,6 +65,13 @@ class SessionForm extends React.Component {
 				<a className="session-home-link" href="/">
 					<img className="logo" src="http://res.cloudinary.com/noah-s-kang/image/upload/v1500584578/lightningbolt_white_gdx591.svg"/>
 				</a>
+				<ReactCSSTransitionGroup
+          transitionName="fade-div"
+          transitionAppear={true}
+          transitionAppearTimeout={700}
+          transitionEnter={false}
+          transitionLeave={false}
+          >
 				<div className="session-form-div">
 	        <form className="session-form">
 						<h1 id="session-form-title">{this.props.formType==="login" ? "Log into Impetus" : "Create an account"}</h1>
@@ -97,6 +100,7 @@ class SessionForm extends React.Component {
 						</div>
 	        </form>
 				</div>
+				</ReactCSSTransitionGroup>
 			</div>
     );
   }

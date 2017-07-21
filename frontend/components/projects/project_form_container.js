@@ -2,8 +2,9 @@ import {connect} from 'react-redux';
 import { createProject } from '../../actions/project_actions';
 import ProjectForm from './project_form';
 
-const mapStateToProps = ({errors}) => ({
-  errors
+const mapStateToProps = ({errors, session}) => ({
+  errors,
+  user: session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
