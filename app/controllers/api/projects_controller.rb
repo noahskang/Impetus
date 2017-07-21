@@ -1,6 +1,6 @@
 class Api::ProjectsController < ApplicationController
-  before_action :require_signed_in!, only [:create, :update, :destroy]
-  before_action :require_user_owns_project!, only [:update, :destroy]
+  before_action :require_signed_in!, only: [:create, :update, :destroy]
+  before_action :require_user_owns_project!, only: [:update, :destroy]
 
   def create
     @project = Project.new(project_params)
@@ -17,7 +17,7 @@ class Api::ProjectsController < ApplicationController
   end
 
   def index
-    @project = Project.all
+    @projects = Project.all
   end
 
   def update
@@ -32,6 +32,7 @@ class Api::ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
+    # render "api/projects/show"
   end
 
   private
@@ -41,7 +42,7 @@ class Api::ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:user).permit(:title, :website_url, :description, :category, :creator_id, :funding_goal)
+    params.require(:project).permit(:title, :website_url, :description, :category, :creator_id, :funding_goal, :end_date)
   end
 
 end
