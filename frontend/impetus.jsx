@@ -4,7 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 import { login, signup, logout} from './actions/session_actions';
 import { fetchProjects, fetchProject, createProject, updateProject, destroyProject } from './actions/project_actions';
-
+import { selectProject } from './reducers/selectors';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -19,10 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.store = store;
+  window.selectProject = selectProject;
   window.fetchProjects = fetchProjects;
   window.fetchProject = fetchProject;
   window.createProject = createProject;
   window.updateProject = updateProject;
+  window.createProject = createProject;
   window.destroyProject = destroyProject;
 
   const root = document.getElementById('root');

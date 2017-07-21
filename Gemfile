@@ -48,6 +48,7 @@ group :development do
   gem 'annotate'
   gem 'guard-livereload', :require => false
   gem 'rb-readline'
+  gem 'rack-livereload'
   gem 'rb-fsevent', :require => false
 end
 gem 'bcrypt'
