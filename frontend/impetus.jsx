@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import { login, signup, logout} from './actions/session_actions';
-import { fetchProjects, fetchProject, createProject, updateProject, destroyProject } from './util/project_api_util';
+import { fetchProjects, fetchProject, createProject, updateProject, destroyProject } from './actions/project_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
