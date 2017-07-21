@@ -1,0 +1,153 @@
+.project-form-page{
+  display: flex;
+  position: relative;
+  background-color: $lightest-gray;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.project-form-head{
+  margin-top: 75px;
+  height: 30vh;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 100%;
+  font-family: inherit;
+  justify-content: space-between;
+  margin-left: 60px;
+  .hero_head{
+    flex-basis: 50%;
+    align-self: flex-start;
+    margin-top: 0;
+    max-width: 50%;
+  }
+  h1{
+    color: #080808;
+    font-weight: 500;
+    font-size: 44px;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    line-height: 1.15em;
+    margin: 0;
+  }
+  h2{
+    color: $light-gray;
+    display: block;
+    flex-basis: 50%;
+    margin: 0;
+    font-size: 15px;
+    line-height: 2.6em;
+    font-weight: 300;
+    letter-spacing: .08em;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+  }
+  h3{
+    font-size: 10px;
+    line-height: 1.11111em;
+    letter-spacing: .33333em;
+    font-weight: 500;
+    text-transform: uppercase;
+    opacity: .5;
+  }
+}
+
+.project-form{
+  background-color: white;
+  flex: display;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+  height: 100%;
+  padding: 65px;
+  input{
+    height: 44px;
+    padding: 11px 0;
+    color: $medium-gray;
+    background-color: white;
+    border-bottom: 1px solid $medium-gray;
+    padding-left: 11px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    font: 500 normal 25px / 22px 'Gotham SSm A', 'Gotham SSm B', 'Proxima Nova', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0 0 50px 0;
+    font-size: 14px;
+    -webkit-appearance: textfield;
+    user-select: text;
+    cursor: auto;
+    font: $nav-link-font;
+  }
+  input:focus {
+    color: black;
+  }
+  label{
+    font-size: 20px;
+    color: black;
+    font-weight: 300;
+  }
+  .button_div{
+    display: flex;
+    justify-content: center;
+    button{
+      color: $medium-gray;
+      border: 2px solid $medium-gray;
+      padding: 20px;
+      font-weight: 500;
+      font-size: 14px;
+      font-family: $standard-font;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: border 2s color 2s font-size 2s;
+      -webkit-transition: border color font-size 2s;
+    }
+    button:hover{
+      border: 2px solid $link-color-nav;
+      color: $link-color-nav;
+    }
+    button:active{
+      padding: 21px 20px 19px 20px;
+      border-color: $medium-gray;
+      color: $medium-gray;
+    }
+  }
+}
+
+
+@media(max-width: 1400px){
+  .project-form-head{
+    h2{
+      margin-left: 100px;
+    }
+  }
+}
+
+@media(max-width: 1100px){
+  .project-form-head{
+    h2{
+      display: none;
+    }
+  }
+}
+
+@media(min-width: 750px){
+  .project-form-head{
+    .h1{
+      font-size: 24px;
+      line-height: 1.666667em;
+      letter-spacing: .2083em;
+    }
+  }
+}
+
+@media(max-width: 600px){
+  .project-form-head{
+    h1{display: none;}
+  }
+}

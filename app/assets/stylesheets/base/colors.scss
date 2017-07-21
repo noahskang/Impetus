@@ -1,7 +1,10 @@
 $link-color-nav: #353535;
+$button-hover: rgb(62, 62, 62);
 $medium-gray: #797979;
 $light-gray: #A1A1A1;
 $lighter-gray: #e9e9e9;
+$lightest-gray: rgb(244, 244, 244);
+
 
 @mixin shadow-2 {
   box-shadow: 0 1px 6px 0 rgba(0,0,0,0.17);

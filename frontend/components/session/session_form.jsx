@@ -30,21 +30,18 @@ class SessionForm extends React.Component {
 		// this.props.history.push('/');
   }
 
-	// onClick={this.props.receiveErrors([])
-  // navLink(){
-  //   if(this.props.formType === "login"){
-  //     return (<span><Link className="alt-link" to="/signup">New to Impetus? Signup instead</Link></span>);
-  //   } else {
-  //     return (<span><Link className="alt-link" to="/login"  to s>Already have an account? Login</Link></span>);
-  //   }
-  // }
-
-	navLink(){
+	switchSessionType(){
 		if(this.props.formType === "login"){
-			return (<div><span><Link className="alt-link" to="/signup" onClick={this.props.clearErrors}>New to Impetus? Signup instead</Link></span></div>);
+			return (<div><span><Link className="alt-link" to="/signup" onClick={this.props.clearErrors, this.clearPassword()}>New to Impetus? Signup instead</Link></span></div>);
 		} else {
-			return (<div><span><Link className="alt-link" to="/login" onClick={this.props.clearErrors}>Already have an account? Login</Link></span></div>);
+			return (<div><span><Link className="alt-link" to="/login" onClick={this.props.clearErrors, this.clearPassword()}>Already have an account? Login</Link></span></div>);
 		}
+	}
+
+	clearPassword(){
+		return () => this.setState({
+			password: ""
+		});
 	}
 
 	renderErrors(){
@@ -61,6 +58,7 @@ class SessionForm extends React.Component {
 			</div>
 		);
 	}
+
 	clearErrors(){
 		this.props.receiveErrors([]);
 	}
@@ -95,7 +93,7 @@ class SessionForm extends React.Component {
 	        </div>
 						<br/>
 						<div id = "session-foot">
-							{this.navLink()}
+							{this.switchSessionType()}
 						</div>
 	        </form>
 				</div>

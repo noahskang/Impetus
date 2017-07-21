@@ -2,6 +2,9 @@ class Api::ProjectsController < ApplicationController
   before_action :require_signed_in!, only: [:create, :update, :destroy]
   before_action :require_user_owns_project!, only: [:update, :destroy]
 
+  def new
+  end
+
   def create
     @project = Project.new(project_params)
 
@@ -11,6 +14,9 @@ class Api::ProjectsController < ApplicationController
       render json: @project.errors.full_messages, status: 422
     end
   end
+
+  def edit
+  end 
 
   def show
     @project = Project.find(params[:id])
