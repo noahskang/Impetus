@@ -14,7 +14,7 @@
   padding: 0;
   border: 0;
   vertical-align: baseline;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 900;
   font-family: $nav-link-font;
   letter-spacing: 0.15em;
@@ -71,9 +71,7 @@
   background-color: $button-hover;
 }
 #start-a-project:active{
-  padding: 1 2.2em 0 2.2em;
-  border-color: $medium-gray;
-  color: $medium-gray;
+  padding: 1px 2.2em 0 2.2em;
 }
 
 .leftnav *{
@@ -85,8 +83,9 @@
 }
 
 .site-nav-item {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 24px;
+  font-weight: 500;
   position: relative;
   color: $link-color-nav;
   text-decoration: none;

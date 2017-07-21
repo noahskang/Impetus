@@ -76,13 +76,17 @@
     -moz-box-sizing: border-box;
     position: relative;
     width: 100%;
-    font: 500 normal 25px / 22px 'Gotham SSm A', 'Gotham SSm B', 'Proxima Nova', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0 0 50px 0;
     font-size: 14px;
     -webkit-appearance: textfield;
     user-select: text;
     cursor: auto;
     font: $nav-link-font;
+  }
+  select{
+    @extend input;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
   }
   input:focus {
     color: black;
@@ -96,8 +100,8 @@
     display: flex;
     justify-content: center;
     button{
-      color: $medium-gray;
-      border: 2px solid $medium-gray;
+      color: $link-color-nav;
+      border: 2px solid $link-color-nav;
       padding: 20px;
       font-weight: 500;
       font-size: 14px;
@@ -107,9 +111,9 @@
       transition: border 2s color 2s font-size 2s;
       -webkit-transition: border color font-size 2s;
     }
-    button:hover{
-      border: 2px solid $link-color-nav;
-      color: $link-color-nav;
+    button:disabled{
+      border-color: $light-gray;
+      color: $light-gray;
     }
     button:active{
       padding: 21px 20px 19px 20px;

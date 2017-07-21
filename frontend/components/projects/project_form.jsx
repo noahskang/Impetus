@@ -29,9 +29,20 @@ class ProjectForm extends React.Component{
   categoryDropdown(){
     return(
       <label>Category
-        <input type="text" placeholder="Local" onChange={this.update('category')}/>
+        <select name="cars">
+          <option value="Local">Art</option>
+          <option value="saab">Relief Work</option>
+          <option value="fiat">Fashion</option>
+          <option value="audi">Local</option>
+          <option value="audi">Overseas</option>
+          <option value="audi">Music</option>
+        </select>
       </label>
     );
+  }
+
+  formIncomplete(){
+    return(Object.values(this.state).includes(""));
   }
 
   render(){
@@ -56,7 +67,7 @@ class ProjectForm extends React.Component{
           {this.categoryDropdown()}
           <br/>
           <div className="button_div">
-            <button type="button" onClick={this.handleSubmit}>Save and Continue</button>
+            <button type="button" onClick={this.handleSubmit} disabled={this.formIncomplete() ? "disabled" : ""}>Save and Continue</button>
           </div>
 
         </form>
