@@ -1,8 +1,9 @@
 import React from 'react';
-import { Route, withRouter, Link} from 'react-router-dom';
+import { Route, withRouter, history, Link} from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ReactDOM from 'react-dom';
 import TextareaAutosize from 'react-autosize-textarea';
+import UploadButton from './UploadButton';
 
 class ProjectForm extends React.Component{
   constructor(props){
@@ -11,8 +12,8 @@ class ProjectForm extends React.Component{
       title: "",
       description: "",
       category: "",
-      funding_goal: undefined,
-      end_date: undefined,
+      funding_goal: "",
+      end_date: "",
       website_url: "",
       creator_id: this.props.user.id
     };
@@ -29,6 +30,8 @@ class ProjectForm extends React.Component{
     e.preventDefault();
     const project = Object.assign({}, this.state);
     this.props.createProject(project);
+    this.props.clearErrors();
+    this.props.history.replace("/");
   }
 
   categoryDropdown(){
@@ -49,6 +52,20 @@ class ProjectForm extends React.Component{
     return(Object.values(this.state).includes(""));
   }
 
+  postImage(url){
+    var img = {url: url};
+    $.ajax({
+      url: "/api/images",
+      method: "POST",
+      data: {image: img},
+      success: function(image){
+        var images = this.state.images;
+        images.push(image);
+        this.setState({images: images});
+      }.bind(this)
+    });
+  }
+
   render(){
     return(
       <div className="project-form-page">
@@ -61,6 +78,7 @@ class ProjectForm extends React.Component{
           >
           <div id="project-form-contents" hidden>
           <div className="project-form-head">
+            <UploadButton postImage={this.postImage} />
             <div className = "hero-head">
               <h3>let's get started</h3>
               <h1>NEW PROJECT</h1>

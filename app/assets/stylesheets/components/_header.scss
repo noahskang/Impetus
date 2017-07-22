@@ -14,11 +14,7 @@
   padding: 0;
   border: 0;
   vertical-align: baseline;
-  font-size: 12px;
-  font-weight: 900;
-  font-family: $nav-link-font;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+
   padding: 1.8em 3.6em;
   z-index: 10;
   background-color: white;
@@ -90,6 +86,10 @@
   color: $link-color-nav;
   text-decoration: none;
   overflow: hidden;
+  font-size: 12px;
+  font-family: $nav-link-font;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
 a {
