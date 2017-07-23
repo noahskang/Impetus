@@ -3,7 +3,7 @@ import Dropzone from 'react-dropzone';
 import request from 'superagent';
 
 const CLOUDINARY_UPLOAD_PRESET = 'bsboi6te';
-const  CLOUDINARY_UPLOAD_URL = "http://res.cloudinary.com/noah-s-kang/";
+const  CLOUDINARY_UPLOAD_URL = "https://api.cloudinary.com/v1_1/noah-s-kang/upload";
 
 
 class UploadButton extends React.Component{
