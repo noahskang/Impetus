@@ -4,7 +4,12 @@ import { Route, withRouter, history, Link} from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ReactDOM from 'react-dom';
 import TextareaAutosize from 'react-autosize-textarea';
-import UploadButton from './UploadButton';
+import Dropzone from 'react-dropzone';
+import request from 'superagent';
+
+const CLOUDINARY_UPLOAD_PRESET = 'bsboi6te';
+const  CLOUDINARY_UPLOAD_URL = "https://api.cloudinary.com/v1_1/noah-s-kang/upload";
+
 
 class ProjectForm extends React.Component{
   constructor(props){
@@ -17,6 +22,7 @@ class ProjectForm extends React.Component{
       end_date: "",
       website_url: "",
       creator_id: this.props.user.id,
+      image_url: "filler",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -53,17 +59,46 @@ class ProjectForm extends React.Component{
     return(Object.values(this.state).includes(""));
   }
 
-  postImage(url){
-    var img = {url: url};
-    $.ajax({
-      url: "/api/images",
-      method: "POST",
-      data: {image: img},
-      success: function(image){
-        var images = this.state.images;
-        images.push(image);
-        this.setState({images: images});
-      }.bind(this)
+  imageUploadField(){
+    return(
+      <div id="dropzone-section">
+          <div className="Dropzone">
+              <Dropzone id="dropzone"
+                multiple={false}
+                accept="image/*"
+                onDrop={this.onImageDrop.bind(this)}>
+                <p>Drop an image or click to select a file to upload</p>
+              </Dropzone>
+          </div>
+          <div>
+            {this.state.image_url === 'filler' ? null :
+            <div>
+              <img src={this.state.image_url} />
+            </div>}
+          </div>
+      </div>
+    );
+  }
+
+  onImageDrop(files) {
+    this.handleImageUpload(files[0]);
+  }
+
+  handleImageUpload(file) {
+    let upload = request.post(CLOUDINARY_UPLOAD_URL)
+                        .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+                        .field('file', file);
+
+    upload.end((err, response) => {
+      if (err) {
+        console.log(err);
+      }
+
+      if (response.body.secure_url !== '') {
+        this.setState({
+          image_url: response.body.secure_url
+        });
+      }
     });
   }
 
@@ -104,7 +139,7 @@ class ProjectForm extends React.Component{
             </label>
             {this.categoryDropdown()}
             <label>IMAGE
-              <UploadButton/>
+              {this.imageUploadField()}
             </label>
             <label>Funding Goal ($)
               <input

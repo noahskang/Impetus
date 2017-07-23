@@ -16,7 +16,7 @@ class Api::ProjectsController < ApplicationController
   end
 
   def edit
-  end 
+  end
 
   def show
     @project = Project.find(params[:id])
@@ -48,7 +48,7 @@ class Api::ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :website_url, :description, :category, :creator_id, :funding_goal, :end_date)
+    params.require(:project).permit(:title, :website_url, :description, :category, :creator_id, :funding_goal, :end_date, :image_url)
   end
 
 end

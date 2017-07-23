@@ -21,6 +21,8 @@ class IndexItem extends React.Component{
     return(
       <div className="project-index-item col-full col-sm-12-24 col-lg-8-24">
         <h2>{this.project.category}</h2>
+        <h2>{this.project.id}</h2>
+        <img src={this.project.image_url}/>
         <br/>
         <h1>{this.project.title} : {this.project.desscription}</h1>
         by {this.project.creator}

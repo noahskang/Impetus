@@ -3,7 +3,7 @@ import { fetchProjects } from '../../actions/project_actions';
 import ProjectIndex from './project_index';
 import { selectAllProjects } from '../../reducers/selectors';
 
-const mapStateToProps = ({projects}, match) => {
+const mapStateToProps = ({projects}) => {
   return {
     allProjects: selectAllProjects(projects)
   };
