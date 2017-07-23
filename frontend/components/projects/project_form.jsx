@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Route, withRouter, history, Link} from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ReactDOM from 'react-dom';
@@ -15,7 +16,7 @@ class ProjectForm extends React.Component{
       funding_goal: "",
       end_date: "",
       website_url: "",
-      creator_id: this.props.user.id
+      creator_id: this.props.user.id,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -78,7 +79,7 @@ class ProjectForm extends React.Component{
           >
           <div id="project-form-contents" hidden>
           <div className="project-form-head">
-            <UploadButton postImage={this.postImage} />
+
             <div className = "hero-head">
               <h3>let's get started</h3>
               <h1>NEW PROJECT</h1>
@@ -102,6 +103,9 @@ class ProjectForm extends React.Component{
                 type="text" placeholder="Support my efforts to clean up the stray webs left all around Brooklyn." onChange={this.update('description')}/>
             </label>
             {this.categoryDropdown()}
+            <label>IMAGE
+              <UploadButton/>
+            </label>
             <label>Funding Goal ($)
               <input
                 value={this.state.funding_goal} type="number" placeholder="0" onChange={this.update('funding_goal')}/>

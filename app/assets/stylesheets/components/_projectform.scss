@@ -146,11 +146,48 @@
   }
 }
 
+#dropzone-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0 25px 0;
+}
+
+.Dropzone{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  margin: 20px 0 20px 0;
+  border: 1px solid $medium-gray;
+  p{
+    margin: 70px 10px 20px 10px;
+    font-size: 0.6em;
+    font-weight: 300;
+    text-transform: none;
+    color: $light-gray;
+    text-align: center;
+  }
+}
+
+.Dropzone:hover{
+  border: 2px solid $medium-gray;
+  margin-bottom: 19px;
+}
+
+#dropzone{
+  width: 300px;
+  height: 100%;
+  margin: 30px 0px 30px 0px;
+}
+
+
 
 @media(max-width: 1400px){
   .project-form-head{
     h2{
       margin-left: 100px;
+
     }
   }
 }

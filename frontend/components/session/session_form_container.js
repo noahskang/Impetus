@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
+import { push } from 'react-router-dom';
 
 import { login, logout, signup, receiveErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 
-const mapStateToProps = ({ session }) => {
-  return {
+const mapStateToProps = ({ session }) => ({
     loggedIn: Boolean(session.currentUser),
     errors: session.errors
-  };
-};
+
+});
 
 const mapDispatchToProps = (dispatch, { location }) => {
   const formType = location.pathname.slice(1);

@@ -53,3 +53,4 @@ group :development do
 end
 gem 'bcrypt'
 gem 'figaro'
+gem 'cloudinary'
