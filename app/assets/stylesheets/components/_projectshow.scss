@@ -1,10 +1,19 @@
 .project-show-page{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  // margin-top: 200px;
-  h1{
-    margin-top: 200px;
-    color: black;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 40px;
+  margin-right: 40px;
+  img{
+    width: 50%;
+    height: auto;
   }
+  h1{
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  }
+}
+
+.title-bar{
+  margin-top: 130px;
 }

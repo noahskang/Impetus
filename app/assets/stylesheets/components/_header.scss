@@ -4,6 +4,7 @@
   margin: 0;
   border: 0;
   justify-content: space-between;
+  flex-wrap: nowrap;
   align-items: center;
   height: 65px;
   @include shadow-2;
@@ -97,34 +98,17 @@ a {
   color: $link-color-nav;
 }
 
-@media all and (max-width: 600px){
-  .rightnav *{
-  margin-left: 1em;
+@media all and (max-width: 725px){
+  .rightnav{
+  display: none;
   }
   .leftnav *{
   margin-right: 1em;
   }
-  .rightnav{
-  margin-left: 0.5em;
-  }
-  .leftnav{
-  margin-right: 0.5em;
-  }
   .centernav{
     display: none;
   }
-}
-
-@media all and (max-width: 525px){
-  .rightnav  {
-    display: none;
-  }
-
   .navbar{
     justify-content: center;
-  }
-
-  .centernav{
-    display: none;
   }
 }

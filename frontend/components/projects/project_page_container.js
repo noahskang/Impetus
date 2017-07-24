@@ -5,10 +5,10 @@ import { selectProject } from '../../reducers/selectors';
 
 const mapStateToProps = (state, { match }) => {
   const projectId = parseInt(match.params.projectId);
-  const project = selectProject(state, match.params.projectId);
+  // const project = selectProject(state, projectId);
   return{
     projectId,
-    project
+    project: state.projects
   };
 };
 

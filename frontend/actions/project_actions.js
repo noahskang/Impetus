@@ -10,7 +10,7 @@ export const receiveProjects = (projects) => ({
 });
 
 export const receiveProject = (project) => ({
-  type: RECEIVE_PROJECTS,
+  type: RECEIVE_PROJECT,
   project
 });
 

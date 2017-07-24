@@ -2,55 +2,54 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Link, match} from 'react-router-dom';
 import { values } from 'lodash';
+import persistState from 'redux-localstorage';
 
 class ProjectPage extends React.Component{
 
-  componentDidMount(){
-    console.log(this.props.projectId);
+  constructor(props){
+    super(props);
     this.props.getProject(this.props.projectId);
   }
 
-
-  // percentFunded() {
-  //   return(Math.floor((project.funding_raised/project.funding_goal)*100));
-  // }
-  //
-  // daysToGo(){
-  //   return(Math.floor(( new Date() - Date.parse(project.end_date) ) / 86400000));
-  //
-
-  componentWillReceiveProps(nextProps){
-    if (this.props.projectId !== nextProps.projectId){
-      this.props.getProject(nextProps.match.params.projectId);
-    }
+  componentDidMount(){
+    this.props.getProject(this.props.projectId);
   }
 
+  percentFunded(){
+    let project = this.props.project;
+    return Math.floor((project.funding_raised/project.funding_goal)*100);
+  }
+
+  daysToGo(){
+    let project = this.props.project;
+    return Math.floor(( new Date() - Date.parse(project.end_date) ) / 86400000);
+  }
+
+
   render(){
-    const project = this.props.project;
-    console.log(project);
+    let project = this.props.project;
     return(
         <div className="project-show-page">
-          <h1> Demo Content </h1>
-          <h2>{project.category}</h2>
+          <div className="title-bar">
+            <h1>{project.title}</h1>
+            <h2>{project.description}</h2>
+            {`by ${project.creator}`}
+          </div>
+          <div className="image-and-backing">
+            <img src={project.image_url}/>
+            {project.funding_raised} pledged
+            <br/>
+            {this.percentFunded()} funded
+            <br/>
+            {this.daysToGo()} Days to go
+          </div>
+          <div className="details">
+            <h2>{project.description}</h2>
+          </div>
+
         </div>
     );
   }
 }
 
 export default ProjectPage;
-
-// <div className="project-show-page">
-//   <h2>{project.category}</h2>
-//   <h2>{project.id}</h2>
-//   <img src={project.image_url}/>
-//   <br/>
-//   <h1>Title:{project.title}</h1>
-//   <h2>{project.description}</h2>
-//   {`by ${project.creator}`}
-//   <br/>
-//   {project.funding_raised} pledged
-//   <br/>
-//   {percentFunded} funded
-//   <br/>
-//   {daysToGo} Days to go
-// </div>

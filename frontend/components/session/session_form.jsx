@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect, Link, withRouter, history } from 'react-router-dom';
+import { Route, Redirect, Link, withRouter, history, location } from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class SessionForm extends React.Component {
@@ -108,7 +108,6 @@ class SessionForm extends React.Component {
 		e.preventDefault();
 		let user = { username : "guest1", password: "password1"};
 		this.props.login(user);
-		// this.props.history.push('/');
 	}
 
 }

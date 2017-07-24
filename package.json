@@ -25,6 +25,7 @@
     "react-slick": "^0.14.11",
     "react-toolbox": "^2.0.0-beta.12",
     "redux": "^3.7.2",
+    "redux-localstorage": "^0.4.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "superagent": "^3.5.2",
