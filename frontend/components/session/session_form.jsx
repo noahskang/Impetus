@@ -23,6 +23,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
+
   }
 
 	switchSessionType(){
@@ -55,7 +56,7 @@ class SessionForm extends React.Component {
 	}
 
 	clearErrors(){
-		this.props.receiveErrors([]);
+		this.props.receiveSessionErrors([]);
 	}
 
   render(){

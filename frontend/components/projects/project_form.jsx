@@ -15,12 +15,12 @@ class ProjectForm extends React.Component{
   constructor(props){
     super(props);
     this.state={
-      title: "",
-      description: "",
-      category: "",
-      funding_goal: "",
-      end_date: "",
-      website_url: "",
+      title: null,
+      description: null,
+      category: null,
+      funding_goal: null,
+      end_date: null,
+      website_url: null,
       creator_id: this.props.user.id,
       image_url: "filler",
     };
@@ -36,9 +36,8 @@ class ProjectForm extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     const project = Object.assign({}, this.state);
-    this.props.createProject(project);
+    this.props.createProject(project).then(()=>this.props.history.push("/"));
     this.props.clearErrors();
-    this.props.history.replace("/");
   }
 
   categoryDropdown(){
@@ -55,29 +54,13 @@ class ProjectForm extends React.Component{
     );
   }
 
-  formIncomplete(){
-    return(Object.values(this.state).includes(""));
-  }
-
-  imageUploadField(){
-    return(
-      <div id="dropzone-section">
-          <div className="Dropzone">
-              <Dropzone id="dropzone"
-                multiple={false}
-                accept="image/*"
-                onDrop={this.onImageDrop.bind(this)}>
-                <p>Drop an image or click to select a file to upload</p>
-              </Dropzone>
-          </div>
-          <div>
-            {this.state.image_url === 'filler' ? null :
-            <div>
-              <img src={this.state.image_url} />
-            </div>}
-          </div>
-      </div>
-    );
+  formComplete(){
+    if(Object.values(this.state).includes(null)){
+      return false;
+    } else if (this.state.funding_goal > 2147483647) {
+      return false;
+    }
+    return true;
   }
 
   onImageDrop(files) {
@@ -137,9 +120,21 @@ class ProjectForm extends React.Component{
                 type="text" placeholder="Support my efforts to clean up the stray webs left all around Brooklyn." onChange={this.update('description')}/>
             </label>
             {this.categoryDropdown()}
-            <label>IMAGE
-              {this.imageUploadField()}
-            </label>
+            <h2 id="dropzone-section-label">Image</h2>
+            <div id="dropzone-section">
+              <Dropzone id="dropzone"
+                multiple={false}
+                accept="image/*"
+                onDrop={this.onImageDrop.bind(this)}>
+              <p>Drop an image or click to select a file to upload</p>
+              </Dropzone>
+              <div>
+                {this.state.image_url === 'filler' ? null :
+                (<div>
+                  <img src={this.state.image_url} />
+                </div>)}
+              </div>
+            </div>
             <label>Funding Goal ($)
               <input
                 value={this.state.funding_goal} type="number" placeholder="0" onChange={this.update('funding_goal')}/>
@@ -150,7 +145,7 @@ class ProjectForm extends React.Component{
                 onChange={this.update('end_date')}/>
             </label>
             <div className="submit_div">
-              <button type="button" onClick={this.handleSubmit} disabled={this.formIncomplete() ? "disabled" : ""}>Save and Continue</button>
+              <button type="button" onClick={this.handleSubmit} disabled={this.formComplete() ? "" : "disabled"}>Save and Continue</button>
             </div>
           </form>
           </div>
@@ -161,3 +156,7 @@ class ProjectForm extends React.Component{
 }
 
 export default withRouter(ProjectForm);
+
+// {this.formComplete() ?
+//   <a>Save and Continue</a> : <Link to="/" activeClassName="active" onClick={this.handleSubmit}>Save and Continue</Link>
+// }

@@ -22,7 +22,7 @@ class ProjectPage extends React.Component{
 
   daysToGo(){
     let project = this.props.project;
-    return Math.floor(( new Date() - Date.parse(project.end_date) ) / 86400000);
+    return Math.round(Math.abs((Date.parse(project.end_date) - (new Date()).getTime()) / 86400000));
   }
 
 
@@ -39,7 +39,7 @@ class ProjectPage extends React.Component{
             <img src={project.image_url}/>
             {project.funding_raised} pledged
             <br/>
-            {this.percentFunded()} funded
+            {`${this.percentFunded()}% funded`}
             <br/>
             {this.daysToGo()} Days to go
           </div>

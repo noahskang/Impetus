@@ -7,7 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-User.create!(username: "Noah", password: "password1")
+# User.create!(username: "Noah", password: "password1")
+User.create!(username: "guest1", password: "password1")
+
 
 Project.create!(
   title: "Restore U.W.s cherry blossom quad",

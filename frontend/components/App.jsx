@@ -10,12 +10,6 @@ import { nexstState, replaceState } from 'react-router-dom';
 
 import ProjectPageContainer from './projects/project_page_container';
 
-// const requireAuth = (nextState, replaceState)  => {
-//   if (!auth.loggedIn())
-//     replaceState({ nextPathname: nextState.location.pathname }, '/login')
-// };
-//stackoverflow.com/questions/34119793/react-router-redirection-after-login
-
 const App = () => (
   <div>
     <Switch>
@@ -25,7 +19,7 @@ const App = () => (
       <Route component={NavBar} />
     </Switch>
     <Switch>
-      <Route path="/projects/new" component = {ProjectFormContainer}/>
+      <ProtectedRoute path="/projects/new" component = {ProjectFormContainer}/>
       <Route path="/projects/:projectId" component={ProjectPageContainer}/>
       <Route exact path="/" component = {Home}/>
     </Switch>

@@ -1,5 +1,5 @@
 import {} from '../actions/project_actions.js';
-import { RECEIVE_PROJECTS, RECEIVE_PROJECT, RECEIVE_ERRORS } from '../actions/project_actions';
+import { RECEIVE_PROJECTS, RECEIVE_PROJECT, RECEIVE_PROJECT_ERRORS } from '../actions/project_actions';
 import merge from 'lodash/merge';
 
 const ProjectsReducer= (state = {}, action) => {
@@ -7,10 +7,11 @@ const ProjectsReducer= (state = {}, action) => {
   switch(action.type) {
     case RECEIVE_PROJECTS:
       const projects = action.projects;
-      return merge({}, state, projects);
+      return merge({}, projects);
     case RECEIVE_PROJECT:
-      return action.project;
-    case RECEIVE_ERRORS:
+      const project = action.project;
+      return  merge({}, state, {[project.id]: project});
+    case RECEIVE_PROJECT_ERRORS:
       const errors = action.errors;
       return merge({}, state, {
         errors
