@@ -114,7 +114,6 @@ class ProjectForm extends React.Component{
           >
           <div id="project-form-contents" hidden>
           <div className="project-form-head">
-
             <div className = "hero-head">
               <h3>let's get started</h3>
               <h1>NEW PROJECT</h1>

@@ -48,6 +48,5 @@
 | "/signup"     | "AuthFormContainer" |
 | "/login"      | "AuthFormContainer"     |
 | "/"           | redirect to /signup or /home |
-| "/home"       | "Home"   |
-| "/home/projects/:projectId"     | "ProjectContainer" |
-| "/home/new-project"      | "NewProjectContainer"     |
+| "/projects/:projectId"     | "ProjectContainer" |
+| "/projects/new"      | "NewProjectContainer"     |

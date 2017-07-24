@@ -27,6 +27,3 @@ class ProjectIndex extends React.Component {
 }
 
 export default ProjectIndex;
-
-// filler image:
-// <img className="background" src="http://www.myotonic.org/sites/default/files/Airplane.jpg"/>

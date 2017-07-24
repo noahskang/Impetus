@@ -2,7 +2,7 @@ class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence: true
   validates :password, length: {minimum: 6}, allow_nil: :true
 
-  has_many :projects, foreign_key: :creator_id
+  has_many(:projects, foreign_key: :creator_id, primary_key: :id, class_name: "Project")
 
   attr_accessor :password
 
