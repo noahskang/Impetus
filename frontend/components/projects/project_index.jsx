@@ -1,7 +1,7 @@
 import React from 'react';
 import ProjectIndexItem from './project_index_item';
 var Carousel = require('nuka-carousel');
-
+import { Link } from 'react-router-dom';
 
 class ProjectIndex extends React.Component {
 
@@ -16,7 +16,12 @@ class ProjectIndex extends React.Component {
     return(
       <div className="project-index-section">
         <div className="carousel">
-           <img src="http://res.cloudinary.com/noah-s-kang/image/upload/c_scale,w_2880/v1500628592/dino-reichmuth-115620_w5drec.jpg"/>
+           <img src="http://res.cloudinary.com/noah-s-kang/image/upload/v1500998086/mountainer-reversed_ugn9ke.jpg"/>
+           <div className = "title-caption">
+             <h1>MAKE AWESOME THINGS HAPPEN</h1>
+             <h2>Jump in. Get Moving. Do the thing you need to do.</h2>
+             <Link className="site-nav-item" id="start-a-project" to="/projects/new">START A PROJECT</Link>
+           </div>
         </div>
         <div className="projects-index grid-container">
           <h1>Projects:</h1>

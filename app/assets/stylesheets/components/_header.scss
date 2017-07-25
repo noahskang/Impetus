@@ -6,7 +6,7 @@
   justify-content: space-between;
   flex-wrap: nowrap;
   align-items: center;
-  height: 65px;
+  height: 70px;
   @include shadow-2;
   position: fixed;
   overflow: hidden;
@@ -15,7 +15,6 @@
   padding: 0;
   border: 0;
   vertical-align: baseline;
-
   padding: 1.8em 3.6em;
   z-index: 10;
   background-color: white;
@@ -66,6 +65,7 @@
 
 #start-a-project:hover{
   background-color: $button-hover;
+  border-color: $button-hover;
 }
 #start-a-project:active{
   padding: 1px 2.2em 0 2.2em;
@@ -79,6 +79,58 @@
   margin-left: 1.5em;
 }
 
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown__content {
+    display: none;
+    position: absolute;
+}
+
+.dropdown--active .dropdown__content {
+    display: block;
+}
+
+//
+//
+// .user-dropdown{
+//     .dropbtn{
+//       font-size: 12px;
+//       line-height: 24px;
+//       font-weight: 500;
+//       position: relative;
+//       color: $link-color-nav;
+//       text-decoration: none;
+//       overflow: hidden;
+//       font-family: $nav-link-font;
+//       letter-spacing: 0.15em;
+//       text-transform: uppercase;
+//     }
+//     .dropdown-content{
+//      display: none;
+//      position: absolute;
+//      background-color: #f9f9f9;
+//      min-width: 160px;
+//      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+//      z-index: 1;
+//     }
+//
+//     .dropdown_content a{
+//       color: black;
+//       padding: 12px 16px;
+//       text-decoration: none;
+//       display: block;
+//     }
+//
+//     .dropdown-content a:hover {background-color: #f1f1f1}
+//
+//     .show {display:block;}
+// }
+
+
+
 .site-nav-item {
   font-size: 12px;
   line-height: 24px;
@@ -87,7 +139,6 @@
   color: $link-color-nav;
   text-decoration: none;
   overflow: hidden;
-  font-size: 12px;
   font-family: $nav-link-font;
   letter-spacing: 0.15em;
   text-transform: uppercase;

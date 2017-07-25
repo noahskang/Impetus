@@ -1,0 +1,113 @@
+// Place all the styles related to the Projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.carousel{
+  display: block;
+  object-fit: contain;
+  img{
+    position: relative;
+    width: 100%;
+    opacity: 0.84;
+  }
+  h1{
+    font: inherit;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 5vh;
+    line-height: 1.46875em;
+    letter-spacing: .203125em;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    margin-bottom: 11px;
+    background-size: cover;
+    box-sizing: border-box;
+    max-width: 40vw;
+  }
+  h2{
+    opacity: .7;
+    max-width: 400px;
+    font-weight: 300;
+    letter-spacing: normal;
+    text-transform: none;
+    box-sizing: border-box;
+    font: inherit;
+    font-size: 13px;
+    line-height: 2em;
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+  }
+}
+
+.title-caption{
+  position: absolute;
+  z-index: 1000;
+  margin-left: 20px;
+  right: 50%;
+  top: 22%;
+  bottom: 40%;
+  margin: 20px 20px 20px 20px;
+}
+
+.projects-index{
+  background-color: white;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 20px 20px 40px 20px;
+  display: block;
+  h1{
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 20px;
+  }
+}
+
+.project-index-item{
+  width: 400px;
+  height: 500px;
+  margin: 20px;
+  border: 1px solid #e6e6e6;
+  box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
+  transition: all 0.2s ease-in-out;
+  html, head, body, header, nav, h1, h2, a, ul, li, main, section, p, footer, small{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    color: inherit;
+    text-align: inherit;
+    text-decoration: inherit;
+    vertical-align: inherit;
+    box-sizing: inherit;
+    background: transparent;
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+@media all and (max-width: 1250px){
+  .title-caption{
+    h2{
+      display: none;
+    }
+    h1{
+      font-size: 4vh;
+    }
+  }
+}
+
+@media all and (max-width: 750px){
+  .title-caption{
+    h1{
+      display: none;
+    }
+    #start-a-project{
+      display: none;
+    }
+  }
+}
