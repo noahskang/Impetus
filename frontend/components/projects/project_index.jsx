@@ -14,21 +14,22 @@ class ProjectIndex extends React.Component {
   render(){
     this.projects = this.props.allProjects;
     return(
-      <div className="project-index-section">
-        <div className="carousel">
-           <img src="http://res.cloudinary.com/noah-s-kang/image/upload/v1500998086/mountainer-reversed_ugn9ke.jpg"/>
-           <div className = "title-caption">
-             <h1>MAKE AWESOME THINGS HAPPEN</h1>
-             <h2>Jump in. Get Moving. Do the thing you need to do.</h2>
-             <Link className="site-nav-item" id="start-a-project" to="/projects/new">START A PROJECT</Link>
-           </div>
+      <div className="project-index-head">
+        <div className="parallax-bg">
+          <div className = "title-caption">
+            <h1>MAKE AWESOME THINGS HAPPEN</h1>
+            <h2>Jump in. Get Moving. Do the thing you need to do.</h2>
+            <Link className="site-nav-item" id="start-a-project" to="/projects/new">START A PROJECT</Link>
+          </div>
         </div>
-        <div className="projects-index grid-container">
-          <h1>Projects:</h1>
-          {this.projects.map(project => {
-            let user = this.props.users[project.creator_id] || {};
-            return (<ProjectIndexItem project={project} user={user} key={project.id}/>);
-          })}
+        <div className="projects-index-section">
+          <h1>Featured Projects:</h1>
+          <div className="projects-index">
+            {this.projects.map(project => {
+              let user = this.props.users[project.creator_id] || {};
+              return (<ProjectIndexItem project={project} user={user} key={project.id}/>);
+            })}
+          </div>
        </div>
      </div>
      );

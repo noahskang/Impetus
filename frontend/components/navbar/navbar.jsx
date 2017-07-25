@@ -14,27 +14,6 @@ class NavBar extends React.Component {
     }
   }
 
-  // userDropown(){
-  //   return(
-  //     <div>
-  //       <Dropdown>
-  //         <DropdownTrigger>
-  //           PROJECTS
-  //         </DropdownTrigger>
-  //         <DropdownContent>
-  //          <ul>
-  //            <li>
-  //                <a href="/">Project 1</a>
-  //            </li>
-  //            <li>
-  //                <a href="/">Project 2</a>
-  //            </li>
-  //          </ul>
-  //         </DropdownContent>
-  //       </Dropdown>
-  //     </div>
-  //   );
-  // }
   render(){
     return(
       <nav className="navbar">
@@ -48,7 +27,7 @@ class NavBar extends React.Component {
         <div className="rightnav">
           <a className="site-nav-item" id="explore">EXPLORE</a>
           {this.loginOrOut()}
-          
+
           <Link className="site-nav-item" id="start-a-project" to="/projects/new">START A PROJECT</Link>
         </div>
       </nav>

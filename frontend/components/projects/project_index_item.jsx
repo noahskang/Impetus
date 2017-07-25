@@ -10,22 +10,19 @@ const ProjectIndexItem = ({project, user}) => {
   const shortenedDescription = project.description ? project.description.slice(0, 50) : "";
 
   return(
-      <div className="project-index-item col-full col-sm-12-24 col-lg-8-24">
+      <div className="project-index-item">
         <Link to={`/projects/${project.id}`}>
           <div>
-            <h2>{project.category}</h2>
-            <h2>{project.id}</h2>
             <img src={project.image_url}/>
-            <br/>
-            <h1>Title:{project.title}</h1>
-            <h2>{`${shortenedDescription}...`}</h2>
-            {`by ${user.username}`}
-            <br/>
-            {project.funding_raised} pledged
-            <br/>
-            {`${percentFunded}%`} funded
-            <br/>
-            {daysToGo} Days to go
+            <div className="project-info">
+              <h2 className="category">{project.category}</h2>
+              <h2 className="title">{project.title}</h2>
+              <h2 className="description">{`${shortenedDescription}...`}</h2>
+              <h2 className="creator">{`by ${user.username}`}</h2>
+              <h2 className="funding">{project.funding_raised} pledged</h2>
+              <h2 className="percentFunded">{`${percentFunded}%`} funded</h2>
+              <h2 className="daysToGo">{daysToGo} Days to go</h2>
+            </div>
           </div>
         </Link>
       </div>

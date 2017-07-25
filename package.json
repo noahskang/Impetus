@@ -21,6 +21,8 @@
     "react-router": "^4.1.2",
     "react-router-dom": "^4.1.2",
     "react-simple-dropdown": "^3.0.0",
+    "react-spark-scroll": "^4.0.0",
+    "react-sticky": "^6.0.1",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-localstorage": "^0.4.1",

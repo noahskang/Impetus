@@ -2,14 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.carousel{
+.parallax-bg{
   display: block;
-  object-fit: contain;
-  img{
-    position: relative;
-    width: 100%;
-    opacity: 0.84;
-  }
+  background-image: url("http://res.cloudinary.com/noah-s-kang/image/upload/v1500998086/mountainer-reversed_ugn9ke.jpg");
+  height: 1000px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   h1{
     font: inherit;
     text-transform: uppercase;
@@ -44,21 +44,49 @@
 
 .title-caption{
   position: absolute;
-  z-index: 1000;
   margin-left: 20px;
   right: 50%;
-  top: 22%;
-  bottom: 40%;
+  top: 40%;
   margin: 20px 20px 20px 20px;
 }
 
-.projects-index{
-  background-color: white;
+.projects-index-section{
+  margin-top: 75px;
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: column;
   justify-content: center;
-  margin: 20px 20px 40px 20px;
-  display: block;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  h1{
+    font: inherit;
+    color: $medium-gray;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 2.2vh;
+    line-height: 1.46875em;
+    letter-spacing: .203125em;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    margin-bottom: 11px;
+    background-size: cover;
+    box-sizing: border-box;
+    max-width: 60vw;
+    margin-bottom: 50px;
+  }
+}
+
+.projects-index{
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: left;
+  ul{
+    right: 50px;
+    left: 50px;
+    display: block;
+  }
   h1{
     font-weight: 300;
     text-transform: uppercase;
@@ -67,34 +95,47 @@
   }
 }
 
+
+
 .project-index-item{
   width: 400px;
   height: 500px;
-  margin: 20px;
+  margin: 20px 20px 20px 20px;
   border: 1px solid #e6e6e6;
   box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
   transition: all 0.2s ease-in-out;
-  html, head, body, header, nav, h1, h2, a, ul, li, main, section, p, footer, small{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font: inherit;
-    color: inherit;
-    text-align: inherit;
-    text-decoration: inherit;
-    vertical-align: inherit;
-    box-sizing: inherit;
-    background: transparent;
-    font-family: 'Roboto', sans-serif;
+  img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #e6e6e6;
+  }
+}
+
+.project-info{
+  box-sizing: border-box;
+  padding: 20px 20px 20px 20px;
+  font-family: $standard-font;
+  font-weight: 300;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  .category{
+    text-transform: capitalize;
+    color: $medium-gray;
+  }
+  .title{
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .description{
+    color: $light-gray;
+    font-size: 12px;
   }
 }
 
 @media all and (max-width: 1250px){
   .title-caption{
-    h2{
-      display: none;
-    }
     h1{
       font-size: 4vh;
     }
@@ -104,6 +145,9 @@
 @media all and (max-width: 750px){
   .title-caption{
     h1{
+      display: none;
+    }
+    h2{
       display: none;
     }
     #start-a-project{
