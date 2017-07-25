@@ -15,19 +15,17 @@ class ProjectShowPage extends React.Component{
     this.props.getProject(this.props.projectId);
   }
 
-  percentFunded(){
-    let project = this.props.project;
+  percentFunded(project){
     return Math.floor((project.funding_raised/project.funding_goal)*100);
   }
 
-  daysToGo(){
-    let project = this.props.project;
+  daysToGo(project){
     return Math.round(Math.abs((Date.parse(project.end_date) - (new Date()).getTime()) / 86400000));
   }
 
 
   render(){
-    let project = Object.values(this.props.project)[0] || {};
+    let project = Object.values(this.props.projects)[0] || {};
     console.log("project", project);
     return(
         <div className="project-show-page">
@@ -40,9 +38,9 @@ class ProjectShowPage extends React.Component{
             <img src={project.image_url}/>
             {project.funding_raised} pledged
             <br/>
-            {`${this.percentFunded()}% funded`}
+            {`${this.percentFunded(project)}% funded`}
             <br/>
-            {this.daysToGo()} Days to go
+            {this.daysToGo(project)} Days to go
           </div>
           <div className="details">
             <h2>{project.description}</h2>

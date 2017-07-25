@@ -4,11 +4,12 @@ import ProjectShowPage from './project_show_page';
 import { selectProject } from '../../reducers/selectors';
 
 
-const mapStateToProps = ({projects}, {match }) => {
+const mapStateToProps = ({projects, users}, {match }) => {
   const projectId = parseInt(match.params.projectId);
   return{
     projectId,
-    project: projects
+    projects,
+    users
   };
 };
 
