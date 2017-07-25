@@ -6,3 +6,8 @@ export const selectProject = ({projects}, id) => {
   const project = projects[id] || {};
   return project;
 };
+
+export const selectUserProjects = (projects, user) => {
+  const userProjects = (Object.values(projects)).filter((project)=>(project.creator_id == user.id));
+  return userProjects;
+};

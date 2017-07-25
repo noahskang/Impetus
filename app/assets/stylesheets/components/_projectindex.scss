@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.hideme{
+  opacity: 0;
+}
+
 .parallax-bg{
   display: block;
   background-image: url("http://res.cloudinary.com/noah-s-kang/image/upload/v1500998086/mountainer-reversed_ugn9ke.jpg");
@@ -117,20 +121,36 @@
   box-sizing: border-box;
   padding: 20px 20px 20px 20px;
   font-family: $standard-font;
-  font-weight: 300;
-  font-size: 10px;
-  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.5vh;
+  letter-spacing: 0.06em;
+  line-height: 2em;
   .category{
     text-transform: capitalize;
     color: $medium-gray;
+    margin-bottom: 15px;
   }
   .title{
-    font-size: 12px;
+    font-size: 1.7vh;
     text-transform: uppercase;
   }
   .description{
     color: $light-gray;
-    font-size: 12px;
+    font-size: 1.7vh;
+    font-weight: 200;
+  }
+  .creator{
+    margin-top: 11px;
+  }
+}
+
+.project-stats{
+  margin-bottom: 0px;
+  color: $light-gray;
+  font-weight: 300;
+  .bolded{
+    color: black;
+    font-weight: 500;
   }
 }
 

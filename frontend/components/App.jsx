@@ -7,6 +7,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import NavBar from './navbar/navbar_container';
 import Home from './home';
 import { nexstState, replaceState } from 'react-router-dom';
+import UserProjectsContainer from './projects/user_projects_container';
 
 import ProjectShowPageContainer from './projects/project_show_page_container';
 
@@ -19,6 +20,7 @@ const App = () => (
       <Route component={NavBar} />
     </Switch>
     <Switch>
+      <ProtectedRoute path="/user/projects" component= {UserProjectsContainer} />
       <ProtectedRoute path="/projects/new" component = {ProjectFormContainer}/>
       <Route path="/projects/:projectId" component={ProjectShowPageContainer}/>
       <Route exact path="/" component = {Home}/>

@@ -16,7 +16,7 @@ class ProjectIndex extends React.Component {
     return(
       <div className="project-index-head">
         <div className="parallax-bg">
-          <div className = "title-caption">
+          <div className = "title-caption top">
             <h1>MAKE AWESOME THINGS HAPPEN</h1>
             <h2>Jump in. Get Moving. Do the thing you need to do.</h2>
             <Link className="site-nav-item" id="start-a-project" to="/projects/new">START A PROJECT</Link>
@@ -27,7 +27,7 @@ class ProjectIndex extends React.Component {
           <div className="projects-index">
             {this.projects.map(project => {
               let user = this.props.users[project.creator_id] || {};
-              return (<ProjectIndexItem project={project} user={user} key={project.id}/>);
+              return (<ProjectIndexItem className="top hideme" project={project} user={user} key={project.id}/>);
             })}
           </div>
        </div>

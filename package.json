@@ -12,6 +12,7 @@
     "lodash": "^4.17.4",
     "normalize.css": "^7.0.0",
     "nuka-carousel": "^2.0.4",
+    "rc-progress": "^2.2.1",
     "react": "^15.6.1",
     "react-addons-css-transition-group": "^15.6.0",
     "react-autosize-textarea": "^0.4.8",

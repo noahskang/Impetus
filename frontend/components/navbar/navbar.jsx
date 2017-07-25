@@ -27,7 +27,7 @@ class NavBar extends React.Component {
         <div className="rightnav">
           <a className="site-nav-item" id="explore">EXPLORE</a>
           {this.loginOrOut()}
-
+          <Link className="site-nav-item" id="my-projects" to="/user/projects">MY PROJECTS</Link>
           <Link className="site-nav-item" id="start-a-project" to="/projects/new">START A PROJECT</Link>
         </div>
       </nav>
