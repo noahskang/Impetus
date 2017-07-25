@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Link, match} from 'react-router-dom';
-import { values } from 'lodash';
 import persistState from 'redux-localstorage';
+import { values } from 'lodash';
 
-class ProjectPage extends React.Component{
+class ProjectShowPage extends React.Component{
 
   constructor(props){
     super(props);
@@ -27,7 +27,8 @@ class ProjectPage extends React.Component{
 
 
   render(){
-    let project = this.props.project;
+    let project = Object.values(this.props.project)[0] || {};
+    console.log("project", project);
     return(
         <div className="project-show-page">
           <div className="title-bar">
@@ -52,4 +53,4 @@ class ProjectPage extends React.Component{
   }
 }
 
-export default ProjectPage;
+export default ProjectShowPage;

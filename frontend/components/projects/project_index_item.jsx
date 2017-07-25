@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const ProjectIndexItem = ({project}) => {
+const ProjectIndexItem = ({project, user}) => {
 
   const percentFunded = Math.floor((project.funding_raised/project.funding_goal)*100);
 
@@ -19,7 +19,7 @@ const ProjectIndexItem = ({project}) => {
             <br/>
             <h1>Title:{project.title}</h1>
             <h2>{`${shortenedDescription}...`}</h2>
-            {`by ${project.creator}`}
+            {`by ${user.username}`}
             <br/>
             {project.funding_raised} pledged
             <br/>

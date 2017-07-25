@@ -1,11 +1,11 @@
 
 import React from 'react';
-import ProjectContainer from './projects/project_container';
+import ProjectIndexContainer from './projects/project_index_container';
 
 const Home = () => (
   <div>
     <div>
-      <ProjectContainer />
+      <ProjectIndexContainer />
     </div>
   </div>
 );

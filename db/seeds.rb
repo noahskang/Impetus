@@ -9,7 +9,9 @@
 
 # User.create!(username: "Noah", password: "password1")
 User.create!(username: "guest1", password: "password1")
-
+User.create!(username: "Noah", password: "password1")
+User.create!(username: "Friend", password: "password1")
+User.create!(username: "Munyo", password: "password1")
 
 Project.create!(
   title: "Restore U.W.s cherry blossom quad",

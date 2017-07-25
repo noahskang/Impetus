@@ -1,14 +1,14 @@
 import {connect} from 'react-redux';
 import { fetchProject } from '../../actions/project_actions';
-import ProjectPage from './project_page';
+import ProjectShowPage from './project_show_page';
 import { selectProject } from '../../reducers/selectors';
 
-const mapStateToProps = (state, { match }) => {
+
+const mapStateToProps = ({projects}, {match }) => {
   const projectId = parseInt(match.params.projectId);
-  // const project = selectProject(state, projectId);
   return{
     projectId,
-    project: state.projects
+    project: projects
   };
 };
 
@@ -20,4 +20,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
     mapStateToProps,
   mapDispatchToProps
-)(ProjectPage);
+)(ProjectShowPage);

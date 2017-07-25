@@ -8,7 +8,7 @@ import NavBar from './navbar/navbar_container';
 import Home from './home';
 import { nexstState, replaceState } from 'react-router-dom';
 
-import ProjectPageContainer from './projects/project_page_container';
+import ProjectShowPageContainer from './projects/project_show_page_container';
 
 const App = () => (
   <div>
@@ -20,7 +20,7 @@ const App = () => (
     </Switch>
     <Switch>
       <ProtectedRoute path="/projects/new" component = {ProjectFormContainer}/>
-      <Route path="/projects/:projectId" component={ProjectPageContainer}/>
+      <Route path="/projects/:projectId" component={ProjectShowPageContainer}/>
       <Route exact path="/" component = {Home}/>
     </Switch>
   </div>

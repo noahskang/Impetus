@@ -15,12 +15,12 @@ class ProjectForm extends React.Component{
   constructor(props){
     super(props);
     this.state={
-      title: null,
-      description: null,
-      category: null,
-      funding_goal: null,
-      end_date: null,
-      website_url: null,
+      title: "",
+      description: "",
+      category: "",
+      funding_goal: "",
+      end_date: "",
+      website_url: "",
       creator_id: this.props.user.id,
       image_url: "filler",
     };
@@ -55,7 +55,7 @@ class ProjectForm extends React.Component{
   }
 
   formComplete(){
-    if(Object.values(this.state).includes(null)){
+    if(Object.values(this.state).includes("")){
       return false;
     } else if (this.state.funding_goal > 2147483647) {
       return false;
