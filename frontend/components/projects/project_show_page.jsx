@@ -8,31 +8,33 @@ class ProjectShowPage extends React.Component{
 
   constructor(props){
     super(props);
-    this.props.getProject(this.props.projectId);
   }
 
   componentDidMount(){
-    this.props.getProject(this.props.projectId);
+    this.props.getProject();
+    this.props.getAllUsers();
   }
 
-  percentFunded(project){
-    return Math.floor((project.funding_raised/project.funding_goal)*100);
+
+  percentFunded(){
+    return Math.floor((this.props.project.funding_raised/this.props.project.funding_goal)*100);
   }
 
-  daysToGo(project){
-    return Math.round(Math.abs((Date.parse(project.end_date) - (new Date()).getTime()) / 86400000));
+  daysToGo(){
+    return Math.round(Math.abs((Date.parse(this.props.project.end_date) - (new Date()).getTime()) / 86400000));
   }
-
 
   render(){
-    let project = Object.values(this.props.projects)[0] || {};
-    console.log("project", project);
+
+    let project = this.props.project;
+    let user = this.props.user;
+
     return(
         <div className="project-show-page">
           <div className="title-bar">
             <h1>{project.title}</h1>
             <h2>{project.description}</h2>
-            {`by ${project.creator}`}
+            {`by ${user.username}`}
           </div>
           <div className="image-and-backing">
             <img src={project.image_url}/>
