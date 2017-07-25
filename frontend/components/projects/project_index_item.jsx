@@ -11,7 +11,7 @@ const ProjectIndexItem = ({project, user}) => {
   const shortenedDescription = project.description ? project.description.slice(0, 50) : "";
 
   return(
-      <div className="project-index-item">
+      <div className="project-index-item hideme">
         <div>
           <Link to={`/projects/${project.id}`}>
           <img src={project.image_url}/>

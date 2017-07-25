@@ -20,11 +20,14 @@
 .userProjects-list{
   display: flex;
   justify-content: center;
-  #user-project-link{
+  #button-area{
+    margin-left: 50px;
+  }
+  #title-and-caption{
     color: $medium-gray;
     font-weight: 200;
   }
-  #user-project-link:hover{
+  #title-and-caption:hover{
     color: white;
     text-decoration: underline;
   }

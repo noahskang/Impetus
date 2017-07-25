@@ -12,6 +12,17 @@
     text-transform: capitalize;
     margin-bottom: 20px;
   }
+  #delete{
+    font-size: 11px;
+    line-height: 24px;
+    font-weight: 500;
+    position: relative;
+    text-decoration: none;
+    overflow: hidden;
+    font-family: $nav-link-font;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
 }
 
 .title-bar{

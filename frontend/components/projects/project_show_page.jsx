@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Link, match} from 'react-router-dom';
+import {Link, match, history} from 'react-router-dom';
 import persistState from 'redux-localstorage';
 import { values } from 'lodash';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class ProjectShowPage extends React.Component{
 
   constructor(props){
     super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount(){
@@ -24,6 +26,16 @@ class ProjectShowPage extends React.Component{
     return Math.round(Math.abs((Date.parse(this.props.project.end_date) - (new Date()).getTime()) / 86400000));
   }
 
+  handleSubmit(e){
+    e.preventDefault();
+    this.props.destroyProject().then(()=>this.props.history.push("/user/projects"));
+    this.props.clearErrors();
+  }
+  deleteButton(){
+    if(this.props.currentUser.id===this.props.user.id){
+      return <button type="button" className="standard-black-button" id="delete" value="x" onClick={this.handleSubmit}>DELETE PROJECT</button>;
+    }
+  }
   render(){
 
     let project = this.props.project;
@@ -31,7 +43,9 @@ class ProjectShowPage extends React.Component{
 
     return(
         <div className="project-show-page">
+    
           <div className="title-bar">
+            {this.deleteButton()}
             <h1>{project.title}</h1>
             <h2>{project.description}</h2>
             {`by ${user.username}`}
