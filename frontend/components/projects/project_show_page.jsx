@@ -4,6 +4,7 @@ import {Link, match, history} from 'react-router-dom';
 import persistState from 'redux-localstorage';
 import { values } from 'lodash';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { Line } from 'rc-progress';
 
 class ProjectShowPage extends React.Component{
 
@@ -17,6 +18,9 @@ class ProjectShowPage extends React.Component{
     this.props.getAllUsers();
   }
 
+  percentWithCap(){
+    return Math.min(this.percentFunded(), 100);
+  }
 
   percentFunded(){
     return Math.floor((this.props.project.funding_raised/this.props.project.funding_goal)*100);
@@ -61,11 +65,14 @@ class ProjectShowPage extends React.Component{
               <img src={project.image_url}/>
             </div>
             <div className="project-stats">
-              <p><span className="bolded">{`${project.funding_raised} `}</span><span>pledged</span></p>
-              <p><span className="bolded">{`${this.percentFunded(project)}% `}</span><span>funded</span></p>
-              <p><span className="bolded">{this.daysToGo(project)}</span>&nbsp;<span>days to go</span></p>
+              <Line percent={this.percentWithCap()}
+                strokeWidth="0.8" strokeColor="#2BDE73"
+                trailColor="#e6e6e6" trailWidth="0.8" />
+              <p><p className="bolded">{`$${project.funding_raised} `}</p><p>pledged</p></p>
+              <p><p className="bolded">{`${this.percentFunded(project)}% `}</p><p>funded</p></p>
+              <p><p className="bolded">{this.daysToGo(project)}</p>&nbsp;<p>days to go</p></p>
+              <button type="button" className id="back-project-button" value="x">Back this Project</button>
             </div>
-
           </div>
           <div className="details">
             <h2>{project.description}</h2>
