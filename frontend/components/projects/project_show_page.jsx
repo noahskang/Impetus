@@ -64,7 +64,7 @@ class ProjectShowPage extends React.Component{
             <div className="image">
               <img src={project.image_url}/>
             </div>
-            <div className="project-stats">
+            <div className="project-show-stats">
               <Line percent={this.percentWithCap()}
                 strokeWidth="0.8" strokeColor="#2BDE73"
                 trailColor="#e6e6e6" trailWidth="0.8" />
