@@ -6,7 +6,6 @@ import { values } from 'lodash';
 
 const mapStateToProps = ({projects, session}) => {
   let userProjects = selectUserProjects(projects, session.currentUser);
-  console.log(userProjects);
   return{
     userProjects
   };

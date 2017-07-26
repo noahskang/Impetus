@@ -11,3 +11,14 @@ export const selectUserProjects = (projects, user) => {
   const userProjects = (Object.values(projects)).filter((project)=>(project.creator_id == user.id));
   return userProjects;
 };
+
+export const selectProjectRewards= (projectId, rewards) => {
+  let allRewards = Object.values(rewards) || [];
+  if(allRewards.length>1){
+    console.log("allRewards", allRewards);
+    let projectRewards = allRewards.filter(reward=>(reward.project_id === projectId));
+    return projectRewards;
+  } else{
+    return [];
+  }
+};

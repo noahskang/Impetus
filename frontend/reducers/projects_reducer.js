@@ -1,4 +1,3 @@
-import {} from '../actions/project_actions.js';
 import { RECEIVE_PROJECTS, RECEIVE_PROJECT, RECEIVE_PROJECT_ERRORS } from '../actions/project_actions';
 import merge from 'lodash/merge';
 

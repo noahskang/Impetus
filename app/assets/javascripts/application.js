@@ -16,13 +16,4 @@
 
 $(window).scroll(function(){
   $(".top").css("opacity", 1 - $(window).scrollTop() / 250);
-  $('.hideme').each( function(i){
-     var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-     var bottom_of_window = $(window).scrollTop() + $(window).height();
-
-     if( bottom_of_window > bottom_of_object-1000 ){
-         $(this).animate({'opacity':'1'}, 500);
-
-     }
-   });
 });

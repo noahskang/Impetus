@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Route, withRouter, history, Link} from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ReactDOM from 'react-dom';

@@ -16,6 +16,7 @@ class ProjectShowPage extends React.Component{
   componentDidMount(){
     this.props.getProject();
     this.props.getAllUsers();
+    // this.props.getAllRewards();
   }
 
   percentWithCap(){
@@ -30,12 +31,28 @@ class ProjectShowPage extends React.Component{
     return Math.round(Math.abs((Date.parse(this.props.project.end_date) - (new Date()).getTime()) / 86400000));
   }
 
-  deleteButton(){
+  userEditButtons(){
     if(this.props.currentUser){
       if(this.props.currentUser.id===this.props.creatorId){
-        return (<button type="button" className="standard-black-button" id="delete" value="x" onClick={this.handleSubmit}>DELETE PROJECT</button>);
+        return (
+          <div>
+            <button type="button" className="standard-black-button" id="delete" value="x" onClick={this.handleSubmit}>DELETE PROJECT</button>
+            <Link to={`/projects/${this.props.projectId}/rewards`} className="standard-black-button" id="addrewards">ADD REWARDS</Link>
+          </div>
+        );
       }
     }
+  }
+
+  rewardList(){
+    this.props.project.rewards.map(reward => {
+      return(
+        <div>
+          <h1>reward.title</h1>
+          <h1>reward.description</h1>
+        </div>
+      );
+    });
   }
 
   handleSubmit(e){
@@ -53,7 +70,7 @@ class ProjectShowPage extends React.Component{
           <div className="project-title-bar">
             <div className="author-button">
               <span className="author">{`by ${user.username}`}</span>
-              {this.deleteButton()}
+              {this.userEditButtons()}
             </div>
             <div className="title-description">
               <h1>{project.title}</h1>
@@ -68,16 +85,20 @@ class ProjectShowPage extends React.Component{
               <Line percent={this.percentWithCap()}
                 strokeWidth="0.8" strokeColor="#2BDE73"
                 trailColor="#e6e6e6" trailWidth="0.8" />
-              <p><p className="bolded">{`$${project.funding_raised} `}</p><p>pledged</p></p>
-              <p><p className="bolded">{`${this.percentFunded(project)}% `}</p><p>funded</p></p>
-              <p><p className="bolded">{this.daysToGo(project)}</p>&nbsp;<p>days to go</p></p>
+              <span><p className="bolded">{`$${project.funding_raised} `}</p><p>pledged</p></span>
+              <span><p className="bolded">{`${this.percentFunded(project)}% `}</p><p>funded</p></span>
+              <span><p className="bolded">{this.daysToGo(project)}</p>&nbsp;<p>days to go</p></span>
               <button type="button" className id="back-project-button" value="x">Back this Project</button>
             </div>
           </div>
-          <div className="details">
-            <h2>{project.description}</h2>
+          <div className="details-rewards">
+            <div className="details">
+              <h2>{project.description}</h2>
+            </div>
+            <div className="rewards">
+              <h2>{this.rewardList()}</h2>
+            </div>
           </div>
-
         </div>
     );
   }

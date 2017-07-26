@@ -4,6 +4,8 @@ class User < ApplicationRecord
 
   has_many(:projects, foreign_key: :creator_id, primary_key: :id, class_name: "Project")
 
+  has_many :rewards, through: :pledges, source: :reward
+
   attr_accessor :password
 
   after_initialize :ensure_session_token

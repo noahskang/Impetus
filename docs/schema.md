@@ -28,28 +28,18 @@
 | column name | data type | details |
 |-------|-------|-------|
 |  id    | integer | not null, primary key |
-| pledge  |  integer   | not null |
-| tier | integer | not null |
+| amount  |  integer   | not null |
 | description | string | not null |
-| delivery_date | string | not null |
 | project_id | integer | not null |
+| backing_limit | integer | not null |
+| delivery_date | date | not null |
 
 ## Join Tables
 
-**projects backers**
+**pledgess**
 *customized backing amounts are distinguished from rewards*
 
 | column name | data type | details |
 |-------|-------|-------|
 | backer_id    | integer | not null |
-| project_id  |  integer   | not null |
-| amount | integer | not null |
-
-**project rewards**
-*rewards are different from customized backing amounts*
-
-| column name | data type | details |
-|-------|-------|-------|
-| reward_id    | integer | not null |
-| project_id  |  integer   | not null |
-| backer_id   |  integer | not null |
+| reward_id | integer | not null |

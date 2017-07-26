@@ -1,8 +1,9 @@
 ```js
 {
   currentUser: {
-    id: 1,
+    id: 1,,
     username: "demo-user"
+    password: "password"
   },
   errors: {
     signUp: [],
@@ -16,26 +17,27 @@
       category: "Tests",
       description: "This is blank description"
       creator_id: 1,
-      funding-goal: 3000,
+      funding_goal: 3000,
+      funding_raised: 2000,
       end-date: '07/12/15'
-      backers: {user_1_id: reward_id, user_2_id: reward_2_id}
-      rewards: {
-        1: {
-          pledge: 10,
-          tier: 1,
-          description: "personal thanks",
-          delivery-date: "date1"
-          project_id: 1
-        }
-      },
+    }
+  },
+  rewards: {
+    1: {
+      id: 1,
+      amount: 22,
+      description: "personal thanks",
+      project_id: 1,
+      reward_sum: 2000
+      backing_limit: 20,
+      delivery_date: "07/21/17"
     }
   },
   users:  {
     1: {
-      id: 1
-      name: "user 1"
-      projects_created: [project_1_id, project_2_id]
-      projects_backed: [project_1_id, project_2_id]
+      id: 1,
+      name: "user 1",
+      password: "password"
     }
   },
 

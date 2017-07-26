@@ -4,6 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 import { login, signup, logout} from './actions/session_actions';
 import { fetchProjects, fetchProject, createProject, updateProject, destroyProject } from './actions/project_actions';
+import { fetchRewards, createReward, destroyReward } from './actions/reward_actions';
 import { fetchUsers } from './actions/user_actions';
 import { selectProject } from './reducers/selectors';
 
@@ -27,6 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.updateProject = updateProject;
   window.createProject = createProject;
   window.destroyProject = destroyProject;
+  window.fetchRewards = fetchRewards;
+  window.createReward = createReward;
+  window.destroyReward = destroyReward;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
