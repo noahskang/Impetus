@@ -10,6 +10,7 @@ import { nexstState, replaceState } from 'react-router-dom';
 import UserProjectsContainer from './projects/user_projects_container';
 import RewardsFormContainer from './rewards/rewards_form_container';
 import ProjectShowPageContainer from './projects/project_show_page_container';
+import BackingForm from './projects/backing_form';
 
 const App = () => (
   <div>
@@ -23,7 +24,8 @@ const App = () => (
       <ProtectedRoute exact path="/user/projects" component= {UserProjectsContainer} />
       <ProtectedRoute path="/projects/:projectId/rewards" component={RewardsFormContainer} />
       <ProtectedRoute path="/projects/new" component = {ProjectFormContainer}/>
-      <Route path="/projects/:projectId" component={ProjectShowPageContainer}/>
+      <ProtectedRoute path="/projects/:projectId/backing" component={BackingForm}/>
+      <ProtectedRoute path="/projects/:projectId/" component={ProjectShowPageContainer}/>
       <Route exact path="/" component = {Home}/>
     </Switch>
   </div>

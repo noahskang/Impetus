@@ -49,7 +49,7 @@
   display: inline-block;
 }
 
-.standard-black-button, #start-a-project{
+@mixin standard-black-button(){
   display: inline-block;
   -webkit-font-smoothing: antialiased;
   -webkit-appearance: none;
@@ -61,6 +61,14 @@
   z-index: 100;
   transition: opacity .3s cubic-bezier(.694,0,.335,1);
   padding: 0 2.2em;
+}
+
+.standard-black-button{
+  @include standard-black-button()
+}
+
+#start-a-project{
+  @include standard-black-button()
 }
 
 #start-a-project:hover{

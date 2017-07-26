@@ -35,8 +35,9 @@ class ProjectIndex extends React.Component {
           <h1>Featured Projects:</h1>
           <div className="projects-index">
             {this.projects.map(project => {
+              let i=1
               let user = this.props.users[project.creator_id] || {};
-              return (<ProjectIndexItem project={project} user={user} key={project.id}/>);
+              return (<ProjectIndexItem project={project} user={user} index={i+=1} key={project.id}/>);
             })}
           </div>
        </div>

@@ -12,12 +12,14 @@ const mapStateToProps = ({projects, users, session, rewards}, {match}) => {
   let creatorId = project.creator_id || {};
   let currentUser = session.currentUser || {};
   let user = users[creatorId] || {};
+  let rewardArray = project.rewards || [];
   return{
     project,
     creatorId,
     projectId,
     user,
     currentUser,
+    rewardArray
   };
 };
 

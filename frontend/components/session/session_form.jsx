@@ -23,7 +23,6 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
-
   }
 
 	switchSessionType(){
@@ -108,7 +107,7 @@ class SessionForm extends React.Component {
 	handleGuestLogin(e){
 		e.preventDefault();
 		let user = { username : "guest1", password: "password1"};
-		this.props.login(user);
+		this.props.login(user).then(()=>this.props.history.go(-1));
 	}
 
 }

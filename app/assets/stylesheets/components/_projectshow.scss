@@ -12,17 +12,6 @@
     text-transform: capitalize;
     margin-bottom: 20px;
   }
-  #delete{
-    font-size: 11px;
-    line-height: 24px;
-    font-weight: 500;
-    position: relative;
-    text-decoration: none;
-    overflow: hidden;
-    font-family: $nav-link-font;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
   .image-and-stats{
     margin-top: 25px;
     display: flex;
@@ -36,9 +25,6 @@
   .stats{
     display: inline-block;
     width: 15%;
-  }
-  button{
-    text-align: center;
   }
 }
 
@@ -66,7 +52,21 @@
   }
 }
 
-.author-button{
+.edit-buttons{
+  #delete, #addrewards{
+    @include standard-black-button();
+    font-size: 11px;
+    font-weight: 500;
+    width: 150px;
+    letter-spacing: 0.15em;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+}
+
+
+.creator-button-div{
   display: flex;
   flex-direction: column;
   width: 250px;
@@ -121,11 +121,15 @@
   }
 }
 
+.details{
+  width: 700px;
+}
 .details-rewards{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .rewards{
-  
+  width: 200px;
+  margin-left: 80px;
 }

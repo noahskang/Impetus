@@ -5,6 +5,7 @@ import persistState from 'redux-localstorage';
 import { values } from 'lodash';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { Line } from 'rc-progress';
+import RewardIndexItem from '../rewards/reward_index_item';
 
 class ProjectShowPage extends React.Component{
 
@@ -16,7 +17,6 @@ class ProjectShowPage extends React.Component{
   componentDidMount(){
     this.props.getProject();
     this.props.getAllUsers();
-    // this.props.getAllRewards();
   }
 
   percentWithCap(){
@@ -35,24 +35,23 @@ class ProjectShowPage extends React.Component{
     if(this.props.currentUser){
       if(this.props.currentUser.id===this.props.creatorId){
         return (
-          <div>
-            <button type="button" className="standard-black-button" id="delete" value="x" onClick={this.handleSubmit}>DELETE PROJECT</button>
-            <Link to={`/projects/${this.props.projectId}/rewards`} className="standard-black-button" id="addrewards">ADD REWARDS</Link>
+          <div className="edit-buttons">
+            <button type="button" id="delete" value="x" onClick={this.handleSubmit}>DELETE PROJECT</button>
+            <Link to={`/projects/${this.props.projectId}/rewards`} id="addrewards">ADD REWARDS</Link>
           </div>
         );
       }
     }
   }
 
-  rewardList(){
-    this.props.project.rewards.map(reward => {
+  rewardIndex(){
+    if(this.props.rewardArray.length>0){
       return(
-        <div>
-          <h1>reward.title</h1>
-          <h1>reward.description</h1>
-        </div>
+        this.props.rewardArray.map(reward => {
+          return(<RewardIndexItem reward={reward} project={this.props.project} key={reward.id}/>);
+        })
       );
-    });
+    }
   }
 
   handleSubmit(e){
@@ -60,6 +59,7 @@ class ProjectShowPage extends React.Component{
     this.props.destroyProject().then(()=>this.props.history.push("/user/projects"));
     this.props.clearErrors();
   }
+
   render(){
 
     let project = this.props.project;
@@ -68,7 +68,7 @@ class ProjectShowPage extends React.Component{
     return(
         <div className="project-show-page">
           <div className="project-title-bar">
-            <div className="author-button">
+            <div className="creator-button-div">
               <span className="author">{`by ${user.username}`}</span>
               {this.userEditButtons()}
             </div>
@@ -83,12 +83,12 @@ class ProjectShowPage extends React.Component{
             </div>
             <div className="project-show-stats">
               <Line percent={this.percentWithCap()}
-                strokeWidth="0.8" strokeColor="#2BDE73"
-                trailColor="#e6e6e6" trailWidth="0.8" />
+                strokeWidth="2" strokeColor="#2BDE73"
+                trailColor="#e6e6e6" trailWidth="2" />
               <span><p className="bolded">{`$${project.funding_raised} `}</p><p>pledged</p></span>
               <span><p className="bolded">{`${this.percentFunded(project)}% `}</p><p>funded</p></span>
               <span><p className="bolded">{this.daysToGo(project)}</p>&nbsp;<p>days to go</p></span>
-              <button type="button" className id="back-project-button" value="x">Back this Project</button>
+              <Link to={`/projects/${this.props.projectId}/backing`} id="back-project-button" rewards={this.props.rewardArray} userId={this.props.currentUser.id} project={project} creator={user}>Back this Project</Link>
             </div>
           </div>
           <div className="details-rewards">
@@ -96,7 +96,7 @@ class ProjectShowPage extends React.Component{
               <h2>{project.description}</h2>
             </div>
             <div className="rewards">
-              <h2>{this.rewardList()}</h2>
+              {this.rewardIndex()}
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
     resources :rewards, only: [:show] do
       resources :pledges, only: [:create]
-    end 
+    end
   end
 
   root "static_pages#root"

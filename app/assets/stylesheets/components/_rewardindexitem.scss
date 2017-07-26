@@ -1,0 +1,30 @@
+.reward-index-item{
+  background-color: $lightest-gray;
+  margin-bottom: 15px;
+  padding: 10px 10px 10px 10px;
+  font-weight: 300;
+  font-family: $standard-font;
+  font-style: none;
+
+  h4{
+    color: #586BE9;;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  h1{
+    font-size: 14px;
+    color: $dark-medium-gray;
+    margin-bottom: 5px;
+    margin-bottom: 10px;
+  }
+  h2{
+    font-size: 11px;
+    color: $medium-gray;
+    margin-bottom: 5px;
+  }
+
+}
+
+.reward-index-item:hover{
+  color: #586BE9;
+}
