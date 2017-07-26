@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-
 class UserProjects extends React.Component {
 
   constructor(props){
@@ -12,7 +11,7 @@ class UserProjects extends React.Component {
 
   render(){
     return(
-      <div className="userProjects">
+      <div className="userProjects-bg">
         <ReactCSSTransitionGroup
           transitionName="fade-div"
           transitionAppear={true}
@@ -20,14 +19,14 @@ class UserProjects extends React.Component {
           transitionEnter={false}
           transitionLeave={false}
           >
-        <h1>My Projects</h1>
-        <div className="userProjects-list">
-          {this.props.userProjects.map(project =>
-            (<Link id="user-project-link" to={`/projects/${project.id}`} key={project.id}>
-            <p>
-              <span id="title-and-caption">{`${project.title}: `}{project.description}</span>
-            </p>
-          </Link>))}
+        <div className="userProjects">
+          <h1>My Projects</h1>
+          <div className="userProjects-list">
+            {this.props.userProjects.map(project =>
+              (<Link id="user-project-link" to={`/projects/${project.id}`} key={project.id}>
+                <h2 id="title-and-caption">{`${project.title}: `}</h2>
+            </Link>))}
+          </div>
         </div>
       </ReactCSSTransitionGroup>
       </div>

@@ -8,15 +8,17 @@ import { values } from 'lodash';
 const mapStateToProps = ({projects, users, session}, {match }) => {
   const projectId = parseInt(match.params.projectId);
   let project = projects[projectId] || {};
-  let currentUser = session.currentUser;
-  let user = users[project.creator_id] || {};
+  let creatorId = project.creator_id || {};
+  let currentUser = session.currentUser || {};
+  let user = users[creatorId] || {};
   return{
     project,
+    creatorId,
+    projectId,
     user,
     currentUser
   };
 };
-
 
 const mapDispatchToProps = (dispatch, {match}) => ({
   getProject: () => dispatch(fetchProject(match.params.projectId)),

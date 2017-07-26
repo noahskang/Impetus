@@ -23,10 +23,10 @@ const ProjectIndexItem = ({project, user}) => {
               <span className="description">{`${shortenedDescription}...`}</span>
             </p>
             <p className="creator">{`by ${user.username}`}</p>
+            <Line percent={percentWithCap}
+              strokeWidth="2" strokeColor="#2BDE73"
+              trailColor="#e6e6e6" trailWidth="2" />
             <div className="project-stats">
-              <Line percent={percentWithCap}
-                strokeWidth="2" strokeColor="#2BDE73"
-                trailColor="#e6e6e6" trailWidth="2" />
               <p><span className="bolded">{`${project.funding_raised} `}</span><span>pledged</span></p>
               <p><span className="bolded">{`${percentFunded}% `}</span><span>funded</span></p>
               <p><span className="bolded">{daysToGo}</span>&nbsp;<span>days to go</span></p>

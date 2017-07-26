@@ -11,14 +11,14 @@
 User.create!(username: "guest1", password: "password1")
 User.create!(username: "Noah", password: "password1")
 User.create!(username: "Friend", password: "password1")
-User.create!(username: "Munyo", password: "password1")
+User.create!(username: "Blargh", password: "password1")
 
 Project.create!(
   title: "Restore U.W.s cherry blossom quad",
   website_url: "https://www.washington.edu/",
   category: "community",
   description: "U.W.'s quad has been a fixture of the University of Washington campus and a tourist attraction for decades. Help us restore this beautiful state landmark.",
-  creator_id: 3,
+  creator_id: 1,
   funding_goal: 5000,
   end_date: "08/10/2020",
   funding_raised: 2000,
@@ -30,7 +30,7 @@ Project.create!(
   website_url: "google.com",
   category: "recreational",
   description: "let's do a random project together",
-  creator_id: 4,
+  creator_id: 2,
   funding_goal: 4000,
   funding_raised: 2000,
   end_date: "02/02/1994",
@@ -41,8 +41,20 @@ Project.create!(
   title: "Project 3",
   website_url: "google.com",
   category: "recreational",
-  description: "me and you forever",
+  description: "go hiking somewhere awesome",
   creator_id: 3,
+  funding_goal: 10000,
+  funding_raised: 2000,
+  end_date: "02/02/1994",
+  image_url: "http://res.cloudinary.com/noah-s-kang/image/upload/v1500918569/19721181278_68c4d1ace9_k_pwx0ka.jpg"
+)
+
+Project.create!(
+  title: "Project 3",
+  website_url: "google.com",
+  category: "recreational",
+  description: "another hiking project",
+  creator_id: 1,
   funding_goal: 10000,
   funding_raised: 2000,
   end_date: "02/02/1994",

@@ -18,7 +18,7 @@
     font: inherit;
     text-transform: uppercase;
     font-weight: 500;
-    font-size: 5vh;
+    font-size: 30px;
     line-height: 1.46875em;
     letter-spacing: .203125em;
     -webkit-margin-before: 1em;
@@ -119,35 +119,41 @@
 
 .project-info{
   box-sizing: border-box;
-  padding: 20px 20px 20px 20px;
+  padding: 25px 30px 25px 30px;
   font-family: $standard-font;
   font-weight: 500;
-  font-size: 1.5vh;
+  font-size: 12px;
   letter-spacing: 0.06em;
-  line-height: 2em;
+  line-height: 1.7em;
+
   .category{
     text-transform: capitalize;
     color: $medium-gray;
     margin-bottom: 15px;
   }
   .title{
-    font-size: 1.7vh;
+    font-size: 14px;
     text-transform: uppercase;
+    font-weight: 300;
   }
   .description{
     color: $light-gray;
-    font-size: 1.7vh;
+    font-size: 14px;
     font-weight: 200;
   }
   .creator{
-    margin-top: 11px;
+    margin-top: 12px;
   }
 }
 
 .project-stats{
-  margin-bottom: 0px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   color: $light-gray;
   font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   .bolded{
     color: black;
     font-weight: 500;

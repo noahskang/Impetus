@@ -26,15 +26,18 @@ class ProjectShowPage extends React.Component{
     return Math.round(Math.abs((Date.parse(this.props.project.end_date) - (new Date()).getTime()) / 86400000));
   }
 
+  deleteButton(){
+    if(this.props.currentUser){
+      if(this.props.currentUser.id===this.props.creatorId){
+        return (<button type="button" className="standard-black-button" id="delete" value="x" onClick={this.handleSubmit}>DELETE PROJECT</button>);
+      }
+    }
+  }
+
   handleSubmit(e){
     e.preventDefault();
     this.props.destroyProject().then(()=>this.props.history.push("/user/projects"));
     this.props.clearErrors();
-  }
-  deleteButton(){
-    if(this.props.currentUser.id===this.props.user.id){
-      return <button type="button" className="standard-black-button" id="delete" value="x" onClick={this.handleSubmit}>DELETE PROJECT</button>;
-    }
   }
   render(){
 
@@ -43,20 +46,26 @@ class ProjectShowPage extends React.Component{
 
     return(
         <div className="project-show-page">
-    
-          <div className="title-bar">
-            {this.deleteButton()}
-            <h1>{project.title}</h1>
-            <h2>{project.description}</h2>
-            {`by ${user.username}`}
+          <div className="project-title-bar">
+            <div className="author-button">
+              <span className="author">{`by ${user.username}`}</span>
+              {this.deleteButton()}
+            </div>
+            <div className="title-description">
+              <h1>{project.title}</h1>
+              <h2>{project.description}</h2>
+            </div>
           </div>
-          <div className="image-and-backing">
-            <img src={project.image_url}/>
-            {project.funding_raised} pledged
-            <br/>
-            {`${this.percentFunded(project)}% funded`}
-            <br/>
-            {this.daysToGo(project)} Days to go
+          <div className="image-and-stats">
+            <div className="image">
+              <img src={project.image_url}/>
+            </div>
+            <div className="project-stats">
+              <p><span className="bolded">{`${project.funding_raised} `}</span><span>pledged</span></p>
+              <p><span className="bolded">{`${this.percentFunded(project)}% `}</span><span>funded</span></p>
+              <p><span className="bolded">{this.daysToGo(project)}</span>&nbsp;<span>days to go</span></p>
+            </div>
+
           </div>
           <div className="details">
             <h2>{project.description}</h2>
@@ -68,3 +77,11 @@ class ProjectShowPage extends React.Component{
 }
 
 export default ProjectShowPage;
+
+// <div className="stats">
+//   {project.funding_raised} pledged
+//   <br/>
+//   {`${this.percentFunded(project)}% funded`}
+//   <br/>
+//   {this.daysToGo(project)} Days to go
+// </div>

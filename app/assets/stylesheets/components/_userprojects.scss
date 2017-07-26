@@ -1,34 +1,53 @@
-.userProjects{
-  margin-top: 200;
-  height: 100vh;
+.userProjects-bg{
   background-color: black;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.userProjects{
   display: flex;
   color: white;
-  font-size: 24px;
+  font-size: 35px;
   font-weight: 300;
-  justify-content: center;
-  flex-direction: column;
+  width: 800px;
+  justify-content: flex-start;
   align-items: center;
+  flex-direction: column;
   h1{
     text-transform: uppercase;
-    letter-spacing: 0.8em;
+    letter-spacing: 0.5em;
     margin-bottom: 50px;
   }
 
 }
-
 .userProjects-list{
-  display: flex;
-  justify-content: center;
-  #button-area{
-    margin-left: 50px;
+  h2{
+    margin-left: 0px;
+    margin-bottom: 30px;
+    font-size: 25px;
+    letter-spacing: 0.09em;
   }
   #title-and-caption{
-    color: $medium-gray;
+    color: white;
     font-weight: 200;
+    color: $medium-gray;
   }
   #title-and-caption:hover{
     color: white;
     text-decoration: underline;
+  }
+}
+
+@media all and (max-width: 900px){
+  .userProjects{
+    h1{
+      font-size: 4vh;
+    }
+  }
+  .userProjects-list{
+    h2{
+      font-size: 4vh;
+    }
   }
 }
