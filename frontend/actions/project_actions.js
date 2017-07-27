@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/project_api_util';
+import {receiveRewards} from './reward_actions';
 
 export const RECEIVE_PROJECTS = 'RECEIVE_PROJECTS';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
@@ -37,9 +38,11 @@ export const createProject = (project) => dispatch => (
 );
 
 export const fetchProject = (id) => dispatch => (
-  APIUtil.fetchProject(id).then(response => (
-    dispatch(receiveProject(response))
-  ), err => (
+  APIUtil.fetchProject(id).then(response => {
+    console.log(response);
+    dispatch(receiveProject(response.project));
+    dispatch(receiveRewards(response.rewards));
+  }, err => (
     dispatch(receiveProjectErrors(err.responseJSON))
   ))
 );

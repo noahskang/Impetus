@@ -7,6 +7,7 @@ class Api::ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @rewards = []
 
     if @project.save
       render "api/projects/show"
@@ -18,12 +19,14 @@ class Api::ProjectsController < ApplicationController
   def edit
   end
 
+# dealing with N+2 query
   def show
     @project = Project.find(params[:id])
+    @rewards = @project.rewards.includes(:pledges, :backers)
   end
 
   def index
-    @projects = Project.all
+    @projects = Project.includes(:rewards).all
   end
 
   def update

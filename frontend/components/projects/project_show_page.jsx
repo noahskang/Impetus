@@ -20,7 +20,6 @@ class ProjectShowPage extends React.Component{
   componentDidMount(){
     this.props.getProject();
     this.props.getAllUsers();
-    this.props.getAllRewards();
   }
 
   percentWithCap(){
@@ -48,23 +47,21 @@ class ProjectShowPage extends React.Component{
     }
   }
 
-  handleRewardSubmit(e){
-    e.preventDefault();
+  handleRewardSubmit(reward_id){
     let user_id = this.props.currentUser.id;
-    let reward_id = e.target;
     let pledge = {user_id, reward_id};
-    this.props.createPledge(pledge);
+    return ()=>this.props.createPledge(pledge);
   }
 
   rewardIndex(){
       return(
         this.props.rewardArray.map(reward => {
-          return(<RewardIndexItem reward={reward} project={this.props.project} key={reward.id} pledges={reward.pledge_count} backers={reward.backer_count} />);
+          return(<RewardIndexItem reward={reward} project={this.props.project} key={reward.id} pledges={reward.pledge_count} backers={reward.backer_count} onClick={this.handleRewardSubmit(reward.id)}/>);
         })
       );
 
   }
-// onClick={reward.id =>(this.handleRewardSubmit)}
+
   handleSubmit(e){
     e.preventDefault();
     this.props.destroyProject().then(()=>this.props.history.push("/user/projects"));
