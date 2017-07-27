@@ -4,6 +4,7 @@ var Carousel = require('nuka-carousel');
 import { Link } from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
+
 class ProjectIndex extends React.Component {
 
   constructor(props){
@@ -35,9 +36,8 @@ class ProjectIndex extends React.Component {
           <h1>Featured Projects:</h1>
           <div className="projects-index">
             {this.projects.map(project => {
-              let i=1
               let user = this.props.users[project.creator_id] || {};
-              return (<ProjectIndexItem project={project} user={user} index={i+=1} key={project.id}/>);
+              return (<ProjectIndexItem project={project} user={user} key={project.id}/>);
             })}
           </div>
        </div>

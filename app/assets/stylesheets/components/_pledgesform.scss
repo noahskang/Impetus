@@ -1,0 +1,78 @@
+.backing-form-contents{
+  margin: 30px 50px 0px 50px;
+  color: $dark-medium-gray;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  select{
+    @extend input;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+  }
+
+  label{
+    font-size: 14px;
+    text-transform: uppercase;
+    color: black;
+    font-weight: 500;
+  }
+}
+
+.backing-page{
+
+  .project-title-bar{
+    color: $light-gray;
+    opacity: 0.4;
+  }
+}
+
+
+.backing-form-contents{
+  margin-top: 50px;
+  border-left: 50%;
+  border-right: 50%;
+  display: flex;
+  flex-direction: column;
+}
+input{
+  height: 44px;
+  padding: 11px 0;
+  color: $medium-gray;
+  background-color: white;
+  border-bottom: 1px solid $medium-gray;
+  padding-left: 11px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  margin: 0 0 50px 0;
+  font-size: 14px;
+  font-weight: 300;
+  -webkit-appearance: textfield;
+  user-select: text;
+  cursor: auto;
+  font: $nav-link-font;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  letter-spacing: 0.08em;
+}
+
+.reward-dropdown{
+  @extend input;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+}
+
+.backing-form{
+  margin-top: 50px;
+  width: 450px;
+}
+#backing-form-head{
+  h1{
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+}

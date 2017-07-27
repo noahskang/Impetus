@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { Line } from 'rc-progress';
+import {SparkScroll, SparkProxy, sparkScrollFactory} from '../../util/app-spark';
 
 const ProjectIndexItem = ({project, user}) => {
 
@@ -11,7 +12,10 @@ const ProjectIndexItem = ({project, user}) => {
   const shortenedDescription = project.description ? project.description.slice(0, 50) : "";
 
   return(
-      <div className="project-index-item hideme">
+      <SparkScroll.div timeline={{
+    'topBottom-40': {opacity: 0, marginTop: '200px', ease: "easeinSine" },
+    'centerBottom-150': {opacity: 1, marginTop: '20px', ease: "easeinSine"}
+  }} className="project-index-item">
         <div>
           <Link to={`/projects/${project.id}`}>
           <img src={project.image_url}/>
@@ -33,7 +37,7 @@ const ProjectIndexItem = ({project, user}) => {
             </div>
           </div>
         </div>
-      </div>
+      </SparkScroll.div>
   );
 };
 

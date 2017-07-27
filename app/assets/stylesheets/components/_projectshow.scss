@@ -8,19 +8,14 @@
     width: 100%;
     height: auto;
   }
-  h1{
-    text-transform: capitalize;
-    margin-bottom: 20px;
-  }
   .image-and-stats{
-    margin-top: 25px;
     display: flex;
     justify-content: flex-start;
     margin-bottom: 50px;
   }
   .image{
     display: inline-block;
-    width: 800px;
+    width: 790px;
   }
   .stats{
     display: inline-block;
@@ -29,26 +24,33 @@
 }
 
 .project-title-bar{
-  margin-top: 145px;
+  margin-top: 100px;
   display: flex;
-  justify-content: flex-start;
-  margin-bottom: 20px;
+  justify-content: flex-end;
+  margin-bottom: 10px
 }
 
 .title-description{
   margin-left: 50px;
+  margin-right: 50px;
   display: flex;
   flex-direction: column;
   h1{
-    font-size: 30px;
+    font-size: 25px;
     text-transform: uppercase;
     color: black;
     opacity: 0.8;
+    margin-bottom: 10px
   }
   h2{
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 300;
     color: $dark-medium-gray;
+  }
+  .author{
+    margin-bottom: 11px;
+    font-weight: 300;
+    color: $light-gray;
   }
 }
 
@@ -57,42 +59,49 @@
     @include standard-black-button();
     font-size: 11px;
     font-weight: 500;
+    background-color: $dark-medium-gray;
     width: 150px;
     letter-spacing: 0.15em;
     text-align: center;
     margin-bottom: 15px;
   }
-
+  #delete:hover, #addrewards:hover{
+    background-color: black;
+  }
 }
 
 
-.creator-button-div{
+.project-edit-button-div{
   display: flex;
   flex-direction: column;
   width: 250px;
-  .author{
-    margin-bottom: 12px;
-    color: $light-gray;
-  }
 }
 .project-show-stats{
-  margin-left: 50px;
+  margin-left: 40px;
   width: 40%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  font-size: 12px;
+  justify-content: flex-start;
+  font-size: 13px;
   .bolded{
-    font-size: 20px;
+    font-size: 24px;
+    margin-bottom: 5px;
     color: $dark-medium-gray;
+  }
+  span{
+    margin-top: 35px;
+  }
+  .line{
+    margin-bottom: 30px;
   }
   #back-project-button{
     cursor: pointer;
     display: inline-block;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 500;
-    letter-spacing: .091em;
+    letter-spacing: .11em;
     line-height: 1em;
+    margin-top: 75px;
     padding: 1.8em 3.6em;
     text-align: center;
     text-rendering: optimizeLegibility;
@@ -109,27 +118,40 @@
     transition-timing-function: cubic-bezier(0.694, 0, 0.335, 1), cubic-bezier(0.694, 0, 0.335, 1), cubic-bezier(0.694, 0, 0.335, 1);
     transition-delay: initial, initial, initial;
 
-    // background-color: $green;
-    // font-weight: 500;
-    // font-size: 15px;
-    // letter-spacing: 0.05em;
-    // border-color: $green;
   }
   #back-project-button:hover{
-    color: $medium-gray;
-    border-color: $medium-gray;
+    border-color: $dark-medium-gray;
+    border-width: 2px;
+    background-color: $dark-medium-gray;
+    color: white;
+    font-weight: 500;
   }
 }
 
 .details{
-  width: 700px;
+  width: 675px;
+  padding-right: 35px;
+
+  h2{
+    font-size: 14px;
+    line-height: 1.3em;
+    font-weight: 300;
+  }
 }
+
 .details-rewards{
+  color: $dark-medium-gray;
+
+  h1{
+    font-size: 21px;
+    margin-bottom: 25px;
+  }
+  margin: 10px 35px 0 35px;
   display: flex;
   justify-content: flex-start;
 }
 
 .rewards{
-  width: 200px;
-  margin-left: 80px;
+  width: 275px;
+  margin-left: 40px;
 }

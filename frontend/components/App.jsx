@@ -17,7 +17,6 @@ const App = () => (
     <Switch>
       <AuthRoute path="/login" component = {SessionFormContainer} />
       <AuthRoute path="/signup" component = {SessionFormContainer} />
-      // because the above are authroutes -- as soon as I log in a user, they will automatically redirect to the home page.
       <Route component={NavBar} />
     </Switch>
     <Switch>

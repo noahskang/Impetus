@@ -8,6 +8,7 @@ import { Line } from 'rc-progress';
 import RewardIndexItem from '../rewards/reward_index_item';
 import PledgesForm from './pledges_form';
 
+
 class ProjectShowPage extends React.Component{
 
   constructor(props){
@@ -68,14 +69,21 @@ class ProjectShowPage extends React.Component{
     let user = this.props.user;
 
     return(
-        <div className="project-show-page">
+      <div className="project-show-page">
+      <ReactCSSTransitionGroup
+        transitionName="fade-div"
+        transitionAppear={true}
+        transitionAppearTimeout={700}
+        transitionEnter={false}
+        transitionLeave={false}
+        >
           <div className="project-title-bar">
-            <div className="creator-button-div">
-              <span className="author">{`by ${user.username}`}</span>
+            <div className="project-edit-button-div">
               {this.userEditButtons()}
             </div>
             <div className="title-description">
               <h1>{project.title}</h1>
+              <span className="author">{`by ${user.username}`}</span>
               <h2>{project.description}</h2>
             </div>
           </div>
@@ -84,23 +92,26 @@ class ProjectShowPage extends React.Component{
               <img src={project.image_url}/>
             </div>
             <div className="project-show-stats">
-              <Line percent={this.percentWithCap()}
+              <div className="line"><Line percent={this.percentWithCap()}
                 strokeWidth="2" strokeColor="#2BDE73"
-                trailColor="#e6e6e6" trailWidth="2" />
-              <span><p className="bolded">{`$${project.funding_raised} `}</p><p>pledged</p></span>
+                trailColor="#e6e6e6" trailWidth="2" /></div>
+              <span><p className="bolded">{`$${project.funding_raised} `}</p><p>pledged of{` $${project.funding_goal} `}goal</p></span>
               <span><p className="bolded">{`${this.percentFunded(project)}% `}</p><p>funded</p></span>
-              <span><p className="bolded">{this.daysToGo(project)}</p>&nbsp;<p>days to go</p></span>
+              <span><p className="bolded">{this.daysToGo(project)}</p><p>days to go</p></span>
               <Link to={`/projects/${this.props.projectId}/pledges`} id="back-project-button">Back This Project</Link>
             </div>
           </div>
           <div className="details-rewards">
             <div className="details">
+              <h1>About this project</h1>
               <h2>{project.description}</h2>
             </div>
             <div className="rewards">
+              <h1>Support this project</h1>
               {this.rewardIndex()}
             </div>
           </div>
+        </ReactCSSTransitionGroup>
         </div>
     );
   }
