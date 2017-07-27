@@ -1,0 +1,27 @@
+
+.search-bar{
+    margin-top: 55px;
+display: flex;
+justify-content: flex-start;
+  #search-input{
+    width: 60%;
+  }
+  #search-button{
+    height: 40px;
+    width: 40px;
+    border: none;
+  }
+}
+
+#search-input::placeholder{
+  font-size: 11px;
+  line-height: 24px;
+  font-weight: 500;
+  position: relative;
+  color: $link-color-nav;
+  text-decoration: none;
+  overflow: hidden;
+  font-family: $nav-link-font;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}

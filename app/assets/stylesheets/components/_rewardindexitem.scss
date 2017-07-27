@@ -1,11 +1,14 @@
 .reward-index-item{
   background-color: $lightest-gray;
   margin-bottom: 15px;
+  margin-top: 0px;
   padding: 10px 10px 10px 10px;
   font-weight: 300;
   font-family: $standard-font;
   font-style: none;
   letter-spacing: 0.03em;
+  position: relative;
+  cursor: pointer;
   h4{
     color: #586BE9;;
     font-size: 14px;
@@ -23,9 +26,57 @@
     color: $medium-gray;
     margin-bottom: 5px;
   }
+}
+
+.project-info{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+
+
+.choose-reward{
+  display: flex;
+  background-color: $medium-gray;
+  opacity: 0.8;
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  h1{
+    color: white;
+    font-weight: 200;
+    opacity: 1;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
 
 }
 
-.reward-index-item:hover{
-  color: #586BE9;
+#limited-message{
+  color: red;
+}
+.backing-message{
+  color: $green;
+  font-style: italic;
+}
+
+.reward-index-item:hover .choose-reward{
+  opacity: 0.8;
+  transition: opacity 0.4s;
+  z-index: 20;
+
+}
+.reward-index-item:hover .reward-info{
+  opacity: 0.6;
+  transition: opacity 0.4s;
 }

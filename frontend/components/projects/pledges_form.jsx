@@ -6,7 +6,7 @@ class PledgesForm extends React.Component{
       super(props);
       this.state={
         user_id: this.props.currentUserId,
-        reward_id: 0
+        reward_id: -1
       };
       this.handleSubmit = this.handleSubmit.bind(this);
       this.rewardDropdown = this.rewardDropdown.bind(this);
@@ -26,7 +26,7 @@ class PledgesForm extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     const pledge = Object.assign({}, this.state);
-    this.props.createPledge(pledge).then(()=>this.props.history.goBack());
+    this.props.createPledge(pledge).then(()=>this.props.history.replace(`/projects/${this.props.project.id}/`));
     this.props.clearErrors();
   }
 

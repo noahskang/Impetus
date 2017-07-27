@@ -12,6 +12,7 @@ const mapStateToProps = ({projects, users, session, rewards}, {match, location})
   let project = projects[projectId] || {};
   let creatorId = project.creator_id || {};
   let currentUser = session.currentUser || {};
+  let userRewards = currentUser.rewards || [];
   let user = users[creatorId] || {};
   let rewardArray = Object.values(rewards) || [];
   return{
@@ -20,6 +21,7 @@ const mapStateToProps = ({projects, users, session, rewards}, {match, location})
     projectId,
     user,
     currentUser,
+    userRewards,
     rewardArray,
     location
   };

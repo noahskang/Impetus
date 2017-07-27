@@ -1,7 +1,7 @@
 import { RECEIVE_PLEDGES, RECEIVE_PLEDGE, RECEIVE_PLEDGE_ERRORS } from '../actions/pledge_actions';
 import merge from 'lodash/merge';
 
-const RewardsReducer = (state = {}, action) => {
+const PledgesReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_PLEDGES:
@@ -21,4 +21,4 @@ const RewardsReducer = (state = {}, action) => {
   }
 };
 
-export default RewardsReducer;
+export default PledgesReducer;

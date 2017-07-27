@@ -1,7 +1,7 @@
 import * as APIUtil from '../util/pledge_api_util';
 
 export const RECEIVE_PLEDGES = 'RECEIVE_PLEDGES';
-export const RECEIVE_PLEDGE = 'RECEIVE_REWARD';
+export const RECEIVE_PLEDGE = 'RECEIVE_PLEDGE';
 export const RECEIVE_PLEDGE_ERRORS = 'RECEIVE_PLEDGE_ERRORS';
 
 export const receivePledges = (pledges) => ({

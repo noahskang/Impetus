@@ -1,4 +1,5 @@
 import { RECEIVE_REWARDS, RECEIVE_REWARD, RECEIVE_REWARD_ERRORS } from '../actions/reward_actions';
+import { RECEIVE_PLEDGE } from '../actions/pledge_actions';
 import merge from 'lodash/merge';
 
 const RewardsReducer = (state = {}, action) => {
@@ -7,6 +8,9 @@ const RewardsReducer = (state = {}, action) => {
     case RECEIVE_REWARDS:
       const rewards = action.rewards;
       return merge({}, rewards);
+    case RECEIVE_PLEDGE:
+      const rewardId= action.pledge.reward_id;
+      return merge({}, state, {[rewardId]: {pledge_count: state[rewardId].pledge_count+1}});
     case RECEIVE_REWARD:
       if(!action.reward){ return state; }
       const reward = action.reward;

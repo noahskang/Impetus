@@ -32,6 +32,7 @@ class Api::ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     if @project.update(project_params)
+      @rewards = []
       render "api/projects/show"
     else
        flash.now[:errors] = @sub.errors.full_messages
@@ -41,6 +42,7 @@ class Api::ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
+    @rewards = []
     render "api/projects/show"
   end
 

@@ -56,7 +56,7 @@ class ProjectShowPage extends React.Component{
   rewardIndex(){
       return(
         this.props.rewardArray.map(reward => {
-          return(<RewardIndexItem reward={reward} project={this.props.project} key={reward.id} pledges={reward.pledge_count} backers={reward.backer_count} onClick={this.handleRewardSubmit(reward.id)}/>);
+          return(<RewardIndexItem reward={reward} project={this.props.project} key={reward.id} userRewards = {this.props.userRewards} pledges={reward.pledge_count} backers={reward.backer_count} onClick={this.handleRewardSubmit(reward.id)}/>);
         })
       );
 

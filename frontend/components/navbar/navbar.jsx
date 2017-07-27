@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchBar from './search';
 import { Link } from 'react-router-dom';
 var Dropdown = require('react-simple-dropdown');
 var DropdownTrigger = Dropdown.DropdownTrigger;
@@ -29,6 +30,7 @@ class NavBar extends React.Component {
             </a>
         </div>
         <div className="centernav">
+          <SearchBar />
         </div>
         <div className="rightnav">
           <a className="site-nav-item" id="explore">EXPLORE</a>
