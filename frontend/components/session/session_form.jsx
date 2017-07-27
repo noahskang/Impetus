@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Redirect, Link, withRouter, history, location } from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import SlideAnimation from 'react-slide-animation';
 
 class SessionForm extends React.Component {
 	constructor(props) {

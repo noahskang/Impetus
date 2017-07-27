@@ -5,6 +5,7 @@ import ProjectShowPage from './project_show_page';
 import { selectProject, selectProjectRewards } from '../../reducers/selectors';
 import {fetchUsers} from '../../actions/user_actions';
 import { values } from 'lodash';
+import { createPledge } from '../../actions/pledge_actions';
 
 const mapStateToProps = ({projects, users, session, rewards}, {match, location}) => {
   const projectId = parseInt(match.params.projectId);
@@ -26,7 +27,7 @@ const mapStateToProps = ({projects, users, session, rewards}, {match, location})
 
 const mapDispatchToProps = (dispatch, {match}) => ({
   getProject: () => dispatch(fetchProject(match.params.projectId)),
-  getPledges: () => dispatch(fetchProject(match.params.projectId)),
+  createPledge: pledge => dispatch(createPledge(pledge)),
   getAllRewards: () => dispatch(fetchRewards(match.params.projectId)),
   getAllUsers: ()=>dispatch(fetchUsers()),
   destroyProject: ()=>dispatch(destroyProject(match.params.projectId)),

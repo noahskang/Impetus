@@ -36,20 +36,24 @@
   display: flex;
   flex-direction: column;
   h1{
-    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 0.09em;
+    font-size: 22px;
     text-transform: uppercase;
     color: black;
-    opacity: 0.8;
     margin-bottom: 10px
   }
   h2{
-    font-size: 12px;
-    font-weight: 300;
+    font-size: 13px;
     color: $dark-medium-gray;
+    margin-right: 200px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
   }
   .author{
     margin-bottom: 11px;
     font-weight: 300;
+    font-size: 10px;
     color: $light-gray;
   }
 }
@@ -83,8 +87,12 @@
   flex-direction: column;
   justify-content: flex-start;
   font-size: 13px;
+  letter-spacing: 0.06em;
+  color: $light-gray;
+  font-weight: 300;
   .bolded{
     font-size: 24px;
+    font-weiht: 400;
     margin-bottom: 5px;
     color: $dark-medium-gray;
   }
@@ -97,11 +105,11 @@
   #back-project-button{
     cursor: pointer;
     display: inline-block;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     letter-spacing: .11em;
     line-height: 1em;
-    margin-top: 75px;
+    margin-top: 65px;
     padding: 1.8em 3.6em;
     text-align: center;
     text-rendering: optimizeLegibility;

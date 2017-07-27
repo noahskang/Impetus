@@ -14,6 +14,7 @@ class ProjectShowPage extends React.Component{
   constructor(props){
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleRewardSubmit = this.handleRewardSubmit.bind(this);
   }
 
   componentDidMount(){
@@ -47,15 +48,23 @@ class ProjectShowPage extends React.Component{
     }
   }
 
+  handleRewardSubmit(e){
+    e.preventDefault();
+    let user_id = this.props.currentUser.id;
+    let reward_id = e.target;
+    let pledge = {user_id, reward_id};
+    this.props.createPledge(pledge);
+  }
+
   rewardIndex(){
       return(
         this.props.rewardArray.map(reward => {
-          return(<RewardIndexItem reward={reward} project={this.props.project} key={reward.id} pledges={reward.pledge_count} backers={reward.backer_count}/>);
+          return(<RewardIndexItem reward={reward} project={this.props.project} key={reward.id} pledges={reward.pledge_count} backers={reward.backer_count} />);
         })
       );
 
   }
-
+// onClick={reward.id =>(this.handleRewardSubmit)}
   handleSubmit(e){
     e.preventDefault();
     this.props.destroyProject().then(()=>this.props.history.push("/user/projects"));
@@ -70,13 +79,6 @@ class ProjectShowPage extends React.Component{
 
     return(
       <div className="project-show-page">
-      <ReactCSSTransitionGroup
-        transitionName="fade-div"
-        transitionAppear={true}
-        transitionAppearTimeout={700}
-        transitionEnter={false}
-        transitionLeave={false}
-        >
           <div className="project-title-bar">
             <div className="project-edit-button-div">
               {this.userEditButtons()}
@@ -87,6 +89,13 @@ class ProjectShowPage extends React.Component{
               <h2>{project.description}</h2>
             </div>
           </div>
+          <ReactCSSTransitionGroup
+            transitionName="fade-div"
+            transitionAppear={true}
+            transitionAppearTimeout={700}
+            transitionEnter={false}
+            transitionLeave={false}
+            >
           <div className="image-and-stats">
             <div className="image">
               <img src={project.image_url}/>
@@ -101,6 +110,7 @@ class ProjectShowPage extends React.Component{
               <Link to={`/projects/${this.props.projectId}/pledges`} id="back-project-button">Back This Project</Link>
             </div>
           </div>
+          </ReactCSSTransitionGroup>
           <div className="details-rewards">
             <div className="details">
               <h1>About this project</h1>
@@ -111,7 +121,7 @@ class ProjectShowPage extends React.Component{
               {this.rewardIndex()}
             </div>
           </div>
-        </ReactCSSTransitionGroup>
+
         </div>
     );
   }

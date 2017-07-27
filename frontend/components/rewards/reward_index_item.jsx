@@ -4,6 +4,7 @@ import { Line } from 'rc-progress';
 
 const RewardIndexItem = ({reward, project, backers, pledges}) => {
   console.log("backers", backers);
+
   return(
       <div className="reward-index-item">
         <div>
