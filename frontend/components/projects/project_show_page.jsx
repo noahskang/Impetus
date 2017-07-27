@@ -6,6 +6,7 @@ import { values } from 'lodash';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { Line } from 'rc-progress';
 import RewardIndexItem from '../rewards/reward_index_item';
+import PledgesForm from './pledges_form';
 
 class ProjectShowPage extends React.Component{
 
@@ -17,6 +18,7 @@ class ProjectShowPage extends React.Component{
   componentDidMount(){
     this.props.getProject();
     this.props.getAllUsers();
+    this.props.getAllRewards();
   }
 
   percentWithCap(){
@@ -45,13 +47,12 @@ class ProjectShowPage extends React.Component{
   }
 
   rewardIndex(){
-    if(this.props.rewardArray.length>0){
       return(
         this.props.rewardArray.map(reward => {
-          return(<RewardIndexItem reward={reward} project={this.props.project} key={reward.id}/>);
+          return(<RewardIndexItem reward={reward} project={this.props.project} key={reward.id} pledges={reward.pledge_count} backers={reward.backer_count}/>);
         })
       );
-    }
+
   }
 
   handleSubmit(e){
@@ -59,6 +60,7 @@ class ProjectShowPage extends React.Component{
     this.props.destroyProject().then(()=>this.props.history.push("/user/projects"));
     this.props.clearErrors();
   }
+
 
   render(){
 
@@ -88,7 +90,7 @@ class ProjectShowPage extends React.Component{
               <span><p className="bolded">{`$${project.funding_raised} `}</p><p>pledged</p></span>
               <span><p className="bolded">{`${this.percentFunded(project)}% `}</p><p>funded</p></span>
               <span><p className="bolded">{this.daysToGo(project)}</p>&nbsp;<p>days to go</p></span>
-              <Link to={`/projects/${this.props.projectId}/backing`} id="back-project-button" rewards={this.props.rewardArray} userId={this.props.currentUser.id} project={project} creator={user}>Back this Project</Link>
+              <Link to={`/projects/${this.props.projectId}/pledges`} id="back-project-button">Back This Project</Link>
             </div>
           </div>
           <div className="details-rewards">

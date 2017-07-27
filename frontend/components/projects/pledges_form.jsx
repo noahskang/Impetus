@@ -1,13 +1,19 @@
 import React from 'react';
 
-class BackingForm extends React.Component{
+class PledgesForm extends React.Component{
   constructor(props){
       super(props);
       this.state={
-        user_id: this.props.userId,
+        user_id: this.props.currentUserId,
         reward_id: 0
       };
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.rewardDropdown = this.rewardDropdown.bind(this);
+  }
+
+  componentDidMount(){
+    this.props.getProject();
+    this.props.fetchProjects();
   }
 
   update(field){
@@ -28,7 +34,7 @@ class BackingForm extends React.Component{
       <label>Reward
         <select name="rewards" onChange={this.update('reward_id')}>
           {this.props.rewards.map(reward=>(
-            <option value={reward.id}>{reward.title}</option>
+            <option value={reward.id} key={reward.id}>{reward.title}</option>
           ))}
         </select>
       </label>
@@ -41,11 +47,10 @@ class BackingForm extends React.Component{
         <div className="project-title-bar">
           <div className="creator-button-div">
             <span className="author">{`by ${this.props.creator.username}`}</span>
-            {this.userEditButtons()}
           </div>
           <div className="title-description">
-            <h1>{this.props.title}</h1>
-            <h2>{this.props.description}</h2>
+            <h1>{this.props.projecttitle}</h1>
+            <h2>{this.props.projectdescription}</h2>
           </div>
         </div>
         <div className="backing-form-contents">
@@ -55,7 +60,7 @@ class BackingForm extends React.Component{
           <form className="backing-form">
             <h2>custom amount filler</h2>
             {this.rewardDropdown()}
-            <input type="submit" onClick={this.handleSubmit}>Submit Form</input>
+            <input type="submit" value="Submit Form" onClick={this.handleSubmit}/>
           </form>
         </div>
       </div>
@@ -63,4 +68,4 @@ class BackingForm extends React.Component{
   }
 }
 
-export default BackingForm;
+export default PledgesForm;

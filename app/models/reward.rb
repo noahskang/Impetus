@@ -3,10 +3,13 @@ class Reward < ActiveRecord::Base
 
   belongs_to :project
   has_many :pledges
-  has_many :backers, through: :pledges, source: :users
+  has_many :backers, through: :pledges, source: :backer
 
   def pledge_count
     self.pledges.count
+  end
+  def backer_count
+    self.backers.count
   end
 
 end

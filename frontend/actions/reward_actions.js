@@ -20,8 +20,8 @@ export const receiveRewardErrors = (errors) => ({
   errors
 });
 
-export const fetchRewards = () => dispatch => (
-  APIUtil.fetchRewards().then(response => (
+export const fetchRewards = (projectId) => dispatch => (
+  APIUtil.fetchRewards(projectId).then(response => (
     dispatch(receiveRewards(response))
   ), err => (
     dispatch(receiveRewardErrors(err.responseJSON))

@@ -7,6 +7,7 @@ import { fetchProjects, fetchProject, createProject, updateProject, destroyProje
 import { fetchRewards, createReward, destroyReward } from './actions/reward_actions';
 import { fetchUsers } from './actions/user_actions';
 import { selectProject } from './reducers/selectors';
+import {fetchPledges} from './util/pledge_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchRewards = fetchRewards;
   window.createReward = createReward;
   window.destroyReward = destroyReward;
+  window.fetchPledges = fetchPledges;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
