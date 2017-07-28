@@ -28,10 +28,10 @@ Project.create!(
 )
 
 Project.create!(
-  title: "another random project",
+  title: "Musical Firepit",
   website_url: "google.com",
-  category: "recreational",
-  description: "let's do a random project together",
+  category: "Music",
+  description: "What's a bonfire without music? Now, all the people who love singing old-time folk songs with their friends to the strumming o an acoustic guitar round' the ol' bonfire can do that -- even without musical skills. this firepit can be controlled by bluetooth to play your favorite campfire playlist. s'mores, anyone?",
   creator_id: 2,
   funding_goal: 4000,
   funding_raised: 400,
@@ -40,7 +40,7 @@ Project.create!(
 )
 
 Project.create!(
-  title: "Project 3",
+  title: "Alpine exploration",
   website_url: "google.com",
   category: "recreational",
   description: "go hiking somewhere awesome",
@@ -150,7 +150,7 @@ Project.create!(
 Project.create!(
   title: "Robot for the Disabled",
   website_url: "transformer.com",
-  category: "technology",
+  category: "relief work",
   description: "These days, sickness is getting worse and it is harder to find help for those people. I can create a robot that can help a person walk where is needed, drive them to a destination, bathe them, etc. All manual labor needed.",
   creator_id: 5,
   funding_goal: 100000,
