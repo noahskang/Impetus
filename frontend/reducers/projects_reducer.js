@@ -6,8 +6,7 @@ const ProjectsReducer= (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_PROJECTS:
-      const projects = action.projects;
-      return merge({}, projects);
+      return action.projects;
     case RECEIVE_PLEDGE:
       const projectId =action.pledge.reward.project_id;
       return merge({}, state, {[projectId]: {funding_raised: state[projectId].funding_raised+action.pledge.reward.amount} });

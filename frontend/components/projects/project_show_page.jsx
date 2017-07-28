@@ -17,6 +17,10 @@ class ProjectShowPage extends React.Component{
     this.handleRewardSubmit = this.handleRewardSubmit.bind(this);
   }
 
+  shortenedDescription(){
+    return this.props.project.description ? this.props.project.description.slice(0, 150) : "";
+  }
+
   componentDidMount(){
     this.props.getProject();
     this.props.getAllUsers();
@@ -86,7 +90,7 @@ class ProjectShowPage extends React.Component{
             <div className="title-description">
               <h1>{project.title}</h1>
               <span className="author">{`by ${user.username}`}</span>
-              <h2>{project.description}</h2>
+              <h2>{this.shortenedDescription()}</h2>
             </div>
           </div>
           <ReactCSSTransitionGroup

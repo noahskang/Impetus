@@ -40,7 +40,6 @@ export const createProject = (project) => dispatch => (
 
 export const fetchProject = (id) => dispatch => (
   APIUtil.fetchProject(id).then(response => {
-    console.log(response);
     dispatch(receiveProject(response.project));
     dispatch(receiveRewards(response.rewards));
   }, err => (

@@ -10,7 +10,7 @@ class Api::ProjectsController < ApplicationController
     @rewards = []
 
     if @project.save
-      render "api/projects/show"
+      render "api/projects/project"
     else
       render json: @project.errors.full_messages, status: 422
     end
