@@ -3,11 +3,10 @@ import {Link, withRouter} from 'react-router-dom';
 import { Line } from 'rc-progress';
 import { values } from 'lodash';
 
-const RewardIndexItem = ({reward, history, clickMethod, project, backers, pledges, currentUser}) => {
+const RewardIndexItem = ({reward, history, clickMethod, project, pledges, currentUser}) => {
 
   const checkLoggedIn = () => {
     if(currentUser.id){
-      console.log(clickMethod);
       return clickMethod();
     }
     else{
@@ -25,10 +24,9 @@ const RewardIndexItem = ({reward, history, clickMethod, project, backers, pledge
           <h2>Estimated Delivery</h2>
           <h2>{reward.delivery_date}</h2>
           </span>
-          <h2>{backers} backers</h2>
-          <h2 id="limited-message">limited ({reward.backing_limit - reward.backer_count} out of {reward.backing_limit}) left</h2>
+          <h2>{reward.pledge_count} backers</h2>
+          <h2 id="limited-message">limited ({reward.backing_limit - reward.pledge_count} out of {reward.backing_limit}) left</h2>
           <p>
-            <h2>pledge count {pledges}</h2>
             <h2 className="backing-message">{reward.current_user_is_backer ? "You backed this reward" : ""}</h2>
           </p>
         </div>

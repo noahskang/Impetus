@@ -11,14 +11,14 @@ import UserProjectsContainer from './projects/user_projects_container';
 import RewardsFormContainer from './rewards/rewards_form_container';
 import ProjectShowPageContainer from './projects/project_show_page_container';
 import PledgesFormContainer from './projects/pledges_form_container';
-import SearchIndex from './search/searchindex';
+import SearchIndexContainer from './search/search_index_container';
 
 const App = () => (
   <div>
     <Switch>
       <AuthRoute path="/login" component = {SessionFormContainer} />
       <AuthRoute path="/signup" component = {SessionFormContainer} />
-      <Route path="/search/" component={SearchIndex}/>
+      <Route path="/search/:query/" component={SearchIndexContainer}/>
       <Route component={NavBar} />
     </Switch>
     <Switch>

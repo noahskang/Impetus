@@ -33,6 +33,7 @@ class PledgesForm extends React.Component{
   rewardDropdown(){
     return(
         <select className="reward-dropdown" name="rewards" onChange={this.update('reward_id')}>
+          <option id="pledge-placeholder" value="" disabled selected>Select your reward</option>
           {this.props.rewards.map(reward=>(
             <option value={reward.id} key={reward.id}>{reward.title}</option>
           ))}
@@ -60,9 +61,6 @@ class PledgesForm extends React.Component{
           transitionLeave={false}
           >
         <div className="backing-form-contents">
-          <div id="backing-form-head">
-            <h1>SELECT A REWARD</h1>
-          </div>
           <form className="backing-form">
             {this.rewardDropdown()}
             <div className="submit_div">

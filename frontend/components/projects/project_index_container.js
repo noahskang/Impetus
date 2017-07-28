@@ -4,16 +4,14 @@ import {fetchUsers} from '../../actions/user_actions';
 import ProjectIndex from './project_index';
 import { selectAllProjects } from '../../reducers/selectors';
 
-const mapStateToProps = ({projects, users}) => {
+const mapStateToProps = ({projects}) => {
   return {
-    allProjects: selectAllProjects(projects),
-    users
+    allProjects: selectAllProjects(projects)
   };
 };
 
 const mapDispatchToProps = (dispatch) => ({
   getAllProjects: ()=>dispatch(fetchProjects()),
-  getAllUsers: ()=>dispatch(fetchUsers())
 });
 
 export default connect(

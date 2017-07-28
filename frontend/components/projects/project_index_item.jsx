@@ -13,7 +13,7 @@ const ProjectIndexItem = ({project, user}) => {
 
   return(
       <SparkScroll.div timeline={{
-    'topBottom-40': {opacity: 0, marginTop: '100px', ease: "easeoutSine" },
+    'topBottom': {opacity: 0.2, marginTop: '100px', ease: "easeoutSine" },
     'centerBottom-50': {opacity: 1, marginTop: '20px', ease: "easeoutSine"}
   }} className="project-index-item">
         <div>

@@ -24,9 +24,15 @@ class Api::ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @rewards = @project.rewards.includes(:pledges, :backers)
   end
-
+      #
+      # @projects = Project.all.where("title LIKE ? OR description LIKE ?", "%#{params[:query]}%")
   def index
-    @projects = Project.includes(:rewards).all
+    if params[:query]
+      puts "this is a test"
+      @projects = Project.all.where("title LIKE ? OR description LIKE ?", "%#{params[:query]}%")
+    else
+      @projects = Project.includes(:rewards).all
+    end
   end
 
   def update

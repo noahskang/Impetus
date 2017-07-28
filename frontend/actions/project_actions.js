@@ -5,7 +5,6 @@ import {receiveRewards} from './reward_actions';
 export const RECEIVE_PROJECTS = 'RECEIVE_PROJECTS';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 export const RECEIVE_PROJECT_ERRORS = 'RECEIVE_PROJECT_ERRORS';
-export const RECEIVE_SEARCH_PROJECTS = 'RECEIVE_SEARCH_PROJECTS';
 
 export const receiveProjects = (projects) => ({
   type: RECEIVE_PROJECTS,
@@ -15,11 +14,6 @@ export const receiveProjects = (projects) => ({
 export const receiveProject = (project) => ({
   type: RECEIVE_PROJECT,
   project
-});
-
-export const receiveSearchProjects = search =>({
-  type: RECEIVE_SEARCH_PROJECTS,
-  search
 });
 
 export const receiveProjectErrors = (errors) => ({
@@ -44,8 +38,12 @@ export const createProject = (project) => dispatch => (
   )
 );
 
-export const fetchSearchProjects = () => dispatch => (
-  SearchUtil.fetchSearchProjects().then(response => dispatch(receiveSearchProjects(response)))
+export const fetchSearchProjects = (query) => dispatch => (
+  SearchUtil.fetchSearchProjects(query).then(response => (
+    dispatch(receiveProjects(response))
+  ), err => (
+    dispatch(receiveProjectErrors(err.responseJSON))
+  ))
 );
 
 export const fetchProject = (id) => dispatch => (

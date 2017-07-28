@@ -8,9 +8,6 @@ class Reward < ActiveRecord::Base
   def pledge_count
     self.pledges.count
   end
-  def backer_count
-    self.backers.count
-  end
 
   def current_user_is_backer(currentUser)
     if currentUser

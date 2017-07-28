@@ -10,7 +10,6 @@ class ProjectIndex extends React.Component {
   constructor(props){
     super(props);
     this.props.getAllProjects();
-    this.props.getAllUsers();
   }
 
   render(){
@@ -36,7 +35,7 @@ class ProjectIndex extends React.Component {
           <h1>Featured Projects:</h1>
           <div className="projects-index">
             {this.projects.map(project => {
-              let user = this.props.users[project.creator_id] || {};
+              let user = project.creator || {};
               return (<ProjectIndexItem project={project} user={user} key={project.id}/>);
             })}
           </div>

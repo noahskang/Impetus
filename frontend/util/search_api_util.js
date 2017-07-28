@@ -1,6 +1,6 @@
-export const fetchSearchProjects = () => (
+export const fetchSearchProjects = query => (
   $.ajax({
     method: 'GET',
-    url: '/api/search'
+    url: `/api/projects/${query}`,
   })
 );
