@@ -28,8 +28,7 @@ class Api::ProjectsController < ApplicationController
       # @projects = Project.all.where("title LIKE ? OR description LIKE ?", "%#{params[:query]}%")
   def index
     if params[:query]
-      puts "this is a test"
-      @projects = Project.all.where("title LIKE ? OR description LIKE ?", "%#{params[:query]}%")
+      @projects = Project.all.where("title LIKE ? OR description LIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
     else
       @projects = Project.includes(:rewards).all
     end

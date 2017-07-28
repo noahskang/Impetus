@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchBar from '../search/search';
+import SearchContainer from '../search/search_container';
 import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
@@ -28,7 +28,7 @@ class NavBar extends React.Component {
             </a>
         </div>
         <div className="centernav">
-          <SearchBar />
+          <SearchContainer />
         </div>
         <div className="rightnav">
           {this.loginOrOut()}

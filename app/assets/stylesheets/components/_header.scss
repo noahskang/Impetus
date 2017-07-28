@@ -1,8 +1,6 @@
 .navbar{
   display: flex;
   box-sizing: border-box;
-  margin: 0;
-  border: 0;
   justify-content: space-between;
   flex-wrap: nowrap;
   align-items: center;
@@ -36,10 +34,6 @@
 
 .centernav{
   justify-content: center;
-}
-
-.impetus-logo-text{
-  display: inline-block;
 }
 
 @mixin standard-black-button(){

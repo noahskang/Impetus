@@ -1,0 +1,122 @@
+.search-results{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: black;
+  height: 100vh;
+  min-height: 100%;
+}
+
+.slider{
+  display: none;
+}
+
+#exit-x{
+  font-family: $standard-font;
+  font-weight: 100;
+  font-size: 30px;
+  color: $light-gray;
+  transition: all 0.2s ease-in;
+  padding-top: 1px;
+  &:hover{
+    color: white;
+    padding-bottom: 0px;
+    font-size: 30.2px;
+  }
+}
+
+.search-nav-links{
+  margin: 30px 70px 30px 70px;
+  display: flex;
+  justify-content: space-between;
+  img{
+    align-self: center;
+    position: relative;
+    margin-right: 18px;
+    margin-left: 18px;
+    padding-bottom: 1px;
+    width: 110px;
+    transition: all 0.2s ease-in-out;
+    &:hover{
+      width: 111px;
+      padding-bottom: 0px;
+      color: white;
+    }
+  }
+}
+
+.search-index-section{
+  margin-top: 100px;
+}
+
+.query-head{
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 175px;
+  h1{
+    font-weight: 300;
+    font-size: 45px;
+    color: white;
+    letter-spacing: 0.11em;
+  }
+  h2{
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    letter-spacing: 0.11em;
+  }
+  h3{
+    color: white;
+    opacity: .7;
+    font-family: $standard-font;
+    font-weight: 150;
+    letter-spacing: 0.11em;
+    text-transform: none;
+    box-sizing: border-box;
+    font-size: 13px;
+    line-height: 2em;
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+  }
+}
+
+.search-index-item-stats{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: $light-gray;
+  font-weight: 300;
+  display: flex;
+  justify-content: space-between;
+  .bolded{
+    color: black;
+    font-weight: 500;
+  }
+}
+
+.search-index-item{
+  width: 400px;
+  height: 400px;
+  margin: 20px 20px 20px 20px;
+  box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
+  transition: all 0.2s ease-in-out;
+  background-color: white;
+  &:hover{
+    opacity: 1;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #e6e6e6;
+  }
+}

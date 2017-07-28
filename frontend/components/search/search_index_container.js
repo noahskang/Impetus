@@ -6,15 +6,15 @@ import { values } from 'lodash';
 
 
 const mapStateToProps = ({projects}, {match}) => {
-  let projectList = Object.values(projects) || [];
+  let projectList = Object.values(projects);
   return{
     projectList,
     match
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-  fetchSearchProjects: (query) => dispatch(fetchSearchProjects(query)),
+const mapDispatchToProps = (dispatch, {match}) => ({
+  fetchSearchProjects: () => dispatch(fetchSearchProjects(match.params.query)),
 });
 
 export default connect(
