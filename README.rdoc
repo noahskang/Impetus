@@ -14,11 +14,15 @@ http://res.cloudinary.com/noah-s-kang/image/upload/v1501283121/Screen_Shot_2017-
 
 ## Project Design
 
+http://res.cloudinary.com/noah-s-kang/image/upload/v1501283278/Screen_Shot_2017-07-28_at_4.07.35_PM_mgu20q.png
+
 ### User Experience
 
 Impetus was designed with an emphasis on User Experience. Although the functionality of the App was based on Kickstarter, the UI was inspired by Squarespace to achieve a clean, modern aesthetic emphasizing intuitive usability.
 
 ## Implementation
+
+http://res.cloudinary.com/noah-s-kang/image/upload/v1501283208/Screen_Shot_2017-07-28_at_4.06.25_PM_pyhgnh.png
 
 ### Searching Projects by Keyword or Category
 **functionality**
@@ -37,6 +41,25 @@ def index
   end
 end
 ```
+* The categories page renders a new list of relevant projects without rerouting, simply by changing state.
+
+when rendering my list of categories, I attach an onClick event handler to each button:
+```javascript
+{
+  categories.map(category => {
+  return(<button onClick={this.handleClick} value={category.toLowerCase()} key={category}>{category}</button>);
+})}
+```
+```javascript
+handleClick(e){
+    e.preventDefault();
+    let selectedProjects = this.props.projectArray.filter(project => ( project.category.toLowerCase()===e.currentTarget.value));
+    this.setState({
+      categoryProjects: selectedProjects
+    }, ()=>console.log(this.state));
+  }
+```
+
 
 ### User Authentication
 **functionality**

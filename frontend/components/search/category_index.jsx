@@ -17,8 +17,6 @@ class CategoryIndex extends React.Component{
   }
 
 handleClick(e){
-  console.log("e", e);
-    console.log(e.currentTarget.value);
     e.preventDefault();
     let selectedProjects = this.props.projectArray.filter(project => ( project.category.toLowerCase()===e.currentTarget.value));
     this.setState({
