@@ -15,20 +15,20 @@ const rewardSum = rewards => {
   return sum;
 };
 
-const mapStateToProps = ({projects, users, session, rewards, pledges}, {match, location}) => {
+const mapStateToProps = ({projects, session, rewards, pledges}, {match, location}) => {
   const projectId = parseInt(match.params.projectId);
   let project = projects[projectId] || {};
   let creatorId = project.creator_id || {};
   let currentUser = session.currentUser || {};
   let userRewards = currentUser.rewards || [];
-  let user = users[creatorId] || {};
+  let creator = project.creator || {};
   let rewardArray = Object.values(rewards) || [];
   project.funding_raised = rewardSum(rewardArray);
   return{
     project,
     creatorId,
     projectId,
-    user,
+    creator,
     currentUser,
     userRewards,
     rewardArray,

@@ -48,11 +48,13 @@ class ProjectForm extends React.Component{
     return(
       <label>Category
         <select name="categories" onChange={this.update('category')}>
-          <option value="Local">Art</option>
+          <option value="Art">Art</option>
+          <option value="Technology">Technology</option>
           <option value="Relief Work">Relief Work</option>
           <option value="Local">Local</option>
           <option value="Overseas">Overseas</option>
           <option value="Music">Music</option>
+          <option value="Culinary">Culinary</option>
         </select>
       </label>
     );
@@ -150,7 +152,7 @@ class ProjectForm extends React.Component{
               <input
                 value={this.state.funding_goal} type="number" placeholder="0" min="1" max="10000000" onChange={this.update('funding_goal')} required/>
             </label>
-            <label>Funding Period Ends On 
+            <label>Funding Period Ends On
               <input type="date" min={this.currentDate}
                 value={this.state.end_date}
                 onChange={this.update('end_date')} required/>

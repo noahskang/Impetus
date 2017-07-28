@@ -18,8 +18,20 @@
   background-color: white;
 }
 
+.explore-logo{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.explore{
+  width: 20px;
+  color: $green;
+}
+
 .leftnav{
   position: relative;
+  display: flex;
+  justify-content: flex-start;
   margin-right: 20px;
   margin-left: 20px;
 }

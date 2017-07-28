@@ -16,20 +16,12 @@ class ProjectIndex extends React.Component {
     this.projects = this.props.allProjects;
     return(
       <div className="project-index-head">
-        <div className="parallax-bg">
-          <ReactCSSTransitionGroup
-            transitionName="fade-div"
-            transitionAppear={true}
-            transitionAppearTimeout={1000}
-            transitionEnter={false}
-            transitionLeave={false}
-            >
+        <div className="parallax-bg animated fadeIn">
           <div className = "title-caption top">
             <h1>MAKE AWESOME THINGS HAPPEN</h1>
             <h2>Jump in. Get Moving. Do the thing you need to do.</h2>
             <Link className="site-nav-item" id="start-a-project" to="/projects/new">START A PROJECT</Link>
           </div>
-         </ReactCSSTransitionGroup>
        </div>
         <div className="projects-index-section">
           <h1>Featured Projects:</h1>

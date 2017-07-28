@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import {Link, match, history} from 'react-router-dom';
 import persistState from 'redux-localstorage';
 import { values } from 'lodash';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { Line } from 'rc-progress';
 import RewardIndexItem from '../rewards/reward_index_item';
 import PledgesForm from './pledges_form';
@@ -13,8 +12,13 @@ class ProjectShowPage extends React.Component{
 
   constructor(props){
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleRewardSubmit = this.handleRewardSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillMount(){
+    console.log("scrolling");
+    window.scrollTo(0,0);
   }
 
   shortenedDescription(){
@@ -23,7 +27,6 @@ class ProjectShowPage extends React.Component{
 
   componentDidMount(){
     this.props.getProject();
-    this.props.getAllUsers();
   }
 
   percentWithCap(){
@@ -79,27 +82,21 @@ class ProjectShowPage extends React.Component{
   render(){
 
     let project = this.props.project;
-    let user = this.props.user;
+    let creator = this.props.creator;
 
     return(
       <div className="project-show-page">
+        <div className="project-show-main animated fadeInLeftBig">
           <div className="project-title-bar">
             <div className="title-description">
               <h1>{project.title}</h1>
-              <span className="author">{`by ${user.username}`}</span>
+              <span className="author">{`by ${creator.username}`}</span>
               <h2>{this.shortenedDescription()}...</h2>
             </div>
             <div className="project-edit-button-div">
               {this.userEditButtons()}
             </div>
           </div>
-          <ReactCSSTransitionGroup
-            transitionName="fade-div"
-            transitionAppear={true}
-            transitionAppearTimeout={700}
-            transitionEnter={false}
-            transitionLeave={false}
-            >
           <div className="image-and-stats">
             <div className="image">
               <img src={project.image_url}/>
@@ -114,7 +111,7 @@ class ProjectShowPage extends React.Component{
               <Link to={`/projects/${this.props.projectId}/pledges`} id="back-project-button">Back This Project</Link>
             </div>
           </div>
-          </ReactCSSTransitionGroup>
+        </div>
           <div className="details-rewards">
             <div className="details">
               <h1>About this project</h1>

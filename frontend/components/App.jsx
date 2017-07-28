@@ -12,6 +12,7 @@ import RewardsFormContainer from './rewards/rewards_form_container';
 import ProjectShowPageContainer from './projects/project_show_page_container';
 import PledgesFormContainer from './projects/pledges_form_container';
 import SearchIndexContainer from './search/search_index_container';
+import CategoryIndexContainer from './search/category_index_container';
 
 const App = () => (
   <div>
@@ -19,6 +20,7 @@ const App = () => (
       <AuthRoute path="/login" component = {SessionFormContainer} />
       <AuthRoute path="/signup" component = {SessionFormContainer} />
       <Route path="/search/:query/" component={SearchIndexContainer}/>
+      <Route path="/categories" component={CategoryIndexContainer}/>
       <Route component={NavBar} />
     </Switch>
     <Switch>

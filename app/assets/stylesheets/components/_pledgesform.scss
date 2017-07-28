@@ -26,10 +26,24 @@
 }
 
 .backing-page{
-
   .project-title-bar{
     color: $light-gray;
-    opacity: 0.4;
+    .title-description{
+      opacity: 0.4;
+    }
+  }
+}
+
+.project-show-link{
+  opacity: 0.8;
+  width: 70px;
+  &:hover{
+    opacity: 1;
+  }
+  h2{
+    font-size: 10px;
+    position: absolute;
+    margin-left: 5px;
   }
 }
 

@@ -17,7 +17,3 @@
 $(window).scroll(function(){
   $(".top").css("opacity", 1 - $(window).scrollTop() / 250);
 });
-
-$(document).ready(function(){
-    $('.slider').slideDown(1000);
-});

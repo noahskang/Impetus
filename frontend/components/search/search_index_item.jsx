@@ -1,8 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { Line } from 'rc-progress';
-import {SparkScroll, SparkProxy, sparkScrollFactory} from '../../util/app-spark';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const SearchIndexItem = ({project, user}) => {
 
@@ -13,14 +11,7 @@ const SearchIndexItem = ({project, user}) => {
   const shortenedDescription = project.description ? project.description.slice(0, 50) : "";
 
   return(
-    <ReactCSSTransitionGroup
-      transitionName="fade-div"
-      transitionAppear={true}
-      transitionAppearTimeout={700}
-      transitionEnter={false}
-      transitionLeave={false}
-      >
-      <div className="search-index-item">
+      <div className="search-index-item animated fadeInUpBig">
         <div>
           <Link to={`/projects/${project.id}`}>
           <img src={project.image_url}/>
@@ -42,7 +33,6 @@ const SearchIndexItem = ({project, user}) => {
           </div>
         </div>
       </div>
-    </ReactCSSTransitionGroup>
   );
 };
 

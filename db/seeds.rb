@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+local# This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 # Examples:
@@ -18,7 +18,7 @@ User.create!(username: "joechoe", password: "password1")
 Project.create!(
   title: "Restore U.W.s cherry blossom quad",
   website_url: "https://www.washington.edu/",
-  category: "community",
+  category: "local",
   description: "U.W.'s quad has been a fixture of the University of Washington campus and a tourist attraction for decades. Help us restore this beautiful state landmark.",
   creator_id: 1,
   funding_goal: 5000,

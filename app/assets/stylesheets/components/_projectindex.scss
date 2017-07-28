@@ -5,7 +5,7 @@
 
 .parallax-bg{
   display: block;
-  background-image: url("http://res.cloudinary.com/noah-s-kang/image/upload/v1500998086/mountainer-reversed_ugn9ke.jpg");
+  background-image: url("http://res.cloudinary.com/noah-s-kang/image/upload/c_scale,w_1656/v1500998086/mountainer-reversed_ugn9ke.jpg");
   height: 98vh;
   background-attachment: fixed;
   background-position: center;
@@ -59,7 +59,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: $off-white;
+  background-color: white;
   h1{
     font: inherit;
     color: $medium-gray;
@@ -96,14 +96,16 @@
   }
 }
 
-
-
 .project-index-item{
   width: 400px;
-  height: 500px;
+  height: 475px;
   margin: 20px 20px 20px 20px;
   border: 1px solid #e6e6e6;
-  box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+  &:hover{
+    box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
+  }
   transition: all 0.2s ease-in-out;
   background-color: white;
   img{

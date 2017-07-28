@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class PledgesForm extends React.Component{
   constructor(props){
@@ -44,8 +43,12 @@ class PledgesForm extends React.Component{
   render(){
     return(
       <div className="project-show-page backing-page">
-        <div className="project-title-bar">
+        <div className="project-title-bar animated fadeIn">
           <div className="project-edit-button-div">
+            <a className="project-show-link" href={`#/projects/${this.props.project.id}/`}>
+    					<img className="back-arrow" src="http://res.cloudinary.com/noah-s-kang/image/upload/v1501274019/arrows_long_left1600_drewzl.png"/>
+              <h2>view project</h2>
+    				</a>
           </div>
           <div className="title-description">
             <h1>{this.props.project.title}</h1>
@@ -53,14 +56,7 @@ class PledgesForm extends React.Component{
             <h2>{this.props.project.description}</h2>
           </div>
         </div>
-        <ReactCSSTransitionGroup
-          transitionName="fade-div"
-          transitionAppear={true}
-          transitionAppearTimeout={700}
-          transitionEnter={false}
-          transitionLeave={false}
-          >
-        <div className="backing-form-contents">
+        <div className="backing-form-contents animated fadeInLeftBig">
           <form className="backing-form">
             {this.rewardDropdown()}
             <div className="submit_div">
@@ -68,7 +64,6 @@ class PledgesForm extends React.Component{
             </div>
           </form>
         </div>
-        </ReactCSSTransitionGroup>
       </div>
     );
   }

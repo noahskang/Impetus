@@ -31,6 +31,11 @@ class NavBar extends React.Component {
           <SearchContainer />
         </div>
         <div className="rightnav">
+          <div className="explore-logo">
+            <Link className="site-nav-item" to="/categories">
+              <img className="explore" src="http://res.cloudinary.com/noah-s-kang/image/upload/v1501275950/compass-icon-3_ixdm3h.svg"/>
+            </Link>
+          </div>
           {this.loginOrOut()}
           {this.showIfLoggedIn()}
           <Link className="site-nav-item" id="start-a-project" to="/projects/new">START A PROJECT</Link>
