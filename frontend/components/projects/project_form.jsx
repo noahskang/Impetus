@@ -150,7 +150,7 @@ class ProjectForm extends React.Component{
               <input
                 value={this.state.funding_goal} type="number" placeholder="0" min="1" max="10000000" onChange={this.update('funding_goal')} required/>
             </label>
-            <label>End Date
+            <label>Funding Period Ends On 
               <input type="date" min={this.currentDate}
                 value={this.state.end_date}
                 onChange={this.update('end_date')} required/>

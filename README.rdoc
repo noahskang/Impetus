@@ -1,28 +1,74 @@
-== README
+# Impetus
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Impetus live](https://impetus-kickstarter-clone.herokuapp.com/#/)
+Impetus is a crowdfunding full-stack web application based closely on Kickstarter. Impetus allows users to publicize their own ideas and financially back the projects that they are passionate about. Noah Kang designed Impetus as a personal project using Ruby on Rails and React-redux.
 
-Things you may want to cover:
+## Features
+* Secure authentication for user login and signup
+* Projects: creation and deletion
+* Rewards / Backing: Project creators can add and delete rewards. Project backers can select pledge to support projects.
+* Image attachments for projects
 
-* Ruby version
+## Project Design
 
-* System dependencies
+### User Experience
 
-* Configuration
+Impetus was designed with an emphasis on User Experience. Although the functionality of the App was based on Kickstarter, the UI was inspired by Squarespace to achieve a clean, modern aesthetic emphasizing intuitive usability.
 
-* Database creation
+## Implementation
 
-* Database initialization
+### Viewing and Backing Projects
 
-* How to run the test suite
+### User Authentication
+**functionality**
+* Users can only create projects, back projects, and view the projects that they created if they are signed in. Attempting to access one of these pages while logged out will trigger a redirect to the login page.
+* Users can only delete projects or add rewards if they are signed in, and if they are the project owner.
+* A LOGOUT button replaces the LOGIN button when the user is already logged in.
 
-* Services (job queues, cache servers, search engines, etc.)
+**development challenges**
+* The login page is a full-size page with NO navigation bar. This meant that I would need to conditionally render the navigation bar, rather than rendering it on every page.
 
-* Deployment instructions
+**implementation**
+* I used Protected Routes to redirect the user to a login page when they click on a link that only a logged in user can access.
+* I used Auth Routes to redirect the user to the home page when they try to login after having already logged in.
+* A switch statement for the components controls rendering.
+* Implementing second switch statement allowed for conditionally rendering the navigation bar.
 
-* ...
+```javascript
+<Switch>
+  <AuthRoute path="/login" component = {SessionFormContainer} />
+  <AuthRoute path="/signup" component = {SessionFormContainer} />
+  <Route component={NavBar} />
+</Switch>
 
+<Switch>
+  <ProtectedRoute exact path="/user/projects" component= {UserProjectsContainer} />
+  <ProtectedRoute path="/projects/:projectId/rewards" component={RewardsFormContainer} />
+  <ProtectedRoute path="/projects/:projectId/pledges" component={PledgesFormContainer}/>
+  <ProtectedRoute path="/projects/new" component = {ProjectFormContainer}/>
+  <Route path="/projects/:projectId/" component={ProjectShowPageContainer}/>
+  <Route exact path="/" component = {Home}/>
+</Switch>
+```
+## Technology
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Impetus was designed utilizing these key technologies:
+
+### Backend
+* Ruby on Rails
+* PostgreSQL database
+* Cloudinary image storage
+
+### Frontend
+* React/Redux
+* React DOM
+* React Router
+* jQuery
+* Webpack
+
+## Future Additions
+**User Profile Page**
+Users can upload profile photos, view the projects they created, and the projects that they are backing.
+
+**Advanced Backing Capabilities**
+The app can handle credit card payments, and issues email confirmations to users when they make a pledge.

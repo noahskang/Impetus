@@ -82,15 +82,15 @@ class ProjectShowPage extends React.Component{
     let user = this.props.user;
 
     return(
-      <div className="project-show-page">
+      <div className="project-show-page" autoscroll="true">
           <div className="project-title-bar">
-            <div className="project-edit-button-div">
-              {this.userEditButtons()}
-            </div>
             <div className="title-description">
               <h1>{project.title}</h1>
               <span className="author">{`by ${user.username}`}</span>
-              <h2>{this.shortenedDescription()}</h2>
+              <h2>{this.shortenedDescription()}...</h2>
+            </div>
+            <div className="project-edit-button-div">
+              {this.userEditButtons()}
             </div>
           </div>
           <ReactCSSTransitionGroup

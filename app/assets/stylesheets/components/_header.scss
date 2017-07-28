@@ -112,13 +112,42 @@ a {
   color: $link-color-nav;
 }
 
+@media all and (max-width: 1150px){
+  #my-projects{
+    display: none;
+  }
+  .centernav{
+    position: absolute;
+    margin-left: 17%;
+  }
+}
+
+@media all and (max-width: 1050px){
+  .centernav{
+    position: absolute;
+    margin-left: 10%;
+  }
+}
+
 @media all and (max-width: 1000px){
+  .centernav{
+    margin-left: 7%;
+  }
+}
+
+@media all and (max-width: 900px){
+  #log-out{
+    display: none;
+  }
+}
+
+@media all and (max-width: 800px){
   .centernav{
     display: none;
   }
 }
 
-@media all and (max-width: 725px){
+@media all and (max-width: 550px){
   .rightnav{
   display: none;
   }

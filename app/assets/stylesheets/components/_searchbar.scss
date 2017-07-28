@@ -1,17 +1,16 @@
-
 .search-bar{
   margin-top: 45px;
   display: flex;
   margin-left: 50%;
   margin-right: 50%;
   justify-content: flex-start;
-  width: 500px;
+  width: 380px;
   #search-input{
     width: 60%;
   }
   #search-button{
     position: absolute;
-    margin-left: 270px;
+    margin-left: 185px;
     border-bottom: 1px solid $medium-gray;
     height: 40px;
     width: 35px;

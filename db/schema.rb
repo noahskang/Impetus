@@ -38,11 +38,11 @@ ActiveRecord::Schema.define(version: 20170726180422) do
   end
 
   create_table "rewards", force: :cascade do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "description",   null: false
     t.integer  "project_id",    null: false
     t.integer  "amount",        null: false
-    t.string   "description",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.date     "delivery_date", null: false
     t.integer  "backing_limit", null: false
     t.string   "title",         null: false

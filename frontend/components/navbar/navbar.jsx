@@ -1,15 +1,12 @@
 import React from 'react';
 import SearchBar from './search';
 import { Link } from 'react-router-dom';
-var Dropdown = require('react-simple-dropdown');
-var DropdownTrigger = Dropdown.DropdownTrigger;
-var DropdownContent = Dropdown.DropdownContent;
 
 class NavBar extends React.Component {
 
   loginOrOut(){
     if(this.props.currentUser){
-      return(<button className="site-nav-item" onClick={this.props.logout}>LOG OUT</button>);
+      return(<button className="site-nav-item" onClick={this.props.logout} id="log-out">LOG OUT</button>);
     }else{
       return(<Link className="site-nav-item" to="/login">LOG IN</Link>);
     }
@@ -17,10 +14,11 @@ class NavBar extends React.Component {
 
   showIfLoggedIn(){
     if(this.props.currentUser){
-      return(<Link className="site-nav-item" id="my-projects" to="/user/projects">MY PROJECTS</Link>);
+      return(<Link className="site-nav-item" id="my-projects" to="/user/projects">ME</Link>);
     }
   }
-
+        //
+        // <a className="site-nav-item" id="explore">EXPLORE</a>
   render(){
     return(
       <nav className="navbar">
@@ -33,7 +31,6 @@ class NavBar extends React.Component {
           <SearchBar />
         </div>
         <div className="rightnav">
-          <a className="site-nav-item" id="explore">EXPLORE</a>
           {this.loginOrOut()}
           {this.showIfLoggedIn()}
           <Link className="site-nav-item" id="start-a-project" to="/projects/new">START A PROJECT</Link>

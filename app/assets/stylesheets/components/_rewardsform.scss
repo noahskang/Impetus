@@ -1,5 +1,37 @@
-.reward-form-page{
+#reward-form-page{
+  min-height: 100%;
+  height: 100vh;
+  background-color: $light-gray;
+}
 
+.reward-form-head{
+  height: 200px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 100%;
+  font-family: inherit;
+  justify-content: center;
+  margin: 80px 60px 0 60px;
+  h1{
+    flex-basis: 50%;
+    text-align: center;
+    margin-top: 0;
+    max-width: 50%;
+    color: #080808;
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    line-height: 1.15em;
+  }
+}
+
+#reward-form-contents{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .reward-form-elements{

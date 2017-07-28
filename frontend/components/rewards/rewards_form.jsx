@@ -28,23 +28,23 @@ class RewardsForm extends React.Component{
   }
 
   render(){
-    return(<div className="project-form-page">
-      <div id="project-form-contents">
-        <div className="project-form-head">
+    return(<div className="reward-form-page">
+      <div id="reward-form-contents">
+        <div className="reward-form-head">
           <h1>Create a reward</h1>
         </div>
-        <form className="project-form">
+        <form className="project-form reward-form">
           <label>Title
-            <input type="text" value={this.state.title} onChange={this.update('title')}/>
+            <input type="text" value={this.state.title} placeholder="Custom t-shirt" onChange={this.update('title')}/>
           </label>
           <label>Description
-            <input type="text" value={this.state.description} onChange={this.update('description')}/>
+            <input type="text" placeholder="you will receive a t-shirt customized with your name!" value={this.state.description} onChange={this.update('description')}/>
           </label>
-          <label>Amount
-            <input type="number" value={this.state.amount} onChange={this.update('amount')}/>
+          <label>Amount ($)
+            <input type="number" placeholder="25" value={this.state.amount} onChange={this.update('amount')}/>
           </label>
           <label>Backer Limit
-            <input type="number" value={this.state.backing_limit} onChange={this.update('backing_limit')}/>
+            <input type="number" placeholder="23" value={this.state.backing_limit} onChange={this.update('backing_limit')}/>
           </label>
           <label>Delivery date
             <input type="date" value={this.state.delivery_date} onChange={this.update('delivery_date')}/>
@@ -54,8 +54,8 @@ class RewardsForm extends React.Component{
           </div>
         </form>
       </div>
-
-    </div>);
+    </div>
+  );
   }
 
 }
