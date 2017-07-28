@@ -1,4 +1,4 @@
-# Impetus
+#Impetus
 
 [Impetus live](https://impetus-kickstarter-clone.herokuapp.com/#/)
 Impetus is a crowdfunding full-stack web application based closely on Kickstarter. Impetus allows users to publicize their own ideas and financially back the projects that they are passionate about. Noah Kang designed Impetus as a personal project using Ruby on Rails and React-redux.
