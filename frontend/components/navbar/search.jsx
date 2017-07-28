@@ -24,7 +24,7 @@ class SearchBar extends React.Component{
   render(){
     return(
       <div className="search-bar-container">
-        <form classname="search-bar-form">
+        <form className="search-bar-form">
           <div className="search-bar">
             <input type="text" id="search-input" placeholder="Search by title or description" onChange={this.update('value')}/>
             <input type="image" id="search-button" src="http://res.cloudinary.com/noah-s-kang/image/upload/c_scale,w_66/v1501189302/magnifying-glass_hlagww.svg" onClick={this.handleSubmit}/>

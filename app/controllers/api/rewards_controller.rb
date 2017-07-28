@@ -4,6 +4,7 @@ class Api::RewardsController < ApplicationController
 
   def create
     @reward = Reward.new(reward_params)
+    current_user
 
     if @reward.save
       @reward = Reward.includes(:pledges).find(@reward.id)
@@ -14,14 +15,17 @@ class Api::RewardsController < ApplicationController
   end
 
   def show
+    current_user
     @reward = Reward.includes(:pledges).find(params[:id])
   end
 
   def index
+    current_user
     @rewards = Reward.includes(:pledges).where(project_id: params[:project_id])
   end
 
   def destroy
+    current_user
     @reward = Reward.includes(:pledges).find(params[:id])
     @reward.destroy
     render "api/rewards/show"

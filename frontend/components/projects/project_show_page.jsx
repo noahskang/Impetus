@@ -47,16 +47,19 @@ class ProjectShowPage extends React.Component{
     }
   }
 
-  handleRewardSubmit(reward_id){
-    let user_id = this.props.currentUser.id;
-    let pledge = {user_id, reward_id};
-    return ()=>this.props.createPledge(pledge);
+  handleRewardSubmit(reward){
+    if(!reward.current_user_is_backer){
+      let user_id = this.props.currentUser.id;
+      let pledge = {reward_id: reward.id, user_id};
+      return ()=>this.props.createPledge(pledge);
+    }
+    return ()=>{};
   }
 
   rewardIndex(){
       return(
         this.props.rewardArray.map(reward => {
-          return(<RewardIndexItem reward={reward} project={this.props.project} key={reward.id} userRewards = {this.props.userRewards} pledges={reward.pledge_count} backers={reward.backer_count} onClick={this.handleRewardSubmit(reward.id)}/>);
+          return(<RewardIndexItem reward={reward} project={this.props.project} key={reward.id} userRewards = {this.props.userRewards} pledges={reward.pledge_count} backers={reward.backer_count} currentUser={this.props.currentUser} clickMethod={this.handleRewardSubmit(reward)}/>);
         })
       );
 

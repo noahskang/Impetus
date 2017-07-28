@@ -10,7 +10,7 @@ const RewardsReducer = (state = {}, action) => {
       return merge({}, rewards);
     case RECEIVE_PLEDGE:
       const rewardId= action.pledge.reward_id;
-      return merge({}, state, {[rewardId]: {pledge_count: state[rewardId].pledge_count+1}});
+      return merge({}, state, {[rewardId]: {pledge_count: state[rewardId].pledge_count+1, current_user_is_backer: true}});
     case RECEIVE_REWARD:
       if(!action.reward){ return state; }
       const reward = action.reward;

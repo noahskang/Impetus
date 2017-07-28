@@ -22,9 +22,9 @@ const App = () => (
     <Switch>
       <ProtectedRoute exact path="/user/projects" component= {UserProjectsContainer} />
       <ProtectedRoute path="/projects/:projectId/rewards" component={RewardsFormContainer} />
-      <ProtectedRoute path="/projects/new" component = {ProjectFormContainer}/>
       <ProtectedRoute path="/projects/:projectId/pledges" component={PledgesFormContainer}/>
-      <ProtectedRoute path="/projects/:projectId/" component={ProjectShowPageContainer}/>
+      <ProtectedRoute path="/projects/new" component = {ProjectFormContainer}/>
+      <Route path="/projects/:projectId/" component={ProjectShowPageContainer}/>
       <Route exact path="/" component = {Home}/>
     </Switch>
   </div>

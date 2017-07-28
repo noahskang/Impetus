@@ -60,7 +60,6 @@ class SessionForm extends React.Component {
 
   render(){
     return(
-			<SlideAnimation component="session-page">
 			<div className="session-page">
 				<a className="session-home-link" href="/">
 					<img className="logo" src="http://res.cloudinary.com/noah-s-kang/image/upload/v1500584578/lightningbolt_white_gdx591.svg"/>
@@ -102,7 +101,6 @@ class SessionForm extends React.Component {
 				</div>
 				</ReactCSSTransitionGroup>
 			</div>
-			 </SlideAnimation>
     );
   }
 

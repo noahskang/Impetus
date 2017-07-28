@@ -7,7 +7,7 @@ import {fetchUsers} from '../../actions/user_actions';
 import { values } from 'lodash';
 import { createPledge } from '../../actions/pledge_actions';
 
-const mapStateToProps = ({projects, users, session, rewards}, {match, location}) => {
+const mapStateToProps = ({projects, users, session, rewards, pledges}, {match, location}) => {
   const projectId = parseInt(match.params.projectId);
   let project = projects[projectId] || {};
   let creatorId = project.creator_id || {};

@@ -47,8 +47,3 @@ class ProjectIndex extends React.Component {
 }
 
 export default ProjectIndex;
-
-// <Carousel ref="carousel">
-//  <img src="http://res.cloudinary.com/noah-s-kang/image/upload/c_scale,w_2880/v1500628592/dino-reichmuth-115620_w5drec.jpg"/>
-//   <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide2"/>
-// </Carousel>

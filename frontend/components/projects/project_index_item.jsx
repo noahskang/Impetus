@@ -20,7 +20,7 @@ const ProjectIndexItem = ({project, user}) => {
           <Link to={`/projects/${project.id}`}>
           <img src={project.image_url}/>
           </Link>
-          <div className="project-info">
+          <div className="project-index-info">
             <p className="category">{project.category}</p>
             <p>
               <Link className="title" to={`/projects/${project.id}`}>{project.title}:</Link>&nbsp;

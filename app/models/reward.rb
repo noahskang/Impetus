@@ -12,4 +12,10 @@ class Reward < ActiveRecord::Base
     self.backers.count
   end
 
+  def current_user_is_backer(currentUser)
+    if currentUser
+      return true if self.backers.where(id: currentUser.id).first
+    end
+    false
+  end
 end
