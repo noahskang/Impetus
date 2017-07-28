@@ -3,6 +3,8 @@
 [Impetus live](https://impetus-kickstarter-clone.herokuapp.com/#/)
 Impetus is a crowdfunding full-stack web application based closely on Kickstarter. Impetus allows users to publicize their own ideas and financially back the projects that they are passionate about. Noah Kang designed Impetus as a personal project using Ruby on Rails and React-redux.
 
+[project_image](http://res.cloudinary.com/noah-s-kang/image/upload/v1501282903/Screen_Shot_2017-07-28_at_4.01.13_PM_sw2wi9.png)
+
 ## Features
 * Secure authentication for user login and signup
 * Projects: creation and deletion
@@ -17,7 +19,23 @@ Impetus was designed with an emphasis on User Experience. Although the functiona
 
 ## Implementation
 
-### Viewing and Backing Projects
+### Searching Projects by keyword or Category
+**functionality**
+* Projects are searchable by title or description, and view an index of all the project details.
+* Categories can be browsed by clicking the "explore icon," and clicking a category will automatically populate a list of all the projects listed underneath that category.
+**Development Challenges**
+* Both my projects index page and my categories/search pages rely on making a Get request to the Index method of the projects controller. Conditional logic was needed to handle the difference between these two index options.
+**Implementation**
+* I used an active record query in my projects query to handle the search.
+```ruby
+def index
+  if params[:query]
+    @projects = Project.all.where("title LIKE ? OR description LIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
+  else
+    @projects = Project.includes(:rewards).all
+  end
+end
+```
 
 ### User Authentication
 **functionality**
