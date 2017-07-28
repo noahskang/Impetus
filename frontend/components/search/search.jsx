@@ -18,18 +18,21 @@ class SearchBar extends React.Component{
   }
 
   handleSubmit(e) {
-    // this.props.history.push(`/search/${this.state.value}/`);
+    if(e.keyCode == 13){
+      this.props.history.push(`/search/${this.state.value}/`);
+    }
   }
+
 
   render(){
     return(
       <div className="search-bar-container">
-        <form className="search-bar-form" onSubmit={this.handleSubmit()}>
+        <div className="search-bar-form">
           <div className="search-bar">
-            <input type="text" id="search-input" placeholder="Search by title" onChange={this.update('value')}/>
+            <input type="text" id="search-input" placeholder="Search by title" onChange={this.update('value')} onKeyDown={this.handleSubmit}/>
             <input type="image" id="search-button" src="http://res.cloudinary.com/noah-s-kang/image/upload/c_scale,w_66/v1501189302/magnifying-glass_hlagww.svg" onClick={this.handleSubmit}/>
           </div>
-        </form>
+        </div>
       </div>
     );
   }

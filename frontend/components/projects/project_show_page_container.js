@@ -2,10 +2,18 @@ import {connect} from 'react-redux';
 import { fetchProject, destroyProject } from '../../actions/project_actions';
 import { fetchRewards } from '../../actions/reward_actions';
 import ProjectShowPage from './project_show_page';
-import { selectProject, selectProjectRewards } from '../../reducers/selectors';
+import { selectProject, selectProjectRewards} from '../../reducers/selectors';
 import {fetchUsers} from '../../actions/user_actions';
 import { values } from 'lodash';
 import { createPledge } from '../../actions/pledge_actions';
+
+const rewardSum = rewards => {
+  let sum = 0;
+  rewards.forEach(reward=>{
+    sum+=(reward.pledge_count*reward.amount);
+  });
+  return sum;
+};
 
 const mapStateToProps = ({projects, users, session, rewards, pledges}, {match, location}) => {
   const projectId = parseInt(match.params.projectId);
@@ -15,6 +23,7 @@ const mapStateToProps = ({projects, users, session, rewards, pledges}, {match, l
   let userRewards = currentUser.rewards || [];
   let user = users[creatorId] || {};
   let rewardArray = Object.values(rewards) || [];
+  project.funding_raised = rewardSum(rewardArray);
   return{
     project,
     creatorId,

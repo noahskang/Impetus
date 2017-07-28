@@ -82,7 +82,7 @@ class ProjectShowPage extends React.Component{
     let user = this.props.user;
 
     return(
-      <div className="project-show-page" autoscroll="true">
+      <div className="project-show-page">
           <div className="project-title-bar">
             <div className="title-description">
               <h1>{project.title}</h1>
