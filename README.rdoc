@@ -25,14 +25,20 @@ Impetus was designed with an emphasis on User Experience. Although the functiona
 http://res.cloudinary.com/noah-s-kang/image/upload/v1501283208/Screen_Shot_2017-07-28_at_4.06.25_PM_pyhgnh.png
 
 ### Searching Projects by Keyword or Category
+
 **functionality**
-* Projects are searchable by title or description, and view an index of all the project details.
-* Categories can be browsed by clicking the "explore icon," and clicking a category will automatically populate a list of all the projects listed underneath that category.
+
+- Projects are searchable by title or description, and view an index of all the project details.
+- Categories can be browsed by clicking the "explore icon," and clicking a category will automatically populate a list of all the projects listed underneath that category.
+
 **Development Challenges**
-* Both my projects index page and my categories/search pages rely on making a Get request to the Index method of the projects controller. Conditional logic was needed to handle the difference between these two index options.
+- Both my projects index page and my categories/search pages rely on making a Get request to the Index method of the projects controller. Conditional logic was needed to handle the difference between these two index options.
+
 **Implementation**
-* I used an active record query in my projects query to handle the search.
+- I used an active record query in my projects query to handle the search.
+
 ```ruby
+
 def index
   if params[:query]
     @projects = Project.all.where("title LIKE ? OR description LIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
@@ -44,22 +50,23 @@ end
 * The categories page renders a new list of relevant projects without rerouting, simply by changing state.
 
 when rendering my list of categories, I attach an onClick event handler to each button:
+
 ```javascript
 {
   categories.map(category => {
   return(<button onClick={this.handleClick} value={category.toLowerCase()} key={category}>{category}</button>);
 })}
 ```
+
 ```javascript
 handleClick(e){
     e.preventDefault();
     let selectedProjects = this.props.projectArray.filter(project => ( project.category.toLowerCase()===e.currentTarget.value));
     this.setState({
       categoryProjects: selectedProjects
-    }, ()=>console.log(this.state));
+    });
   }
 ```
-
 
 ### User Authentication
 **functionality**

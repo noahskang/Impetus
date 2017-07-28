@@ -3,7 +3,6 @@ import { connect, replace } from 'react-redux';
 import { Route, Redirect, withRouter, } from 'react-router-dom';
 
 const Auth = ({component: Component, path, loggedIn, history}) => {
-  console.log("history", history);
   return(
   <Route path={path} render={(props) => (
     !loggedIn ? (

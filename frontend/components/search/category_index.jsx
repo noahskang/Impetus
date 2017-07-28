@@ -21,7 +21,7 @@ handleClick(e){
     let selectedProjects = this.props.projectArray.filter(project => ( project.category.toLowerCase()===e.currentTarget.value));
     this.setState({
       categoryProjects: selectedProjects
-    }, ()=>console.log(this.state));
+    });
   }
 
   render(){

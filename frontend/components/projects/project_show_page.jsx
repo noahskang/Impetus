@@ -17,7 +17,6 @@ class ProjectShowPage extends React.Component{
   }
 
   componentWillMount(){
-    console.log("scrolling");
     window.scrollTo(0,0);
   }
 
