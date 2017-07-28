@@ -16,6 +16,13 @@
   opacity: 0.01;
 }
 
+.project-errors{
+  font-size: 12px;
+  font-weight: 400px;
+  font-family: $standard-font;
+  text-align: center;
+  color: red;
+}
 .fade-div-appear.fade-div-appear-active {
   opacity: 1;
   transition: opacity .5s ease-in;

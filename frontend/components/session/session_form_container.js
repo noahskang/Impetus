@@ -22,8 +22,6 @@ const mapDispatchToProps = (dispatch, { location }) => {
     formType,
   };
 };
-// add both login and create user to the props.
-// This facilitates a simply way to log in as guest -- login is always available as a prop.
 
 export default connect(
   mapStateToProps,

@@ -30,11 +30,12 @@ export const fetchProjects = () => dispatch => (
 );
 
 export const createProject = (project) => dispatch => (
-  APIUtil.createProject(project).then(response => (
-    dispatch(receiveProject(response))
-  ), err => (
+  APIUtil.createProject(project).then(response => {
+    dispatch(receiveProject(response));
+    return response;
+  }).fail(err =>
     dispatch(receiveProjectErrors(err.responseJSON))
-  ))
+  )
 );
 
 export const fetchProject = (id) => dispatch => (

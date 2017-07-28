@@ -2,8 +2,8 @@ import {connect} from 'react-redux';
 import { createProject, receiveProjectErrors } from '../../actions/project_actions';
 import ProjectForm from './project_form';
 
-const mapStateToProps = ({errors, session}) => ({
-  errors,
+const mapStateToProps = ({projects, session}) => ({
+  errors: projects.errors,
   user: session.currentUser
 });
 

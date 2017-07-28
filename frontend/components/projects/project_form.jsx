@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import TextareaAutosize from 'react-autosize-textarea';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
+const DEFAULT_PHOTO = "http://res.cloudinary.com/noah-s-kang/image/upload/v1501022625/19721181278_68c4d1ace9_k_smjsvq.jpg";
 
 const CLOUDINARY_UPLOAD_PRESET = 'bsboi6te';
 const  CLOUDINARY_UPLOAD_URL = "https://api.cloudinary.com/v1_1/noah-s-kang/upload";
@@ -21,9 +22,11 @@ class ProjectForm extends React.Component{
       end_date: "",
       website_url: "",
       creator_id: this.props.user.id,
-      image_url: "filler",
+      image_url: "",
     };
+    this.props.clearErrors();
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.currentDate = (new Date()).toJSON().slice(0,10);
   }
 
   update(field){
@@ -34,9 +37,11 @@ class ProjectForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    const project = Object.assign({}, this.state);
-    this.props.createProject(project).then(()=>this.props.history.push("/"));
-    this.props.clearErrors();
+    let project = Object.assign({}, this.state);
+    if(this.state.image_url === ""){
+      project.image_url = DEFAULT_PHOTO;
+    }
+    (this.props.createProject(project)).then(result=>this.props.history.push(`/projects/${result.id}`), err => scroll(0,0));
   }
 
   categoryDropdown(){
@@ -53,14 +58,6 @@ class ProjectForm extends React.Component{
     );
   }
 
-  formComplete(){
-    if(Object.values(this.state).includes("")){
-      return false;
-    } else if (this.state.funding_goal > 2147483647) {
-      return false;
-    }
-    return true;
-  }
 
   onImageDrop(files) {
     this.handleImageUpload(files[0]);
@@ -84,8 +81,22 @@ class ProjectForm extends React.Component{
     });
   }
 
+  errors() {
+    if (this.props.errors) {
+      return (
+        <ul className="project-errors">
+        {this.props.errors.map(error => {
+          return (<li className="project-error-item" key={error}>{error}</li>);
+        })}
+      </ul>
+      );
+    }
+  }
+
+
   render(){
     return(
+
       <div className="project-form-page">
         <ReactCSSTransitionGroup
           transitionName="fade-div"
@@ -103,10 +114,11 @@ class ProjectForm extends React.Component{
             <h2>Make a great first impression with your project's title and image, and set your funding goal, campaign duration, and project category. No worries if you make a mistake - you can always edit your project later.</h2>
           </div>
           <form className="project-form">
+            {this.errors()}
             <label>Title
               <input
                 value={this.state.title}
-                type="text" placeholder="Web Cleanup" onChange={this.update('title')}/>
+                type="text" placeholder="Web Cleanup" onChange={this.update('title')} required/>
             </label>
             <label>Website URL
               <input
@@ -116,10 +128,10 @@ class ProjectForm extends React.Component{
             <label>Description
               <TextareaAutosize
                 value={this.state.description}
-                type="text" placeholder="Support my efforts to clean up the stray webs left all around Brooklyn." onChange={this.update('description')}/>
+                type="text" placeholder="Support my efforts to clean up the stray webs left all around Brooklyn." onChange={this.update('description')} required/>
             </label>
             {this.categoryDropdown()}
-            <h2 id="dropzone-section-label">Image</h2>
+            <h2 id="dropzone-section-label">Image (Optional)</h2>
             <div id="dropzone-section">
               <Dropzone id="dropzone"
                 multiple={false}
@@ -136,15 +148,15 @@ class ProjectForm extends React.Component{
             </div>
             <label>Funding Goal ($)
               <input
-                value={this.state.funding_goal} type="number" placeholder="0" onChange={this.update('funding_goal')}/>
+                value={this.state.funding_goal} type="number" placeholder="0" min="1" max="10000000" onChange={this.update('funding_goal')} required/>
             </label>
             <label>End Date
-              <input type="date"
+              <input type="date" min={this.currentDate}
                 value={this.state.end_date}
-                onChange={this.update('end_date')}/>
+                onChange={this.update('end_date')} required/>
             </label>
             <div className="submit_div">
-              <button type="button" onClick={this.handleSubmit} disabled={this.formComplete() ? "" : "disabled"}>Save and Continue</button>
+              <button type="button" onClick={this.handleSubmit}>Save and Continue</button>
             </div>
           </form>
           </div>
@@ -155,7 +167,3 @@ class ProjectForm extends React.Component{
 }
 
 export default withRouter(ProjectForm);
-
-// {this.formComplete() ?
-//   <a>Save and Continue</a> : <Link to="/" activeClassName="active" onClick={this.handleSubmit}>Save and Continue</Link>
-// }

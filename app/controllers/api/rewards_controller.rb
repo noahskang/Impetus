@@ -26,6 +26,7 @@ class Api::RewardsController < ApplicationController
 
   def destroy
     current_user
+    
     @reward = Reward.includes(:pledges).find(params[:id])
     @reward.destroy
     render "api/rewards/show"

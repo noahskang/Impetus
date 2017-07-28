@@ -1,14 +1,20 @@
 
 .search-bar{
-    margin-top: 55px;
-display: flex;
-justify-content: flex-start;
+  margin-top: 45px;
+  display: flex;
+  margin-left: 50%;
+  margin-right: 50%;
+  justify-content: flex-start;
+  width: 500px;
   #search-input{
     width: 60%;
   }
   #search-button{
+    position: absolute;
+    margin-left: 270px;
+    border-bottom: 1px solid $medium-gray;
     height: 40px;
-    width: 40px;
+    width: 35px;
     border: none;
   }
 }
@@ -16,7 +22,7 @@ justify-content: flex-start;
 #search-input::placeholder{
   font-size: 11px;
   line-height: 24px;
-  font-weight: 500;
+  font-weight: 300;
   position: relative;
   color: $link-color-nav;
   text-decoration: none;

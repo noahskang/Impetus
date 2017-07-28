@@ -1,4 +1,4 @@
-json.project do json.partial! 'api/projects/project', project: @project end
+json.partial! 'api/projects/project', project: @project
 
 json.rewards do @rewards.each do |reward|
   json.set! reward.id do
