@@ -3,8 +3,8 @@
 [Impetus live](https://impetus-kickstarter-clone.herokuapp.com/#/)
 Impetus is a crowdfunding full-stack web application based closely on Kickstarter. Impetus allows users to publicize their own ideas and financially back the projects that they are passionate about. Noah Kang designed Impetus as a personal project using Ruby on Rails and React-redux.
 
-![image](http://res.cloudinary.com/noah-s-kang/image/upload/v1501282903/Screen_Shot_2017-07-28_at_4.01.13_PM_sw2wi9.png)
-http://res.cloudinary.com/noah-s-kang/image/upload/v1501283121/Screen_Shot_2017-07-28_at_4.04.59_PM_y8nudp.png
+![homepage](http://res.cloudinary.com/noah-s-kang/image/upload/v1501282903/Screen_Shot_2017-07-28_at_4.01.13_PM_sw2wi9.png)
+![index](http://res.cloudinary.com/noah-s-kang/image/upload/v1501283121/Screen_Shot_2017-07-28_at_4.04.59_PM_y8nudp.png)
 
 ## Features
 * Secure authentication for user login and signup
@@ -14,7 +14,7 @@ http://res.cloudinary.com/noah-s-kang/image/upload/v1501283121/Screen_Shot_2017-
 
 ## Project Design
 
-http://res.cloudinary.com/noah-s-kang/image/upload/v1501283278/Screen_Shot_2017-07-28_at_4.07.35_PM_mgu20q.png
+![project_show](http://res.cloudinary.com/noah-s-kang/image/upload/v1501283278/Screen_Shot_2017-07-28_at_4.07.35_PM_mgu20q.png)
 
 ### User Experience
 
@@ -22,7 +22,7 @@ Impetus was designed with an emphasis on User Experience. Although the functiona
 
 ## Implementation
 
-http://res.cloudinary.com/noah-s-kang/image/upload/v1501283208/Screen_Shot_2017-07-28_at_4.06.25_PM_pyhgnh.png
+![search](http://res.cloudinary.com/noah-s-kang/image/upload/v1501283208/Screen_Shot_2017-07-28_at_4.06.25_PM_pyhgnh.png)
 
 ### Searching Projects by Keyword or Category
 
