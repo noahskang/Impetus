@@ -1,6 +1,5 @@
 import React from 'react';
 import ProjectIndexItem from './project_index_item';
-var Carousel = require('nuka-carousel');
 import { Link } from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
