@@ -24,7 +24,6 @@ class Api::ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @rewards = @project.rewards.includes(:pledges, :backers)
   end
-      #
       # @projects = Project.all.where("title LIKE ? OR description LIKE ?", "%#{params[:query]}%")
   def index
     if params[:query]
