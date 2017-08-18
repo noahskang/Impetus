@@ -25,7 +25,7 @@ class SearchIndex extends React.Component{
         </div>
         <div className = "query-head animated fadeInUpBig">
           <h2>EXPLORE</h2>
-          <h3>check out these awesome projects related to your query:</h3>
+          <h3>{this.props.projectList.length > 0 ? "check out these awesome projects related to your query:" : "No projects match your search query. Try a new search"}</h3>
           <h1>{this.props.match.params.query}</h1>
         </div>
         <div className="search-index-section animated fadeInUpBig">

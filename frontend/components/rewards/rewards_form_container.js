@@ -2,8 +2,9 @@ import { connect } from 'react-redux';
 import RewardsForm from './rewards_form';
 import { createReward, receiveRewardErrors} from '../../actions/reward_actions';
 
-const mapStateToProps = ({errors}, {match})=>{
+const mapStateToProps = ({rewards}, {match})=>{
   let projectId = parseInt(match.params.projectId);
+  let errors = rewards.errors;
   return{
     errors,
     projectId

@@ -11,13 +11,27 @@ class RewardsForm extends React.Component{
         project_id: this.props.projectId,
         backing_limit: "",
       };
+      this.props.clearErrors();
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.currentDate = (new Date()).toJSON().slice(0,10);
   }
 
   update(field){
     return e=>this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+  errors() {
+    if (this.props.errors) {
+      return (
+        <ul className="project-errors">
+        {this.props.errors.map(error => {
+          return (<li className="project-error-item" key={error}>{error}</li>);
+        })}
+      </ul>
+      );
+    }
   }
 
   handleSubmit(e) {
@@ -34,6 +48,7 @@ class RewardsForm extends React.Component{
           <h1>Create a reward</h1>
         </div>
         <form className="project-form reward-form">
+          {this.errors()}
           <label>Title
             <input type="text" value={this.state.title} placeholder="Custom t-shirt" onChange={this.update('title')}/>
           </label>
@@ -41,13 +56,19 @@ class RewardsForm extends React.Component{
             <input type="text" placeholder="you will receive a t-shirt customized with your name!" value={this.state.description} onChange={this.update('description')}/>
           </label>
           <label>Amount ($)
-            <input type="number" placeholder="25" value={this.state.amount} onChange={this.update('amount')}/>
+            <input type="number" placeholder="25"
+              min="0" max="100000000"
+              value={this.state.amount} onChange={this.update('amount')}/>
           </label>
           <label>Backer Limit
-            <input type="number" placeholder="23" value={this.state.backing_limit} onChange={this.update('backing_limit')}/>
+            <input type="number" placeholder="23"
+              min="0" max="100000000"
+              value={this.state.backing_limit} onChange={this.update('backing_limit')}/>
           </label>
           <label>Delivery date
-            <input type="date" value={this.state.delivery_date} onChange={this.update('delivery_date')}/>
+            <input type="date" value={this.state.delivery_date}
+              min={this.currentDate}
+             onChange={this.update('delivery_date')}/>
           </label>
           <div className="submit_div">
             <button type="button" onClick={this.handleSubmit}>Save and Continue</button>

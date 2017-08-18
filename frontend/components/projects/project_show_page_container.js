@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import { fetchProject, destroyProject } from '../../actions/project_actions';
+import { fetchProject, destroyProject, receiveProjectErrors } from '../../actions/project_actions';
 import { fetchRewards } from '../../actions/reward_actions';
 import ProjectShowPage from './project_show_page';
 import { selectProject, selectProjectRewards} from '../../reducers/selectors';
@@ -38,6 +38,7 @@ const mapStateToProps = ({projects, session, rewards, pledges}, {match, location
 
 const mapDispatchToProps = (dispatch, {match}) => ({
   getProject: () => dispatch(fetchProject(match.params.projectId)),
+  clearErrors: ()=>dispatch(receiveProjectErrors([])),
   createPledge: pledge => dispatch(createPledge(pledge)),
   getAllRewards: () => dispatch(fetchRewards(match.params.projectId)),
   getAllUsers: ()=>dispatch(fetchUsers()),

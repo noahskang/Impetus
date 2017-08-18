@@ -7,6 +7,7 @@ import { values } from 'lodash';
 
 const mapStateToProps = ({projects}, {match}) => {
   let projectList = Object.values(projects);
+  console.log(projectList, "projectList");
   return{
     projectList,
     match
