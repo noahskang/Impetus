@@ -32,7 +32,7 @@ handleClick(e){
           <h2 id="category-exit-x">X</h2>
           </a>
         </div>
-        <div className="category-index-elements">
+        <div className="category-index-elements animated slideInLeft">
           <div className="category-index">
           <h1>Categories</h1>
           <div className="category-options">
