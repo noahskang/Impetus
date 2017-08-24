@@ -83,7 +83,7 @@
   flex: display;
   justify-content: center;
   align-items: center;
-  width: 700px;
+  width: 70%;
   height: 100%;
   padding: 65px;
   letter-spacing: 0.1em;
@@ -199,7 +199,6 @@
   .project-form-head{
     h2{
       margin-left: 100px;
-
     }
   }
 }
@@ -215,7 +214,7 @@
 @media(min-width: 750px){
   .project-form-head{
     .h1{
-      font-size: 24px;
+      font-size: 30px;
       line-height: 1.666667em;
       letter-spacing: .2083em;
     }
@@ -224,6 +223,6 @@
 
 @media(max-width: 600px){
   .project-form-head{
-    h1{display: none;}
+    h1{font-size: 25px;}
   }
 }

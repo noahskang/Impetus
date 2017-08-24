@@ -4,6 +4,7 @@
   justify-content: flex-start;
   margin-left: 75px;
   margin-right: 75px;
+  margin-bottom: 150px;
   img{
     width: 100%;
     height: auto;
@@ -13,6 +14,7 @@
     justify-content: flex-start;
     margin-bottom: 50px;
   }
+
   .image{
     display: inline-block;
     width: 790px;
@@ -74,12 +76,12 @@
   }
 }
 
-
 .project-edit-button-div{
   display: flex;
   flex-direction: column;
   width: 250px;
 }
+
 .project-show-stats{
   margin-left: 40px;
   width: 40%;
@@ -92,7 +94,7 @@
   font-weight: 300;
   .bolded{
     font-size: 24px;
-    font-weiht: 400;
+    font-weight: 300;
     margin-bottom: 5px;
     color: $dark-medium-gray;
   }
@@ -102,15 +104,17 @@
   .line{
     margin-bottom: 30px;
   }
+
   #back-project-button{
     cursor: pointer;
     display: inline-block;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: .11em;
+    height: 65px;
     line-height: 1em;
-    margin-top: 65px;
-    padding: 1.8em 3.6em;
+    margin-top: 55px;
+    padding: 1.8em;
     text-align: center;
     text-rendering: optimizeLegibility;
     text-transform: uppercase;
@@ -162,4 +166,65 @@
 .rewards{
   width: 275px;
   margin-left: 40px;
+}
+
+
+@media all and (max-width: 1000px){
+  .project-show-stats{
+    .bolded{
+      font-size: 15px;
+    }
+    span{
+      margin-top: 10px;
+    }
+    .line{
+      margin-bottom: 10px;
+    }
+    #back-project-button{
+      font-size: 12px;
+      height: 55px;
+    }
+  }
+
+}
+
+@media all and (max-width: 900px){
+  .project-show-page{
+    .image-and-stats{
+      flex-direction: column;
+    }
+    .image{
+      width: 100%;
+      margin-right: 100px;
+      margin-bottom: 50px;
+    }
+  }
+  .project-show-stats{
+    justify-content: center;
+    margin-left: 0px;
+  }
+  .title-description{
+    display: none;
+  }
+  #back-project-button{
+    font-size: 12px;
+    width: 150px;
+    height: 55px;
+  }
+
+  .details-rewards{
+    flex-direction: column;
+    margin-left: 0px;
+  }
+
+  .details{
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .rewards{
+    width: 100%;
+    margin-top: 50px;
+    margin-left: 0px;
+  }
 }

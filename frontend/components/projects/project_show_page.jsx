@@ -6,6 +6,7 @@ import { values } from 'lodash';
 import { Line } from 'rc-progress';
 import RewardIndexItem from '../rewards/reward_index_item';
 import PledgesForm from './pledges_form';
+import Footer from '../Footer';
 
 
 class ProjectShowPage extends React.Component{
@@ -84,6 +85,7 @@ class ProjectShowPage extends React.Component{
     let creator = this.props.creator;
 
     return(
+      <div>
       <div className="project-show-page">
         <div className="project-show-main animated fadeInLeftBig">
           <div className="project-title-bar">
@@ -111,18 +113,19 @@ class ProjectShowPage extends React.Component{
             </div>
           </div>
         </div>
-          <div className="details-rewards">
-            <div className="details">
-              <h1>About this project</h1>
-              <h2>{project.description}</h2>
-            </div>
-            <div className="rewards">
-              <h1>Support this project</h1>
-              {this.rewardIndex()}
-            </div>
+        <div className="details-rewards">
+          <div className="details">
+            <h1>About this project</h1>
+            <h2>{project.description}</h2>
           </div>
-
+          <div className="rewards">
+            <h1>Support this project</h1>
+            {this.rewardIndex()}
+          </div>
         </div>
+      </div>
+     <Footer />
+     </div>
     );
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import ProjectIndexItem from './project_index_item';
 import { Link } from 'react-router-dom';
+import Footer from '../Footer';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
@@ -31,6 +32,7 @@ class ProjectIndex extends React.Component {
             })}
           </div>
        </div>
+       <Footer />
      </div>
      );
   }
