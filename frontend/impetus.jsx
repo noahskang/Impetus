@@ -21,19 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  window.store = store;
-  window.selectProject = selectProject;
-  window.fetchProjects = fetchProjects;
-  window.fetchProject = fetchProject;
-  window.createProject = createProject;
-  window.updateProject = updateProject;
-  window.createProject = createProject;
-  window.destroyProject = destroyProject;
-  window.fetchRewards = fetchRewards;
-  window.createReward = createReward;
-  window.destroyReward = destroyReward;
-  window.fetchPledges = fetchPledges;
-
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
 

@@ -1,4 +1,4 @@
-local# This file should contain all the record creation needed to seed the database with its default values.
+# This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 # Examples:
@@ -14,42 +14,6 @@ User.create!(username: "Friend", password: "password1")
 User.create!(username: "Blargh", password: "password1")
 User.create!(username: "vul222", password: "password1")
 User.create!(username: "joechoe", password: "password1")
-
-Project.create!(
-  title: "Restore U.W.s cherry blossom quad",
-  website_url: "https://www.washington.edu/",
-  category: "local",
-  description: "U.W.'s quad has been a fixture of the University of Washington campus and a tourist attraction for decades. Help us restore this beautiful state landmark.",
-  creator_id: 1,
-  funding_goal: 5000,
-  end_date: "08/10/2020",
-  funding_raised: 2000,
-  image_url: "http://res.cloudinary.com/noah-s-kang/image/upload/v1500918683/13482103233_470c035e1a_k_i3fyne.jpg"
-)
-
-Project.create!(
-  title: "Musical Firepit",
-  website_url: "google.com",
-  category: "Music",
-  description: "What's a bonfire without music? Now, all the people who love singing old-time folk songs with their friends to the strumming o an acoustic guitar round' the ol' bonfire can do that -- even without musical skills. this firepit can be controlled by bluetooth to play your favorite campfire playlist. s'mores, anyone?",
-  creator_id: 2,
-  funding_goal: 4000,
-  funding_raised: 400,
-  end_date: "02/02/2018",
-  image_url: "http://res.cloudinary.com/noah-s-kang/image/upload/v1500918663/15731353122_8da92e49ce_k_s98i5v.jpg"
-)
-
-Project.create!(
-  title: "Alpine exploration",
-  website_url: "google.com",
-  category: "recreational",
-  description: "go hiking somewhere awesome",
-  creator_id: 3,
-  funding_goal: 10000,
-  funding_raised: 2000,
-  end_date: "02/02/2018",
-  image_url: "http://res.cloudinary.com/noah-s-kang/image/upload/v1500918569/19721181278_68c4d1ace9_k_pwx0ka.jpg"
-)
 
 Project.create!(
   title: "510 Art Gallery",
@@ -159,8 +123,32 @@ Project.create!(
   image_url: "http://res.cloudinary.com/noah-s-kang/image/upload/v1501227136/pexels-photo-185725_okajt2.jpg"
 )
 
+Project.create!(
+  title: "Restore U.W.s cherry blossom quad",
+  website_url: "https://www.washington.edu/",
+  category: "local",
+  description: "U.W.'s quad has been a fixture of the University of Washington campus and a tourist attraction for decades. Help us restore this beautiful state landmark.",
+  creator_id: 1,
+  funding_goal: 5000,
+  end_date: "08/10/2020",
+  funding_raised: 2000,
+  image_url: "http://res.cloudinary.com/noah-s-kang/image/upload/v1500918683/13482103233_470c035e1a_k_i3fyne.jpg"
+)
+
+Project.create!(
+  title: "Musical Firepit",
+  website_url: "google.com",
+  category: "Music",
+  description: "What's a bonfire without music? Now, all the people who love singing old-time folk songs with their friends to the strumming o an acoustic guitar round' the ol' bonfire can do that -- even without musical skills. this firepit can be controlled by bluetooth to play your favorite campfire playlist. s'mores, anyone?",
+  creator_id: 2,
+  funding_goal: 4000,
+  funding_raised: 400,
+  end_date: "02/02/2018",
+  image_url: "http://res.cloudinary.com/noah-s-kang/image/upload/v1500918663/15731353122_8da92e49ce_k_s98i5v.jpg"
+)
+
 Reward.create!(
-  project_id: 4,
+  project_id: 1,
   amount: 1000,
   description: "Receive a free piece of artwork from the artist of your choice.",
   delivery_date: "02/02/2018",
@@ -169,7 +157,7 @@ Reward.create!(
 )
 
 Reward.create!(
-  project_id: 5,
+  project_id: 2,
   amount: 1000,
   description: "Donate 1000 and get a free 3d Printer with steak ink for 4 people",
   delivery_date: "02/05/2018",
@@ -178,7 +166,7 @@ Reward.create!(
 )
 
 Reward.create!(
-  project_id: 5,
+  project_id: 2,
   amount: 5000,
   description: "Donate 5000 or more and get 2 3D printers, one in rose gold and other in onyx black. Plus 1 weeks worth of steak ink.",
   delivery_date: "02/05/2018",
@@ -187,7 +175,7 @@ Reward.create!(
 )
 
 Reward.create!(
-  project_id: 6,
+  project_id: 3,
   amount: 200,
   description: "For every $200 dollars donated, you will receive a free t-shirt that our program design and also a free mug.",
   delivery_date: "02/05/2018",
@@ -196,7 +184,7 @@ Reward.create!(
 )
 
 Reward.create!(
-  project_id: 6,
+  project_id: 3,
   amount: 5000,
   description: "You will be scheduled to give a keynote lecture.",
   delivery_date: "02/05/2018",
@@ -205,7 +193,7 @@ Reward.create!(
 )
 
 Reward.create!(
-  project_id: 7,
+  project_id: 4,
   amount: 100,
   description: "$100, will receive thank you card and your picture on our air toilet website",
   delivery_date: "02/10/2018",
@@ -214,7 +202,7 @@ Reward.create!(
 )
 
 Reward.create!(
-  project_id: 7,
+  project_id: 4,
   amount: 1000,
   description: "at $1000 dollars you will receive a brand new air toilet, with free installation and also receive a thank you card.",
   delivery_date: "03/10/2018",
@@ -223,7 +211,7 @@ Reward.create!(
 )
 
 Reward.create!(
-  project_id: 8,
+  project_id: 5,
   amount: 500,
   description: "at $500, you will get to attend a free screening of our documentary at the Sundance Film Festival ",
   delivery_date: "05/10/2018",
@@ -232,7 +220,7 @@ Reward.create!(
 )
 
 Reward.create!(
-  project_id: 8,
+  project_id: 5,
   amount: 1000,
   description: "At this level of donation of $1000 you will get a free VIP access to the screening of our documentary + a free weekend VIP access to the 2017 Sundance Festival",
   delivery_date: "05/10/2018",
@@ -241,7 +229,7 @@ Reward.create!(
 )
 
 Reward.create!(
-  project_id: 9,
+  project_id: 6,
   amount: 50,
   description: "You get a free baby turtle mug at a donation of $50",
   delivery_date: "05/10/2018",
@@ -250,7 +238,7 @@ Reward.create!(
 )
 
 Reward.create!(
-  project_id: 9,
+  project_id: 6,
   amount: 100,
   description: "At $100 donation you will be invited to a coffee session with turtle and coffee lover Jeff Sessions. ",
   delivery_date: "04/07/2018",
@@ -259,7 +247,7 @@ Reward.create!(
 )
 
 Reward.create!(
-  project_id: 10,
+  project_id: 7,
   amount: 1000,
   description: "For the amount of $1000, you will receive a free tablet",
   delivery_date: "04/07/2018",
@@ -268,7 +256,7 @@ Reward.create!(
 )
 
 Reward.create!(
-  project_id: 11,
+  project_id: 8,
   amount: 5,
   description: "If you donate less than $5 then you are an ultralite Donor. You will get one UltraLite pencil with your name on it.",
   delivery_date: "09/07/2018",
@@ -277,7 +265,7 @@ Reward.create!(
 )
 
 Reward.create!(
-  project_id: 11,
+  project_id: 8,
   amount: 100,
   description: "Our bigger donors get bigger prizes. at $100 you will get our UltraLite colored penicils that come in colors such as Lavendar Lilly and Incan Gold",
   delivery_date: "09/07/2018",
@@ -286,10 +274,28 @@ Reward.create!(
 )
 
 Reward.create!(
-  project_id: 12,
+  project_id: 9,
   amount: 10000,
   description: "For your donation of 10000 you will receive a drone that is used for filming and can be customized according to your wants.",
   delivery_date: "09/10/2018",
   backing_limit: 200,
   title: "Free Drone"
+)
+
+Reward.create!(
+  project_id: 10,
+  amount: 200,
+  description: "For your donation of 200 you will receive a UW branded sweatshirt.",
+  delivery_date: "09/10/2018",
+  backing_limit: 200,
+  title: "Sweatshirt"
+)
+
+Reward.create!(
+  project_id: 11,
+  amount: 1000,
+  description: "For your donation of 1000 you will receive a free musical firepit.",
+  delivery_date: "09/10/2018",
+  backing_limit: 200,
+  title: "Musical firepit"
 )
