@@ -6,3 +6,49 @@
   font-size: 12px;
   text-align: center;
 }
+
+.icons{
+  display: flex;
+  justify-content: center
+}
+
+.icon.alt:before {
+  -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  background-color: #47586a;
+  border-radius: 100%;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 1.5rem;
+  height: 2.25em;
+  line-height: 2.25em;
+  text-align: center;
+  width: 2.25em;
+  margin: 30px 10px 0 10px;
+}
+
+.fa-linkedin:before {
+  background-color: #8cd4e9;
+}
+
+.fa-linkedin:hover:before {
+  background-color: #77cce5;
+}
+
+.fa-linkedin:active:before {
+  background-color: #4cbcdd;
+}
+
+.fa-github:before {
+  background-color: #e98ca4;
+}
+
+.fa-github:hover:before {
+  background-color: #e57793;
+}
+
+.fa-github:active:before {
+  background-color: #dd4c71;
+}
