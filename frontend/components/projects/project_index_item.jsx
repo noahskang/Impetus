@@ -13,8 +13,8 @@ const ProjectIndexItem = ({project, user}) => {
 
   return(
       <SparkScroll.div timeline={{
-    'topBottom': {opacity: 0.2, marginTop: '100px', ease: "easeoutSine" },
-    'centerBottom-50': {opacity: 1, marginTop: '20px', ease: "easeoutSine"}
+    'topBottom': {opacity: 0.5, ease: "easeoutSine" },
+    'bottomBottom': {opacity: 1, ease: "easeoutSine"}
   }} className="project-index-item">
         <div>
           <Link to={`/projects/${project.id}`}>
