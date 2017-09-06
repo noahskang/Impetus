@@ -1,7 +1,7 @@
 # Impetus
 
 [Impetus live](https://impetus-live.herokuapp.com/#/)
-Impetus is a crowdfunding full-stack web application based closely on Kickstarter. Impetus allows users to publicize their own ideas and financially back the projects that they are passionate about. Noah Kang designed Impetus as a personal project using Ruby on Rails and React-redux.
+Impetus is a crowdfunding full-stack web application based closely on Kickstarter. Impetus allows users to publicize their own ideas and financially back the projects that they are passionate about. I designed Impetus using Ruby on Rails and React/Redux.
 
 ![homepage](http://res.cloudinary.com/noah-s-kang/image/upload/v1501282903/Screen_Shot_2017-07-28_at_4.01.13_PM_sw2wi9.png)
 ![index](http://res.cloudinary.com/noah-s-kang/image/upload/v1501283121/Screen_Shot_2017-07-28_at_4.04.59_PM_y8nudp.png)
@@ -10,7 +10,7 @@ Impetus is a crowdfunding full-stack web application based closely on Kickstarte
 * Secure authentication for user login and signup
 * Projects: creation and deletion
 * Rewards / Backing: Project creators can add and delete rewards. Project backers can select pledge to support projects.
-* Image attachments for projects
+* Supports Users uploading banner images for their projects using the Cloudinary CDN.
 
 ## Project Design
 
@@ -26,7 +26,7 @@ Impetus was designed with an emphasis on User Experience. Although the functiona
 
 ### Searching Projects by Keyword or Category
 
-**functionality**
+**Functionality**
 
 - Projects are searchable by title or description, and view an index of all the project details.
 - Categories can be browsed by clicking the "explore icon," and clicking a category will automatically populate a list of all the projects listed underneath that category.
@@ -69,15 +69,15 @@ handleClick(e){
 ```
 
 ### User Authentication
-**functionality**
+**Functionality**
 * Users can only create projects, back projects, and view the projects that they created if they are signed in. Attempting to access one of these pages while logged out will trigger a redirect to the login page.
 * Users can only delete projects or add rewards if they are signed in, and if they are the project owner.
 * A LOGOUT button replaces the LOGIN button when the user is already logged in.
 
-**development challenges**
+**Development Challenges**
 * The login page is a full-size page with NO navigation bar. This meant that I would need to conditionally render the navigation bar, rather than rendering it on every page.
 
-**implementation**
+**Implementation**
 * I used Protected Routes to redirect the user to a login page when they click on a link that only a logged in user can access.
 * I used Auth Routes to redirect the user to the home page when they try to login after having already logged in.
 * A switch statement for the components controls rendering.
