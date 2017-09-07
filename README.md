@@ -3,6 +3,8 @@
 [Impetus live](https://impetus-live.herokuapp.com/#/)
 Impetus is a crowdfunding full-stack web application based closely on Kickstarter. Impetus allows users to publicize their own ideas and financially back the projects that they are passionate about. I designed Impetus using Ruby on Rails and React/Redux.
 
+**if you're looking for information about my project supernacho, please visit this link:** [supernacho](https://github.com/noahskang/SuperNacho)
+
 ![homepage](http://res.cloudinary.com/noah-s-kang/image/upload/v1501282903/Screen_Shot_2017-07-28_at_4.01.13_PM_sw2wi9.png)
 ![index](http://res.cloudinary.com/noah-s-kang/image/upload/v1501283121/Screen_Shot_2017-07-28_at_4.04.59_PM_y8nudp.png)
 
