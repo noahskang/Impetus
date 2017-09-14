@@ -137,7 +137,7 @@ a {
 
 @media all and (max-width: 1000px){
   .centernav{
-    margin-left: 7%;
+    margin-left: 0;
   }
 }
 
@@ -147,7 +147,7 @@ a {
   }
 }
 
-@media all and (max-width: 800px){
+@media all and (max-width: 850px){
   .centernav{
     display: none;
   }
@@ -155,12 +155,19 @@ a {
 
 @media all and (max-width: 550px){
   .rightnav{
-  display: none;
+    flex-direction: column;
+    margin-left: 0;
+  }
+  .rightnav *{
+    margin: 20px 0 0 0;
   }
   .leftnav *{
-  margin-right: 1em;
+    margin-right: 2em;
   }
   .navbar{
     justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 20%;
   }
 }

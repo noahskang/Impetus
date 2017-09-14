@@ -182,3 +182,9 @@
     }
   }
 }
+
+@media all and (max-width: 550px){
+  .parallax-bg{
+    display: none;
+  }
+}

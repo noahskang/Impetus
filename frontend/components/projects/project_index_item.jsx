@@ -12,10 +12,11 @@ const ProjectIndexItem = ({project, user}) => {
   const shortenedDescription = project.description ? project.description.slice(0, 50) : "";
 
   return(
-      <SparkScroll.div timeline={{
-    'topBottom': {opacity: 0.5, ease: "easeoutSine" },
-    'bottomBottom': {opacity: 1, ease: "easeoutSine"}
-  }} className="project-index-item">
+  //     <SparkScroll.div timeline={{
+  //   'topBottom': {opacity: 0.5, ease: "easeoutSine" },
+  //   'bottomBottom': {opacity: 1, ease: "easeoutSine"}
+  // }} className="project-index-item">
+    <div>
         <div>
           <Link to={`/projects/${project.id}`}>
           <img src={project.image_url}/>
@@ -37,7 +38,8 @@ const ProjectIndexItem = ({project, user}) => {
             </div>
           </div>
         </div>
-      </SparkScroll.div>
+      </div>
+      // </SparkScroll.div>
   );
 };
 
