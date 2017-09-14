@@ -16,7 +16,7 @@ const ProjectIndexItem = ({project, user}) => {
   //   'topBottom': {opacity: 0.5, ease: "easeoutSine" },
   //   'bottomBottom': {opacity: 1, ease: "easeoutSine"}
   // }} className="project-index-item">
-    <div>
+    <div className="project-index-item">
         <div>
           <Link to={`/projects/${project.id}`}>
           <img src={project.image_url}/>

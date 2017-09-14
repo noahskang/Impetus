@@ -181,10 +181,10 @@
       display: none;
     }
   }
-}
-
-@media all and (max-width: 550px){
   .parallax-bg{
     display: none;
+  }
+  .project-index-item{
+    max-width: 90vw;
   }
 }
