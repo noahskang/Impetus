@@ -30,3 +30,35 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
+
+@media all and (max-width: 850px){
+  #search-input{
+    display: none;
+  }
+  .search-bar{
+    position: relative;
+    margin-top: 48px;
+    justify-content: center;
+    #search-button{
+      position: static;
+      margin-left: -70px;
+      margin-right: 90%;
+    }
+  }
+}
+
+@media all and (max-width: 550px){
+  #search-input{
+    display: none;
+  }
+  .search-bar{
+    position: relative;
+    // margin-top: 48px;
+    justify-content: center;
+    #search-button{
+      position: static;
+      margin-left: -70px;
+      margin-right: 90%;
+    }
+  }
+}

@@ -45,6 +45,7 @@
 }
 
 .centernav{
+  display: flex;
   justify-content: center;
 }
 
@@ -85,7 +86,6 @@
 .rightnav *{
   margin-left: 1.6em;
 }
-
 
 .dropdown {
     display: inline-block;
@@ -147,13 +147,10 @@ a {
   }
 }
 
-@media all and (max-width: 850px){
+@media all and (max-width: 550px){
   .centernav{
     display: none;
   }
-}
-
-@media all and (max-width: 550px){
   .rightnav{
     flex-direction: column;
     margin-left: 0;
@@ -167,7 +164,7 @@ a {
   .navbar{
     justify-content: center;
     flex-direction: column;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     height: 20%;
   }
 }
